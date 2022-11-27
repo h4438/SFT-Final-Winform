@@ -15,12 +15,49 @@ namespace WinFormDrug
     {
         private DbHelper dbHelper;
         private int newRows;
+        private List<Manufacturer> manufacturers;
+        Dictionary<string, int> comboSource;
+
         public Form()
         {
             InitializeComponent();
-            newRows= 0; 
+            newRows= 0;
             dbHelper= new DbHelper();
+            manufacturers = new List<Manufacturer>();
+            comboSource= new Dictionary<string, int>();
             selectAllManufacturer();
+           
+        }
+        // Supplement
+        private void changeToSupplement_Click(object sender, EventArgs e) 
+        {
+            string tab = tabControlMain.SelectedTab.Text;
+            if (tab == "Supplement") 
+            {
+                foreach (Manufacturer a in manufacturers) 
+                {
+                    if (comboSource.ContainsKey(a.ManuName)) 
+                    {
+                        continue;
+                    }
+                    comboSource.Add(a.ManuName, a.ManuID);
+                }
+                comboBoxSplmManu.DataSource = new BindingSource(this.comboSource, null);
+                comboBoxSplmManu.DisplayMember = "Key";
+                comboBoxSplmManu.ValueMember = "Value";
+            }
+        }
+        private void saveSupplement_Click(object sender, EventArgs e) 
+        {
+            Supplement supplement = new Supplement();
+            supplement.SName = richTextSplmName.Text;
+            supplement.Uses = richTextSplmUses.Text;
+            supplement.Directions = richTextSplmDir.Text;
+            supplement.Category = richTextSplmCate.Text;
+            supplement.Warnings = richTextSplmWarn.Text;
+            supplement.OtherInfo = richTextSplmOther.Text;
+            supplement.Ingredient = richTextSplmIngredient.Text;
+            supplement.InactiveIngredient = richTextSplmInactive.Text;
         }
 
         // Manufacturer
@@ -34,13 +71,15 @@ namespace WinFormDrug
             manufacture.ManuEmail = textManuEmail.Text;
             dbHelper.Manufacturers.Add(manufacture);
             dbHelper.SaveChanges();
+            // update states
+            manufacturers.Add(manufacture);
+            this.newRows++;
             textManuAdrs.Text = "";
             textManuName.Text = "";
             textManuCountry.Text = "";
             textManuEmail.Text = "";
             textManuPhone.Text = "";
             textManuName.Focus();
-            this.newRows++;
             MessageBox.Show("Save complete!");
         }
 
@@ -51,25 +90,15 @@ namespace WinFormDrug
 
         private void selectAllManufacturer()
         {
-            List<Manufacturer> manufacturers = dbHelper.Manufacturers.ToList();
-            if (manufacturers.Count == 0)
+            if (manufacturers.Count > 0 && newRows == 0) 
             {
                 return;
             }
+            manufacturers = dbHelper.Manufacturers.ToList();
             dataGridView1.DataSource = manufacturers;
             UIHelper.fillGrid(dataGridView1);
             UIHelper.colorNewRows(dataGridView1, newRows);
             newRows = 0;
-        }
-
-        private void tabSupplement_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {   
-
         }
     }
 

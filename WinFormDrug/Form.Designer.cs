@@ -30,8 +30,14 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Manufacturer = new System.Windows.Forms.TabControl();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabManu = new System.Windows.Forms.TabPage();
+            this.textManuEmail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textManuPhone = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textManuCountry = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnShowAllManu = new System.Windows.Forms.Button();
             this.btnSaveManu = new System.Windows.Forms.Button();
             this.textManuAdrs = new System.Windows.Forms.TextBox();
@@ -40,8 +46,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnShowAllSplm = new System.Windows.Forms.Button();
+            this.btnSaveSplm = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -57,16 +66,11 @@
             this.richTextSplmInactive = new System.Windows.Forms.RichTextBox();
             this.richTextSplmOther = new System.Windows.Forms.RichTextBox();
             this.comboBoxSplmManu = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textManuCountry = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textManuPhone = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textManuEmail = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.richTextSplmWarn = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.Manufacturer.SuspendLayout();
+            this.tabControlMain.SuspendLayout();
             this.tabManu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -78,7 +82,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 661F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Manufacturer, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tabControlMain, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 16);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -98,16 +102,17 @@
             this.dataGridView1.Size = new System.Drawing.Size(923, 787);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Manufacturer
+            // tabControlMain
             // 
-            this.Manufacturer.Controls.Add(this.tabManu);
-            this.Manufacturer.Controls.Add(this.tabPage1);
-            this.Manufacturer.Location = new System.Drawing.Point(934, 4);
-            this.Manufacturer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Manufacturer.Name = "Manufacturer";
-            this.Manufacturer.SelectedIndex = 0;
-            this.Manufacturer.Size = new System.Drawing.Size(654, 787);
-            this.Manufacturer.TabIndex = 1;
+            this.tabControlMain.Controls.Add(this.tabManu);
+            this.tabControlMain.Controls.Add(this.tabPage1);
+            this.tabControlMain.Location = new System.Drawing.Point(934, 4);
+            this.tabControlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(654, 787);
+            this.tabControlMain.TabIndex = 1;
+            this.tabControlMain.Click += new System.EventHandler(this.changeToSupplement_Click);
             // 
             // tabManu
             // 
@@ -132,6 +137,60 @@
             this.tabManu.TabIndex = 0;
             this.tabManu.Text = "Manufacturer";
             this.tabManu.UseVisualStyleBackColor = true;
+            // 
+            // textManuEmail
+            // 
+            this.textManuEmail.Location = new System.Drawing.Point(294, 431);
+            this.textManuEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuEmail.Name = "textManuEmail";
+            this.textManuEmail.Size = new System.Drawing.Size(210, 27);
+            this.textManuEmail.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(194, 430);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 28);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Email";
+            // 
+            // textManuPhone
+            // 
+            this.textManuPhone.Location = new System.Drawing.Point(294, 356);
+            this.textManuPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuPhone.Name = "textManuPhone";
+            this.textManuPhone.Size = new System.Drawing.Size(210, 27);
+            this.textManuPhone.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(194, 355);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 28);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Phone";
+            // 
+            // textManuCountry
+            // 
+            this.textManuCountry.Location = new System.Drawing.Point(294, 273);
+            this.textManuCountry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuCountry.Name = "textManuCountry";
+            this.textManuCountry.Size = new System.Drawing.Size(210, 27);
+            this.textManuCountry.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(194, 272);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 28);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Country";
             // 
             // btnShowAllManu
             // 
@@ -203,6 +262,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnShowAllSplm);
+            this.tabPage1.Controls.Add(this.btnSaveSplm);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.tableLayoutPanel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
@@ -213,6 +274,36 @@
             this.tabPage1.Text = "Supplement";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnShowAllSplm
+            // 
+            this.btnShowAllSplm.Location = new System.Drawing.Point(334, 611);
+            this.btnShowAllSplm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShowAllSplm.Name = "btnShowAllSplm";
+            this.btnShowAllSplm.Size = new System.Drawing.Size(94, 44);
+            this.btnShowAllSplm.TabIndex = 7;
+            this.btnShowAllSplm.Text = "Show All";
+            this.btnShowAllSplm.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveSplm
+            // 
+            this.btnSaveSplm.Location = new System.Drawing.Point(143, 611);
+            this.btnSaveSplm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveSplm.Name = "btnSaveSplm";
+            this.btnSaveSplm.Size = new System.Drawing.Size(94, 44);
+            this.btnSaveSplm.TabIndex = 6;
+            this.btnSaveSplm.Text = "Save";
+            this.btnSaveSplm.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(249, 16);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(179, 41);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Supplement";
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -221,7 +312,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label19, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 9);
             this.tableLayoutPanel2.Controls.Add(this.label18, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.label17, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label16, 0, 5);
@@ -236,10 +327,12 @@
             this.tableLayoutPanel2.Controls.Add(this.richTextSplmDir, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.richTextSplmInactive, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.richTextSplmOther, 1, 7);
-            this.tableLayoutPanel2.Controls.Add(this.comboBoxSplmManu, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.comboBoxSplmManu, 1, 9);
+            this.tableLayoutPanel2.Controls.Add(this.label19, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.richTextSplmWarn, 1, 8);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 81);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 9;
+            this.tableLayoutPanel2.RowCount = 10;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -248,21 +341,21 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(634, 454);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(634, 495);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // label19
+            // label7
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(3, 411);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(113, 23);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "Manufacturer";
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(3, 458);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 23);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Manufacturer";
             // 
             // label18
             // 
@@ -401,74 +494,29 @@
             // 
             this.comboBoxSplmManu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxSplmManu.FormattingEnabled = true;
-            this.comboBoxSplmManu.Location = new System.Drawing.Point(122, 408);
+            this.comboBoxSplmManu.Location = new System.Drawing.Point(122, 455);
             this.comboBoxSplmManu.Name = "comboBoxSplmManu";
             this.comboBoxSplmManu.Size = new System.Drawing.Size(509, 28);
             this.comboBoxSplmManu.TabIndex = 20;
             // 
-            // label20
+            // label19
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(249, 16);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(179, 41);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Supplement";
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(3, 406);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(113, 23);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Warning";
             // 
-            // label4
+            // richTextSplmWarn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(194, 272);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 28);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Country";
-            // 
-            // textManuCountry
-            // 
-            this.textManuCountry.Location = new System.Drawing.Point(294, 273);
-            this.textManuCountry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textManuCountry.Name = "textManuCountry";
-            this.textManuCountry.Size = new System.Drawing.Size(210, 27);
-            this.textManuCountry.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(194, 355);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 28);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Phone";
-            // 
-            // textManuPhone
-            // 
-            this.textManuPhone.Location = new System.Drawing.Point(294, 356);
-            this.textManuPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textManuPhone.Name = "textManuPhone";
-            this.textManuPhone.Size = new System.Drawing.Size(210, 27);
-            this.textManuPhone.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(194, 430);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 28);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Email";
-            // 
-            // textManuEmail
-            // 
-            this.textManuEmail.Location = new System.Drawing.Point(294, 431);
-            this.textManuEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textManuEmail.Name = "textManuEmail";
-            this.textManuEmail.Size = new System.Drawing.Size(210, 27);
-            this.textManuEmail.TabIndex = 12;
+            this.richTextSplmWarn.Location = new System.Drawing.Point(122, 394);
+            this.richTextSplmWarn.Name = "richTextSplmWarn";
+            this.richTextSplmWarn.Size = new System.Drawing.Size(509, 47);
+            this.richTextSplmWarn.TabIndex = 21;
+            this.richTextSplmWarn.Text = "";
             // 
             // Form
             // 
@@ -481,7 +529,7 @@
             this.Text = "WinForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.Manufacturer.ResumeLayout(false);
+            this.tabControlMain.ResumeLayout(false);
             this.tabManu.ResumeLayout(false);
             this.tabManu.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -496,7 +544,7 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dataGridView1;
-        private TabControl Manufacturer;
+        private TabControl tabControlMain;
         private TabPage tabManu;
         private Label label1;
         private TextBox textManuName;
@@ -530,5 +578,9 @@
         private Label label5;
         private TextBox textManuCountry;
         private Label label4;
+        private Button btnShowAllSplm;
+        private Button btnSaveSplm;
+        private Label label7;
+        private RichTextBox richTextSplmWarn;
     }
 }

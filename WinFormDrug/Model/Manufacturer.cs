@@ -19,5 +19,6 @@ namespace WinFormDrug.Model
         public string ManuPhone { get; set;}    
         public string ManuEmail { get; set;}
         public string ManuCountry { get; set;}
+
     }
 }
