@@ -283,6 +283,7 @@
             this.btnShowAllSplm.TabIndex = 7;
             this.btnShowAllSplm.Text = "Show All";
             this.btnShowAllSplm.UseVisualStyleBackColor = true;
+            this.btnShowAllSplm.Click += new System.EventHandler(this.showAllSupplement_Click);
             // 
             // btnSaveSplm
             // 
@@ -293,6 +294,7 @@
             this.btnSaveSplm.TabIndex = 6;
             this.btnSaveSplm.Text = "Save";
             this.btnSaveSplm.UseVisualStyleBackColor = true;
+            this.btnSaveSplm.Click += new System.EventHandler(this.saveSupplement_Click);
             // 
             // label20
             // 

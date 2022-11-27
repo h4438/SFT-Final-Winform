@@ -16,7 +16,7 @@ namespace WinFormDrug
         private DbHelper dbHelper;
         private int newRows;
         private List<Manufacturer> manufacturers;
-        Dictionary<string, int> comboSource;
+        Dictionary<string, Manufacturer> comboSource;
 
         public Form()
         {
@@ -24,7 +24,7 @@ namespace WinFormDrug
             newRows= 0;
             dbHelper= new DbHelper();
             manufacturers = new List<Manufacturer>();
-            comboSource= new Dictionary<string, int>();
+            comboSource= new Dictionary<string, Manufacturer>();
             selectAllManufacturer();
            
         }
@@ -36,12 +36,14 @@ namespace WinFormDrug
             {
                 foreach (Manufacturer a in manufacturers) 
                 {
+                    // can improve
                     if (comboSource.ContainsKey(a.ManuName)) 
                     {
                         continue;
                     }
-                    comboSource.Add(a.ManuName, a.ManuID);
+                    comboSource.Add(a.ManuName, a);
                 }
+                
                 comboBoxSplmManu.DataSource = new BindingSource(this.comboSource, null);
                 comboBoxSplmManu.DisplayMember = "Key";
                 comboBoxSplmManu.ValueMember = "Value";
@@ -58,6 +60,15 @@ namespace WinFormDrug
             supplement.OtherInfo = richTextSplmOther.Text;
             supplement.Ingredient = richTextSplmIngredient.Text;
             supplement.InactiveIngredient = richTextSplmInactive.Text;
+            supplement.Manufacturer = (Manufacturer)comboBoxSplmManu.SelectedValue;
+            dbHelper.Supplements.Add(supplement);
+            dbHelper.SaveChanges();
+            MessageBox.Show("OK");
+        }
+
+        private void showAllSupplement_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = dbHelper.Supplements.ToList();
         }
 
         // Manufacturer
@@ -100,6 +111,7 @@ namespace WinFormDrug
             UIHelper.colorNewRows(dataGridView1, newRows);
             newRows = 0;
         }
+
     }
 
     public partial class UIHelper
