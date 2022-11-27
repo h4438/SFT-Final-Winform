@@ -29,10 +29,16 @@ namespace WinFormDrug
             Manufacturer manufacture = new Manufacturer();
             manufacture.ManuName = textManuName.Text;
             manufacture.ManuAddress = textManuAdrs.Text;
+            manufacture.ManuPhone = textManuPhone.Text; 
+            manufacture.ManuCountry = textManuCountry.Text;  
+            manufacture.ManuEmail = textManuEmail.Text;
             dbHelper.Manufacturers.Add(manufacture);
             dbHelper.SaveChanges();
             textManuAdrs.Text = "";
             textManuName.Text = "";
+            textManuCountry.Text = "";
+            textManuEmail.Text = "";
+            textManuPhone.Text = "";
             textManuName.Focus();
             this.newRows++;
             MessageBox.Show("Save complete!");
@@ -62,7 +68,7 @@ namespace WinFormDrug
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
+        {   
 
         }
     }
@@ -71,7 +77,8 @@ namespace WinFormDrug
     {
         public static void fillGrid(DataGridView dataGrid)
         {
-            for (int i = 0; i < dataGrid.ColumnCount; i++)
+            // ignore the id column
+            for (int i = 1; i < dataGrid.ColumnCount; i++)
             {
                 dataGrid.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }

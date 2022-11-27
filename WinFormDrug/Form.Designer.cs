@@ -58,6 +58,12 @@
             this.richTextSplmOther = new System.Windows.Forms.RichTextBox();
             this.comboBoxSplmManu = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textManuCountry = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textManuPhone = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textManuEmail = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Manufacturer.SuspendLayout();
@@ -105,6 +111,12 @@
             // 
             // tabManu
             // 
+            this.tabManu.Controls.Add(this.textManuEmail);
+            this.tabManu.Controls.Add(this.label6);
+            this.tabManu.Controls.Add(this.textManuPhone);
+            this.tabManu.Controls.Add(this.label5);
+            this.tabManu.Controls.Add(this.textManuCountry);
+            this.tabManu.Controls.Add(this.label4);
             this.tabManu.Controls.Add(this.btnShowAllManu);
             this.tabManu.Controls.Add(this.btnSaveManu);
             this.tabManu.Controls.Add(this.textManuAdrs);
@@ -123,7 +135,7 @@
             // 
             // btnShowAllManu
             // 
-            this.btnShowAllManu.Location = new System.Drawing.Point(410, 336);
+            this.btnShowAllManu.Location = new System.Drawing.Point(410, 519);
             this.btnShowAllManu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShowAllManu.Name = "btnShowAllManu";
             this.btnShowAllManu.Size = new System.Drawing.Size(94, 44);
@@ -134,7 +146,7 @@
             // 
             // btnSaveManu
             // 
-            this.btnSaveManu.Location = new System.Drawing.Point(194, 336);
+            this.btnSaveManu.Location = new System.Drawing.Point(194, 519);
             this.btnSaveManu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveManu.Name = "btnSaveManu";
             this.btnSaveManu.Size = new System.Drawing.Size(94, 44);
@@ -404,6 +416,60 @@
             this.label20.TabIndex = 2;
             this.label20.Text = "Supplement";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(194, 272);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 28);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Country";
+            // 
+            // textManuCountry
+            // 
+            this.textManuCountry.Location = new System.Drawing.Point(294, 273);
+            this.textManuCountry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuCountry.Name = "textManuCountry";
+            this.textManuCountry.Size = new System.Drawing.Size(210, 27);
+            this.textManuCountry.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(194, 355);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 28);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Phone";
+            // 
+            // textManuPhone
+            // 
+            this.textManuPhone.Location = new System.Drawing.Point(294, 356);
+            this.textManuPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuPhone.Name = "textManuPhone";
+            this.textManuPhone.Size = new System.Drawing.Size(210, 27);
+            this.textManuPhone.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(194, 430);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 28);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Email";
+            // 
+            // textManuEmail
+            // 
+            this.textManuEmail.Location = new System.Drawing.Point(294, 431);
+            this.textManuEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuEmail.Name = "textManuEmail";
+            this.textManuEmail.Size = new System.Drawing.Size(210, 27);
+            this.textManuEmail.TabIndex = 12;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -458,5 +524,11 @@
         private RichTextBox richTextSplmOther;
         private ComboBox comboBoxSplmManu;
         private Label label20;
+        private TextBox textManuEmail;
+        private Label label6;
+        private TextBox textManuPhone;
+        private Label label5;
+        private TextBox textManuCountry;
+        private Label label4;
     }
 }
