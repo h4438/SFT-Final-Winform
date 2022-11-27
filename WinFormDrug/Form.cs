@@ -14,33 +14,35 @@ namespace WinFormDrug
     public partial class Form : System.Windows.Forms.Form
     {
         private DbHelper dbHelper;
-        private int newRows;
+        private int[] newRows;
+        private bool refresh;
         private List<Manufacturer> manufacturers;
         Dictionary<string, Manufacturer> comboSource;
 
         public Form()
         {
             InitializeComponent();
-            newRows= 0;
+            // correspond to the number of tabs
+            newRows= new int[] { 0,0,0};
+            refresh = true;
+            dataGridView1.ReadOnly = true;
             dbHelper= new DbHelper();
             manufacturers = new List<Manufacturer>();
             comboSource= new Dictionary<string, Manufacturer>();
             selectAllManufacturer();
-           
+            refresh = false;
         }
         // Supplement
-        private void changeToSupplement_Click(object sender, EventArgs e) 
+        private void changeTab_Click(object sender, EventArgs e) 
         {
+            refresh = true;
             string tab = tabControlMain.SelectedTab.Text;
             if (tab == "Supplement") 
             {
                 foreach (Manufacturer a in manufacturers) 
                 {
                     // can improve
-                    if (comboSource.ContainsKey(a.ManuName)) 
-                    {
-                        continue;
-                    }
+                    if (comboSource.ContainsKey(a.ManuName)) { return; }
                     comboSource.Add(a.ManuName, a);
                 }
                 
@@ -63,12 +65,15 @@ namespace WinFormDrug
             supplement.Manufacturer = (Manufacturer)comboBoxSplmManu.SelectedValue;
             dbHelper.Supplements.Add(supplement);
             dbHelper.SaveChanges();
+            refresh = true;
             MessageBox.Show("OK");
         }
 
         private void showAllSupplement_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = dbHelper.Supplements.ToList();
+            UIHelper.fillGrid(dataGridView1);
+            UIHelper.colorNewRows(dataGridView1, newRows[tabControlMain.SelectedIndex]);
         }
 
         // Manufacturer
@@ -84,38 +89,56 @@ namespace WinFormDrug
             dbHelper.SaveChanges();
             // update states
             manufacturers.Add(manufacture);
-            this.newRows++;
-            textManuAdrs.Text = "";
-            textManuName.Text = "";
-            textManuCountry.Text = "";
-            textManuEmail.Text = "";
-            textManuPhone.Text = "";
+            refresh = true;
+            this.newRows[tabControlMain.SelectedIndex]++;
+            UIHelper.clearTextBoxes(textManuEmail.Parent);
             textManuName.Focus();
             MessageBox.Show("Save complete!");
         }
 
         private void showAllManu_Click(object sender, EventArgs e)
         {
+         
             selectAllManufacturer();
         }
 
         private void selectAllManufacturer()
         {
-            if (manufacturers.Count > 0 && newRows == 0) 
+            if (manufacturers.Count > 0 && !refresh) 
             {
                 return;
             }
             manufacturers = dbHelper.Manufacturers.ToList();
             dataGridView1.DataSource = manufacturers;
             UIHelper.fillGrid(dataGridView1);
-            UIHelper.colorNewRows(dataGridView1, newRows);
-            newRows = 0;
+            UIHelper.colorNewRows(dataGridView1, newRows[tabControlMain.SelectedIndex]);
+            newRows[tabControlMain.SelectedIndex] = 0;
         }
 
+        // Event handling
+
+        private void clearAllText_Click(object sender, EventArgs e)
+        {
+            UIHelper.clearTextBoxes((sender as Button).Parent);
+        }
     }
 
     public partial class UIHelper
     {
+        public static void clearTextBoxes(Control parent) 
+        {
+            foreach (var control in parent.Controls)
+            {
+                if (control is TextBox) {
+                    ((TextBox)control).Text = "";
+                }
+                else if(control is RichTextBox) 
+                {
+                    ((RichTextBox)control).Text = "";
+                }
+            }
+        }
+
         public static void fillGrid(DataGridView dataGrid)
         {
             // ignore the id column

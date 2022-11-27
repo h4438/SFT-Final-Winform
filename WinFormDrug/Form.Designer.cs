@@ -32,24 +32,26 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabManu = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.textManuEmail = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textManuPhone = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textManuCountry = new System.Windows.Forms.TextBox();
+            this.textManuName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textManuAdrs = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textManuPhone = new System.Windows.Forms.TextBox();
+            this.textManuCountry = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnShowAllManu = new System.Windows.Forms.Button();
             this.btnSaveManu = new System.Windows.Forms.Button();
-            this.textManuAdrs = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textManuName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnShowAllSplm = new System.Windows.Forms.Button();
             this.btnSaveSplm = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableSupplement = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -72,8 +74,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.tabManu.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tableSupplement.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -112,22 +115,13 @@
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(654, 787);
             this.tabControlMain.TabIndex = 1;
-            this.tabControlMain.Click += new System.EventHandler(this.changeToSupplement_Click);
+            this.tabControlMain.Click += new System.EventHandler(this.changeTab_Click);
             // 
             // tabManu
             // 
-            this.tabManu.Controls.Add(this.textManuEmail);
-            this.tabManu.Controls.Add(this.label6);
-            this.tabManu.Controls.Add(this.textManuPhone);
-            this.tabManu.Controls.Add(this.label5);
-            this.tabManu.Controls.Add(this.textManuCountry);
-            this.tabManu.Controls.Add(this.label4);
+            this.tabManu.Controls.Add(this.tableLayoutPanel2);
             this.tabManu.Controls.Add(this.btnShowAllManu);
             this.tabManu.Controls.Add(this.btnSaveManu);
-            this.tabManu.Controls.Add(this.textManuAdrs);
-            this.tabManu.Controls.Add(this.label3);
-            this.tabManu.Controls.Add(this.textManuName);
-            this.tabManu.Controls.Add(this.label2);
             this.tabManu.Controls.Add(this.label1);
             this.tabManu.Location = new System.Drawing.Point(4, 29);
             this.tabManu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -138,63 +132,131 @@
             this.tabManu.Text = "Manufacturer";
             this.tabManu.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.69565F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.30434F));
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.textManuEmail, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.textManuName, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.textManuAdrs, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textManuPhone, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.textManuCountry, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label6, 0, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(136, 85);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(460, 177);
+            this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(3, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 23);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Country";
+            // 
             // textManuEmail
             // 
-            this.textManuEmail.Location = new System.Drawing.Point(294, 431);
+            this.textManuEmail.Location = new System.Drawing.Point(158, 144);
             this.textManuEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textManuEmail.Name = "textManuEmail";
-            this.textManuEmail.Size = new System.Drawing.Size(210, 27);
+            this.textManuEmail.Size = new System.Drawing.Size(281, 27);
             this.textManuEmail.TabIndex = 12;
             // 
-            // label6
+            // textManuName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(194, 430);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 28);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Email";
+            this.textManuName.Location = new System.Drawing.Point(158, 4);
+            this.textManuName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuName.Name = "textManuName";
+            this.textManuName.Size = new System.Drawing.Size(281, 27);
+            this.textManuName.TabIndex = 2;
             // 
-            // textManuPhone
+            // label3
             // 
-            this.textManuPhone.Location = new System.Drawing.Point(294, 356);
-            this.textManuPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textManuPhone.Name = "textManuPhone";
-            this.textManuPhone.Size = new System.Drawing.Size(210, 27);
-            this.textManuPhone.TabIndex = 10;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(3, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 23);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Address";
             // 
-            // label5
+            // textManuAdrs
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(194, 355);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 28);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Phone";
-            // 
-            // textManuCountry
-            // 
-            this.textManuCountry.Location = new System.Drawing.Point(294, 273);
-            this.textManuCountry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textManuCountry.Name = "textManuCountry";
-            this.textManuCountry.Size = new System.Drawing.Size(210, 27);
-            this.textManuCountry.TabIndex = 8;
+            this.textManuAdrs.Location = new System.Drawing.Point(158, 39);
+            this.textManuAdrs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuAdrs.Name = "textManuAdrs";
+            this.textManuAdrs.Size = new System.Drawing.Size(281, 27);
+            this.textManuAdrs.TabIndex = 4;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(194, 272);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(3, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 28);
+            this.label4.Size = new System.Drawing.Size(149, 23);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Country";
+            this.label4.Text = "Name";
+            // 
+            // textManuPhone
+            // 
+            this.textManuPhone.Location = new System.Drawing.Point(158, 109);
+            this.textManuPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuPhone.Name = "textManuPhone";
+            this.textManuPhone.Size = new System.Drawing.Size(281, 27);
+            this.textManuPhone.TabIndex = 10;
+            // 
+            // textManuCountry
+            // 
+            this.textManuCountry.Location = new System.Drawing.Point(158, 74);
+            this.textManuCountry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textManuCountry.Name = "textManuCountry";
+            this.textManuCountry.Size = new System.Drawing.Size(281, 27);
+            this.textManuCountry.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(3, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(149, 23);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Phone";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(3, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 23);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Email";
             // 
             // btnShowAllManu
             // 
-            this.btnShowAllManu.Location = new System.Drawing.Point(410, 519);
+            this.btnShowAllManu.Location = new System.Drawing.Point(357, 327);
             this.btnShowAllManu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShowAllManu.Name = "btnShowAllManu";
             this.btnShowAllManu.Size = new System.Drawing.Size(94, 44);
@@ -205,7 +267,7 @@
             // 
             // btnSaveManu
             // 
-            this.btnSaveManu.Location = new System.Drawing.Point(194, 519);
+            this.btnSaveManu.Location = new System.Drawing.Point(194, 327);
             this.btnSaveManu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveManu.Name = "btnSaveManu";
             this.btnSaveManu.Size = new System.Drawing.Size(94, 44);
@@ -213,42 +275,6 @@
             this.btnSaveManu.Text = "Save";
             this.btnSaveManu.UseVisualStyleBackColor = true;
             this.btnSaveManu.Click += new System.EventHandler(this.saveManufacturer_Click);
-            // 
-            // textManuAdrs
-            // 
-            this.textManuAdrs.Location = new System.Drawing.Point(294, 193);
-            this.textManuAdrs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textManuAdrs.Name = "textManuAdrs";
-            this.textManuAdrs.Size = new System.Drawing.Size(210, 27);
-            this.textManuAdrs.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(194, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 28);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Address";
-            // 
-            // textManuName
-            // 
-            this.textManuName.Location = new System.Drawing.Point(294, 107);
-            this.textManuName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textManuName.Name = "textManuName";
-            this.textManuName.Size = new System.Drawing.Size(210, 27);
-            this.textManuName.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(194, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Name";
             // 
             // label1
             // 
@@ -265,7 +291,7 @@
             this.tabPage1.Controls.Add(this.btnShowAllSplm);
             this.tabPage1.Controls.Add(this.btnSaveSplm);
             this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage1.Controls.Add(this.tableSupplement);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -274,9 +300,20 @@
             this.tabPage1.Text = "Supplement";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(3, 482);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(94, 44);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.clearAllText_Click);
+            // 
             // btnShowAllSplm
             // 
-            this.btnShowAllSplm.Location = new System.Drawing.Point(334, 611);
+            this.btnShowAllSplm.Location = new System.Drawing.Point(334, 643);
             this.btnShowAllSplm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShowAllSplm.Name = "btnShowAllSplm";
             this.btnShowAllSplm.Size = new System.Drawing.Size(94, 44);
@@ -287,7 +324,7 @@
             // 
             // btnSaveSplm
             // 
-            this.btnSaveSplm.Location = new System.Drawing.Point(143, 611);
+            this.btnSaveSplm.Location = new System.Drawing.Point(138, 643);
             this.btnSaveSplm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveSplm.Name = "btnSaveSplm";
             this.btnSaveSplm.Size = new System.Drawing.Size(94, 44);
@@ -306,54 +343,56 @@
             this.label20.TabIndex = 2;
             this.label20.Text = "Supplement";
             // 
-            // tableLayoutPanel2
+            // tableSupplement
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tableSupplement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 9);
-            this.tableLayoutPanel2.Controls.Add(this.label18, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label17, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.label16, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label15, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.richTextSplmName, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.richTextSplmCate, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.richTextSplmUses, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.richTextSplmIngredient, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.richTextSplmDir, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.richTextSplmInactive, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(this.richTextSplmOther, 1, 7);
-            this.tableLayoutPanel2.Controls.Add(this.comboBoxSplmManu, 1, 9);
-            this.tableLayoutPanel2.Controls.Add(this.label19, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.richTextSplmWarn, 1, 8);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 81);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 10;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(634, 495);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableSupplement.ColumnCount = 2;
+            this.tableSupplement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableSupplement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSupplement.Controls.Add(this.btnClear, 0, 10);
+            this.tableSupplement.Controls.Add(this.label7, 0, 9);
+            this.tableSupplement.Controls.Add(this.label18, 0, 7);
+            this.tableSupplement.Controls.Add(this.label17, 0, 6);
+            this.tableSupplement.Controls.Add(this.label16, 0, 5);
+            this.tableSupplement.Controls.Add(this.label15, 0, 4);
+            this.tableSupplement.Controls.Add(this.label14, 0, 3);
+            this.tableSupplement.Controls.Add(this.richTextSplmName, 1, 0);
+            this.tableSupplement.Controls.Add(this.label13, 0, 0);
+            this.tableSupplement.Controls.Add(this.label12, 0, 2);
+            this.tableSupplement.Controls.Add(this.richTextSplmCate, 1, 2);
+            this.tableSupplement.Controls.Add(this.richTextSplmUses, 1, 3);
+            this.tableSupplement.Controls.Add(this.richTextSplmIngredient, 1, 4);
+            this.tableSupplement.Controls.Add(this.richTextSplmDir, 1, 5);
+            this.tableSupplement.Controls.Add(this.richTextSplmInactive, 1, 6);
+            this.tableSupplement.Controls.Add(this.richTextSplmOther, 1, 7);
+            this.tableSupplement.Controls.Add(this.comboBoxSplmManu, 1, 9);
+            this.tableSupplement.Controls.Add(this.label19, 0, 8);
+            this.tableSupplement.Controls.Add(this.richTextSplmWarn, 1, 8);
+            this.tableSupplement.Location = new System.Drawing.Point(6, 81);
+            this.tableSupplement.Name = "tableSupplement";
+            this.tableSupplement.RowCount = 11;
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableSupplement.Size = new System.Drawing.Size(634, 530);
+            this.tableSupplement.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(3, 458);
+            this.label7.Location = new System.Drawing.Point(3, 449);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 23);
             this.label7.TabIndex = 22;
@@ -496,7 +535,7 @@
             // 
             this.comboBoxSplmManu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxSplmManu.FormattingEnabled = true;
-            this.comboBoxSplmManu.Location = new System.Drawing.Point(122, 455);
+            this.comboBoxSplmManu.Location = new System.Drawing.Point(122, 447);
             this.comboBoxSplmManu.Name = "comboBoxSplmManu";
             this.comboBoxSplmManu.Size = new System.Drawing.Size(509, 28);
             this.comboBoxSplmManu.TabIndex = 20;
@@ -534,10 +573,12 @@
             this.tabControlMain.ResumeLayout(false);
             this.tabManu.ResumeLayout(false);
             this.tabManu.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tableSupplement.ResumeLayout(false);
+            this.tableSupplement.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -549,14 +590,10 @@
         private TabControl tabControlMain;
         private TabPage tabManu;
         private Label label1;
-        private TextBox textManuName;
-        private Label label2;
-        private TextBox textManuAdrs;
-        private Label label3;
         private Button btnShowAllManu;
         private Button btnSaveManu;
         private TabPage tabPage1;
-        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tableSupplement;
         private RichTextBox richTextSplmName;
         private Label label13;
         private Label label12;
@@ -575,14 +612,20 @@
         private ComboBox comboBoxSplmManu;
         private Label label20;
         private TextBox textManuEmail;
-        private Label label6;
-        private TextBox textManuPhone;
-        private Label label5;
-        private TextBox textManuCountry;
-        private Label label4;
         private Button btnShowAllSplm;
         private Button btnSaveSplm;
         private Label label7;
         private RichTextBox richTextSplmWarn;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label2;
+        private TextBox textManuName;
+        private Label label3;
+        private TextBox textManuAdrs;
+        private Label label4;
+        private TextBox textManuPhone;
+        private TextBox textManuCountry;
+        private Label label5;
+        private Label label6;
+        private Button btnClear;
     }
 }
