@@ -55,6 +55,16 @@ namespace WinFormDrug
             UIHelper.colorNewRows(dataGridView1, newRows);
             newRows = 0;
         }
+
+        private void tabSupplement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     public partial class UIHelper
