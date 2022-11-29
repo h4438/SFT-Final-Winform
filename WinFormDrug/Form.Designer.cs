@@ -91,6 +91,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.comboBoxAddedBatch = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -172,7 +174,7 @@
             this.tableLayoutPanel2.Controls.Add(this.textManuCountry, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 4);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(136, 85);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(129, 93);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -585,6 +587,8 @@
             // 
             // tabBatch
             // 
+            this.tabBatch.Controls.Add(this.comboBoxAddedBatch);
+            this.tabBatch.Controls.Add(this.label25);
             this.tabBatch.Controls.Add(this.tableLayoutPanel3);
             this.tabBatch.Controls.Add(this.button3);
             this.tabBatch.Controls.Add(this.button2);
@@ -619,7 +623,7 @@
             this.tableLayoutPanel3.Controls.Add(this.textBox7, 1, 7);
             this.tableLayoutPanel3.Controls.Add(this.dateTimePicker2, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchManu, 1, 4);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(89, 134);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(85, 177);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -630,7 +634,8 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(524, 287);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(524, 275);
             this.tableLayoutPanel3.TabIndex = 14;
             // 
             // dateTimePicker4
@@ -659,7 +664,7 @@
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(3, 250);
+            this.label24.Location = new System.Drawing.Point(3, 244);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(169, 23);
             this.label24.TabIndex = 17;
@@ -811,6 +816,24 @@
             this.label26.TabIndex = 3;
             this.label26.Text = "Supplement Batch";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(85, 119);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(103, 23);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "AddedBatch";
+            // 
+            // comboBoxAddedBatch
+            // 
+            this.comboBoxAddedBatch.FormattingEnabled = true;
+            this.comboBoxAddedBatch.Location = new System.Drawing.Point(261, 114);
+            this.comboBoxAddedBatch.Name = "comboBoxAddedBatch";
+            this.comboBoxAddedBatch.Size = new System.Drawing.Size(161, 28);
+            this.comboBoxAddedBatch.TabIndex = 16;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -904,5 +927,7 @@
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker4;
         private ComboBox comboBoxBatchManu;
+        private ComboBox comboBoxAddedBatch;
+        private Label label25;
     }
 }

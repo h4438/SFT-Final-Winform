@@ -15,6 +15,8 @@ namespace WinFormDrug.Model
         public int SID { get; set; }
         public string SName { get; set; }
 
+        public string SLink { get; set; }   
+
         public Manufacturer Manufacturer { get; set; }
         public string Category { get; set; }
         public string Uses { get; set; }

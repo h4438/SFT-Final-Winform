@@ -26,3 +26,4 @@ C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-win
 C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.Initial.resources
 C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Form.resources
 C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.UpdateManu.resources
+C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.AddSupplementImgLink.resources

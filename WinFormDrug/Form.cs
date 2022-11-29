@@ -32,6 +32,17 @@ namespace WinFormDrug
             selectAllManufacturer();
             refresh = false;
         }
+        // Batch
+
+        private void addBatch_Click(object sender, EventArgs e) 
+        {
+            
+        }
+        private void saveBatch_Click(object sender, EventArgs e) 
+        {
+            
+        }
+
         // Supplement
         private void changeTab_Click(object sender, EventArgs e) 
         {
