@@ -47,11 +47,11 @@
             this.btnSaveManu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnShowAllSplm = new System.Windows.Forms.Button();
             this.btnSaveSplm = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.tableSupplement = new System.Windows.Forms.TableLayoutPanel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -70,6 +70,27 @@
             this.comboBoxSplmManu = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.richTextSplmWarn = new System.Windows.Forms.RichTextBox();
+            this.tabBatch = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBatchCost = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxBatchManu = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -77,6 +98,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableSupplement.SuspendLayout();
+            this.tabBatch.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -109,6 +132,7 @@
             // 
             this.tabControlMain.Controls.Add(this.tabManu);
             this.tabControlMain.Controls.Add(this.tabPage1);
+            this.tabControlMain.Controls.Add(this.tabBatch);
             this.tabControlMain.Location = new System.Drawing.Point(934, 4);
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControlMain.Name = "tabControlMain";
@@ -300,17 +324,6 @@
             this.tabPage1.Text = "Supplement";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(3, 482);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 44);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.clearAllText_Click);
-            // 
             // btnShowAllSplm
             // 
             this.btnShowAllSplm.Location = new System.Drawing.Point(334, 643);
@@ -386,6 +399,17 @@
             this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableSupplement.Size = new System.Drawing.Size(634, 530);
             this.tableSupplement.TabIndex = 0;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(3, 482);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(94, 44);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.clearAllText_Click);
             // 
             // label7
             // 
@@ -559,6 +583,234 @@
             this.richTextSplmWarn.TabIndex = 21;
             this.richTextSplmWarn.Text = "";
             // 
+            // tabBatch
+            // 
+            this.tabBatch.Controls.Add(this.tableLayoutPanel3);
+            this.tabBatch.Controls.Add(this.button3);
+            this.tabBatch.Controls.Add(this.button2);
+            this.tabBatch.Controls.Add(this.label26);
+            this.tabBatch.Location = new System.Drawing.Point(4, 29);
+            this.tabBatch.Name = "tabBatch";
+            this.tabBatch.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBatch.Size = new System.Drawing.Size(646, 754);
+            this.tabBatch.TabIndex = 3;
+            this.tabBatch.Text = "Batch";
+            this.tabBatch.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.39695F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.60305F));
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker4, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker3, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker1, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label24, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label23, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label22, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBatchCost, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label10, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label11, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label21, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.textBox7, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker2, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchManu, 1, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(89, 134);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 8;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(524, 287);
+            this.tableLayoutPanel3.TabIndex = 14;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(178, 106);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(337, 27);
+            this.dateTimePicker4.TabIndex = 22;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(178, 73);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(337, 27);
+            this.dateTimePicker3.TabIndex = 15;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(178, 206);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(337, 27);
+            this.dateTimePicker1.TabIndex = 15;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(3, 250);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(169, 23);
+            this.label24.TabIndex = 17;
+            this.label24.Text = "Price per Batch";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(3, 208);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(169, 23);
+            this.label23.TabIndex = 16;
+            this.label23.Text = "Deliver Date";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(3, 175);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(169, 23);
+            this.label22.TabIndex = 15;
+            this.label22.Text = "Signed Date";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(3, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(169, 23);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Expire Date";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(178, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(337, 27);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(3, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(169, 23);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Cost per Batch";
+            // 
+            // textBatchCost
+            // 
+            this.textBatchCost.Location = new System.Drawing.Point(178, 39);
+            this.textBatchCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBatchCost.Name = "textBatchCost";
+            this.textBatchCost.Size = new System.Drawing.Size(337, 27);
+            this.textBatchCost.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(3, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(169, 23);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Quantity";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(3, 108);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(169, 23);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Manufacture Date";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(3, 141);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(169, 23);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Manufacturer";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(178, 240);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(337, 27);
+            this.textBox7.TabIndex = 20;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(178, 173);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(337, 27);
+            this.dateTimePicker2.TabIndex = 21;
+            // 
+            // comboBoxBatchManu
+            // 
+            this.comboBoxBatchManu.FormattingEnabled = true;
+            this.comboBoxBatchManu.Location = new System.Drawing.Point(178, 139);
+            this.comboBoxBatchManu.Name = "comboBoxBatchManu";
+            this.comboBoxBatchManu.Size = new System.Drawing.Size(337, 28);
+            this.comboBoxBatchManu.TabIndex = 23;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(261, 604);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 44);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Save";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(112, 604);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 44);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.Location = new System.Drawing.Point(225, 19);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(260, 41);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Supplement Batch";
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -579,6 +831,10 @@
             this.tabPage1.PerformLayout();
             this.tableSupplement.ResumeLayout(false);
             this.tableSupplement.PerformLayout();
+            this.tabBatch.ResumeLayout(false);
+            this.tabBatch.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -627,5 +883,26 @@
         private Label label5;
         private Label label6;
         private Button btnClear;
+        private TabPage tabBatch;
+        private Label label26;
+        private Button button3;
+        private Button button2;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label8;
+        private TextBox textBox2;
+        private Label label9;
+        private TextBox textBatchCost;
+        private Label label10;
+        private Label label11;
+        private Label label21;
+        private Label label24;
+        private Label label23;
+        private Label label22;
+        private DateTimePicker dateTimePicker1;
+        private TextBox textBox7;
+        private DateTimePicker dateTimePicker3;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker4;
+        private ComboBox comboBoxBatchManu;
     }
 }

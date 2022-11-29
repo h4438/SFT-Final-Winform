@@ -37,7 +37,7 @@ namespace WinFormDrug
         {
             refresh = true;
             string tab = tabControlMain.SelectedTab.Text;
-            if (tab == "Supplement") 
+            if (tab == "Supplement" || tab == "Batch") 
             {
                 foreach (Manufacturer a in manufacturers) 
                 {
@@ -45,10 +45,14 @@ namespace WinFormDrug
                     if (comboSource.ContainsKey(a.ManuName)) { return; }
                     comboSource.Add(a.ManuName, a);
                 }
-                
-                comboBoxSplmManu.DataSource = new BindingSource(this.comboSource, null);
-                comboBoxSplmManu.DisplayMember = "Key";
-                comboBoxSplmManu.ValueMember = "Value";
+                ComboBox comboMain = this.comboBoxSplmManu;
+                comboMain.DataSource = new BindingSource(this.comboSource, null);
+                comboMain.DisplayMember = "Key";
+                comboMain.ValueMember = "Value";
+                // can improve
+                comboBoxBatchManu.DataSource = new BindingSource(this.comboSource, null);
+                comboBoxBatchManu.DisplayMember = "Key";
+                comboBoxBatchManu.ValueMember = "Value";
             }
         }
         private void saveSupplement_Click(object sender, EventArgs e) 
@@ -121,6 +125,8 @@ namespace WinFormDrug
         {
             UIHelper.clearTextBoxes((sender as Button).Parent);
         }
+
+        
     }
 
     public partial class UIHelper
