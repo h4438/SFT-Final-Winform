@@ -16,7 +16,9 @@ namespace WinFormDrug.Model.Order
         //public float BatchOriginalCost { get; set; }
         //public int BatchQuantity { get; set; }
         //public DateTime BatchExpDate { get; set; }
-        //public DateTime BatchManuDate {get; set;}
-
+        //public DateTime BatchManuDate { get; set; }
+        //// foreign keys
+        //public OutgoingOrder outgoingOrder { get; set; }
+        //public IncomingOrder incomingOrder { get; set; }
     }
 }

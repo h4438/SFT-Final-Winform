@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WinFormDrug.Model.Order
 {
-    partial class IncomingOrder
+    public class IncomingOrder
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IncomingOrderID { get; set; }
 
-        public int ManuID { get; set; }
+        public Manufacturer Manufacturer { get; set; }
 
         public int NumberOfProducts { get; set; }
 
