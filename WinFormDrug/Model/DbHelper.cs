@@ -22,7 +22,6 @@ namespace WinFormDrug.Model
         public DbSet<Supplement> Supplements { get; set; }
 
         public DbSet<Agent> Agents { get; set; }
-        
-        //public DbSet<OutgoingOrder> oreder { get; set; }    
+        public DbSet<OutgoingOrder> OutgoingOrders { get; set; }
     }
 }
