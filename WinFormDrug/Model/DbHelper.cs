@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinFormDrug.Model.Order;
 
 namespace WinFormDrug.Model
 {
@@ -19,5 +20,9 @@ namespace WinFormDrug.Model
         public DbSet<Manufacturer> Manufacturers { get; set; }
 
         public DbSet<Supplement> Supplements { get; set; }
+
+        public DbSet<Agent> Agents { get; set; }
+        
+        //public DbSet<OutgoingOrder> oreder { get; set; }    
     }
 }

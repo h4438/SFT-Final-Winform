@@ -71,7 +71,11 @@
             this.label19 = new System.Windows.Forms.Label();
             this.richTextSplmWarn = new System.Windows.Forms.RichTextBox();
             this.tabBatch = new System.Windows.Forms.TabPage();
+            this.comboBoxAddedBatch = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.comboBoxBatchSplm = new System.Windows.Forms.ComboBox();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -91,8 +95,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.comboBoxAddedBatch = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -601,31 +603,51 @@
             this.tabBatch.Text = "Batch";
             this.tabBatch.UseVisualStyleBackColor = true;
             // 
+            // comboBoxAddedBatch
+            // 
+            this.comboBoxAddedBatch.FormattingEnabled = true;
+            this.comboBoxAddedBatch.Location = new System.Drawing.Point(261, 114);
+            this.comboBoxAddedBatch.Name = "comboBoxAddedBatch";
+            this.comboBoxAddedBatch.Size = new System.Drawing.Size(224, 28);
+            this.comboBoxAddedBatch.TabIndex = 16;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(112, 119);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(103, 23);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "AddedBatch";
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.39695F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.60305F));
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker4, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker3, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker1, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label24, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label23, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label22, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label9, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBatchCost, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label10, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label11, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.label21, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.textBox7, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker2, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchManu, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.label27, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchSplm, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker4, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker3, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker1, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label24, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.label23, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label22, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label9, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.textBatchCost, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label10, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label11, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.label21, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.textBox7, 1, 8);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker2, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchManu, 1, 5);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(85, 177);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 8;
+            this.tableLayoutPanel3.RowCount = 9;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -634,27 +656,46 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(524, 275);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(524, 303);
             this.tableLayoutPanel3.TabIndex = 14;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label27.Location = new System.Drawing.Point(3, 5);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(169, 23);
+            this.label27.TabIndex = 25;
+            this.label27.Text = "Supplement";
+            // 
+            // comboBoxBatchSplm
+            // 
+            this.comboBoxBatchSplm.FormattingEnabled = true;
+            this.comboBoxBatchSplm.Location = new System.Drawing.Point(178, 3);
+            this.comboBoxBatchSplm.Name = "comboBoxBatchSplm";
+            this.comboBoxBatchSplm.Size = new System.Drawing.Size(337, 28);
+            this.comboBoxBatchSplm.TabIndex = 24;
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(178, 106);
+            this.dateTimePicker4.Location = new System.Drawing.Point(178, 140);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(337, 27);
             this.dateTimePicker4.TabIndex = 22;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(178, 73);
+            this.dateTimePicker3.Location = new System.Drawing.Point(178, 107);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(337, 27);
             this.dateTimePicker3.TabIndex = 15;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(178, 206);
+            this.dateTimePicker1.Location = new System.Drawing.Point(178, 240);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(337, 27);
             this.dateTimePicker1.TabIndex = 15;
@@ -664,7 +705,7 @@
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(3, 244);
+            this.label24.Location = new System.Drawing.Point(3, 276);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(169, 23);
             this.label24.TabIndex = 17;
@@ -675,7 +716,7 @@
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(3, 208);
+            this.label23.Location = new System.Drawing.Point(3, 242);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(169, 23);
             this.label23.TabIndex = 16;
@@ -686,7 +727,7 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(3, 175);
+            this.label22.Location = new System.Drawing.Point(3, 209);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(169, 23);
             this.label22.TabIndex = 15;
@@ -697,7 +738,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(3, 75);
+            this.label8.Location = new System.Drawing.Point(3, 109);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(169, 23);
             this.label8.TabIndex = 14;
@@ -705,7 +746,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(178, 4);
+            this.textBox2.Location = new System.Drawing.Point(178, 38);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(337, 27);
@@ -716,7 +757,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(3, 41);
+            this.label9.Location = new System.Drawing.Point(3, 75);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(169, 23);
             this.label9.TabIndex = 3;
@@ -724,7 +765,7 @@
             // 
             // textBatchCost
             // 
-            this.textBatchCost.Location = new System.Drawing.Point(178, 39);
+            this.textBatchCost.Location = new System.Drawing.Point(178, 73);
             this.textBatchCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBatchCost.Name = "textBatchCost";
             this.textBatchCost.Size = new System.Drawing.Size(337, 27);
@@ -735,7 +776,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(3, 6);
+            this.label10.Location = new System.Drawing.Point(3, 40);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(169, 23);
             this.label10.TabIndex = 7;
@@ -746,7 +787,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(3, 108);
+            this.label11.Location = new System.Drawing.Point(3, 142);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(169, 23);
             this.label11.TabIndex = 9;
@@ -757,7 +798,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(3, 141);
+            this.label21.Location = new System.Drawing.Point(3, 175);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(169, 23);
             this.label21.TabIndex = 11;
@@ -765,7 +806,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(178, 240);
+            this.textBox7.Location = new System.Drawing.Point(178, 274);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(337, 27);
@@ -773,7 +814,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(178, 173);
+            this.dateTimePicker2.Location = new System.Drawing.Point(178, 207);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(337, 27);
             this.dateTimePicker2.TabIndex = 21;
@@ -781,7 +822,7 @@
             // comboBoxBatchManu
             // 
             this.comboBoxBatchManu.FormattingEnabled = true;
-            this.comboBoxBatchManu.Location = new System.Drawing.Point(178, 139);
+            this.comboBoxBatchManu.Location = new System.Drawing.Point(178, 173);
             this.comboBoxBatchManu.Name = "comboBoxBatchManu";
             this.comboBoxBatchManu.Size = new System.Drawing.Size(337, 28);
             this.comboBoxBatchManu.TabIndex = 23;
@@ -815,24 +856,6 @@
             this.label26.Size = new System.Drawing.Size(260, 41);
             this.label26.TabIndex = 3;
             this.label26.Text = "Supplement Batch";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(85, 119);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(103, 23);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "AddedBatch";
-            // 
-            // comboBoxAddedBatch
-            // 
-            this.comboBoxAddedBatch.FormattingEnabled = true;
-            this.comboBoxAddedBatch.Location = new System.Drawing.Point(261, 114);
-            this.comboBoxAddedBatch.Name = "comboBoxAddedBatch";
-            this.comboBoxAddedBatch.Size = new System.Drawing.Size(161, 28);
-            this.comboBoxAddedBatch.TabIndex = 16;
             // 
             // Form
             // 
@@ -929,5 +952,7 @@
         private ComboBox comboBoxBatchManu;
         private ComboBox comboBoxAddedBatch;
         private Label label25;
+        private Label label27;
+        private ComboBox comboBoxBatchSplm;
     }
 }
