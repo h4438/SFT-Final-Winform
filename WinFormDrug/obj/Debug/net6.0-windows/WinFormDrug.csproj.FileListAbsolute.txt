@@ -30,3 +30,4 @@ C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-win
 C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.AddAgent.resources
 C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.Added_OutgoingOrder.resources
 C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.Added_IncomingOrder.resources
+C:\Users\PC\Desktop\Stuff\SFT-Final\WinFormDrug\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.Added_SupplementBatch.resources
