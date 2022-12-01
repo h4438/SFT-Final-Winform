@@ -13,7 +13,8 @@ namespace WinFormDrug.Model.Order
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BatchID { get; set; }
-        public float BatchOriginalCost { get; set; }
+        public double BatchOriginalCost { get; set; }
+        public double BatchInitPrice { get; set; }
         public int BatchQuantity { get; set; }
         public string BatchExpDate { get; set; }
         public string BatchManuDate { get; set; }

@@ -66,3 +66,4 @@ C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\ref\WinFormDrug.dll
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.changeDateToString_InOrder.resources
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.changeDateTime_string.resources
+C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.updateSupplementBatch.resources

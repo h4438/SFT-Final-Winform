@@ -84,7 +84,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.comboBoxBatchQuantity = new System.Windows.Forms.TextBox();
+            this.textBatchQuantity = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBatchCost = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -92,7 +92,7 @@
             this.dateTimePickerOrderSignedDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxOrderManu = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxBatchPrice = new System.Windows.Forms.TextBox();
+            this.textBatchPrice = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
@@ -649,7 +649,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label21, 0, 8);
             this.tableLayoutPanel3.Controls.Add(this.label23, 0, 7);
             this.tableLayoutPanel3.Controls.Add(this.label22, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchQuantity, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBatchQuantity, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label9, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.textBatchCost, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.label10, 0, 1);
@@ -657,7 +657,7 @@
             this.tableLayoutPanel3.Controls.Add(this.dateTimePickerOrderSignedDate, 1, 6);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxOrderManu, 1, 8);
             this.tableLayoutPanel3.Controls.Add(this.label8, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchPrice, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.textBatchPrice, 1, 3);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(85, 177);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 9;
@@ -757,13 +757,13 @@
             this.label22.TabIndex = 15;
             this.label22.Text = "Signed Date";
             // 
-            // comboBoxBatchQuantity
+            // textBatchQuantity
             // 
-            this.comboBoxBatchQuantity.Location = new System.Drawing.Point(178, 38);
-            this.comboBoxBatchQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBoxBatchQuantity.Name = "comboBoxBatchQuantity";
-            this.comboBoxBatchQuantity.Size = new System.Drawing.Size(337, 27);
-            this.comboBoxBatchQuantity.TabIndex = 2;
+            this.textBatchQuantity.Location = new System.Drawing.Point(178, 38);
+            this.textBatchQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBatchQuantity.Name = "textBatchQuantity";
+            this.textBatchQuantity.Size = new System.Drawing.Size(337, 27);
+            this.textBatchQuantity.TabIndex = 2;
             // 
             // label9
             // 
@@ -832,13 +832,13 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Expire Date";
             // 
-            // comboBoxBatchPrice
+            // textBatchPrice
             // 
-            this.comboBoxBatchPrice.Location = new System.Drawing.Point(178, 108);
-            this.comboBoxBatchPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBoxBatchPrice.Name = "comboBoxBatchPrice";
-            this.comboBoxBatchPrice.Size = new System.Drawing.Size(337, 27);
-            this.comboBoxBatchPrice.TabIndex = 20;
+            this.textBatchPrice.Location = new System.Drawing.Point(178, 108);
+            this.textBatchPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBatchPrice.Name = "textBatchPrice";
+            this.textBatchPrice.Size = new System.Drawing.Size(337, 27);
+            this.textBatchPrice.TabIndex = 20;
             // 
             // button3
             // 
@@ -859,6 +859,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.addBatch_Click);
             // 
             // label26
             // 
@@ -948,7 +949,7 @@
         private Button button2;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label8;
-        private TextBox comboBoxBatchQuantity;
+        private TextBox textBatchQuantity;
         private Label label9;
         private TextBox textBatchCost;
         private Label label10;
@@ -958,7 +959,7 @@
         private Label label23;
         private Label label22;
         private DateTimePicker dateTimePickerOrderDeliverDate;
-        private TextBox comboBoxBatchPrice;
+        private TextBox textBatchPrice;
         private DateTimePicker dateTimePickerBatchExpDate;
         private DateTimePicker dateTimePickerOrderSignedDate;
         private DateTimePicker dateTimePickerBatchManu;

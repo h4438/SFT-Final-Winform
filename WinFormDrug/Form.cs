@@ -54,7 +54,18 @@ namespace WinFormDrug
 
         private void addBatch_Click(object sender, EventArgs e) 
         {
-            
+            SupplementBatch batch = new SupplementBatch();
+            batch.BatchQuantity = Int32.Parse(textBatchQuantity.Text);
+            batch.BatchOriginalCost = Double.Parse(textBatchCost.Text);
+            batch.BatchInitPrice = Double.Parse(textBatchPrice.Text);
+            batch.BatchManuDate = dateTimePickerBatchManu.Value.ToString("yyyy-MM-dd");
+            batch.BatchExpDate = dateTimePickerBatchExpDate.Value.ToString("yyyy-MM-dd");
+            batch.supplement = (Supplement)comboBoxBatchSplm.SelectedValue;
+            batch.incomingOrder = this.inOrder;
+            batch.outgoingOrder = null;
+            dbHelper.supplementBatches.Add(batch);
+            dbHelper.SaveChanges();
+            MessageBox.Show("Batches added");
         }
         private void saveBatch_Click(object sender, EventArgs e) 
         {
