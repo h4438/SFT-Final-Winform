@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormDrug.Model;
+using WinFormDrug.Model.Order;
 
 namespace WinFormDrug
 {
@@ -20,6 +21,7 @@ namespace WinFormDrug
         private List<Supplement> supplements;
         private Dictionary<string, Manufacturer> comboSource;
         private Dictionary<string, Supplement> splmSrc;
+        private IncomingOrder inOrder;
         public Form()
         {
             InitializeComponent();
@@ -36,6 +38,19 @@ namespace WinFormDrug
             refresh = false;
         }
         // Batch
+        private void createInOrder_Click(object sender, EventArgs e)
+        {
+            inOrder= new IncomingOrder();   
+            inOrder.DeliverDate = dateTimePickerOrderDeliverDate.Value.ToString("yyyy-MM-dd");
+            inOrder.SignedDate = dateTimePickerOrderSignedDate.Value.ToString("yyyy-MM-dd");
+            inOrder.ReceivedDate = null;
+            inOrder.Manufacturer = (Manufacturer)comboBoxOrderManu.SelectedValue;
+            inOrder.NumberOfProducts = 0;
+            dbHelper.incomingOrders.Add(inOrder);
+            dbHelper.SaveChanges();
+            //string a = inOrder.IncomingOrderID+"";
+            MessageBox.Show("You can start importing batches!");
+        }
 
         private void addBatch_Click(object sender, EventArgs e) 
         {
@@ -64,9 +79,9 @@ namespace WinFormDrug
                 comboMain.DisplayMember = "Key";
                 comboMain.ValueMember = "Value";
                 // can improve
-                comboBoxBatchManu.DataSource = new BindingSource(this.comboSource, null);
-                comboBoxBatchManu.DisplayMember = "Key";
-                comboBoxBatchManu.ValueMember = "Value";
+                comboBoxOrderManu.DataSource = new BindingSource(this.comboSource, null);
+                comboBoxOrderManu.DisplayMember = "Key";
+                comboBoxOrderManu.ValueMember = "Value";
             }
             if(tab == "Batch")
             {

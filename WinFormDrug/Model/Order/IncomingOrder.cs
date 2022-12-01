@@ -18,10 +18,10 @@ namespace WinFormDrug.Model.Order
 
         public int NumberOfProducts { get; set; }
 
-        public DateTime DeliverDate { get; set; }   
-        public DateTime SignedDate { get; set; }
+        public string DeliverDate { get; set; }   
+        public string SignedDate { get; set; }
 
-        public DateTime ReceivedDate { get; set; }
+        public string ReceivedDate { get; set; }
 
     }
 }

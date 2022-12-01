@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KtKqJDu3cFxqg9pckgsKULWrwYpfoSUNmmDZKoqrZCDCdEwb0+9b10sV+55vYuUjjAoJqM9LRSNkJPJVAjJQSQ==",
+  "dgSpecHash": "TjYlv39G40Ii2ZIgTUX2YLeQJ3qINMNZ0Foj1h4MeuOGL9Xs+MQOYHyqbLNkJlsfVNiyqJV67NvT6pp6Zo483w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\WinFormDrug\\WinFormDrug\\WinFormDrug.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\WinFormDrug\\WinFormDrug.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

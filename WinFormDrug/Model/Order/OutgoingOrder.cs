@@ -14,8 +14,8 @@ namespace WinFormDrug.Model.Order
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OutOrderID { get; set; }
         public int NumberOfProducts { get; set; }
-        public DateTime DeliverDate { get; set; }
-        public DateTime AcceptDate { get; set; }
+        public string DeliverDate { get; set; }
+        public string AcceptDate { get; set; }
 
         public string Address { get; set; }
 

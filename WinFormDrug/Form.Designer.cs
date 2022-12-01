@@ -71,27 +71,28 @@
             this.label19 = new System.Windows.Forms.Label();
             this.richTextSplmWarn = new System.Windows.Forms.RichTextBox();
             this.tabBatch = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.comboBoxAddedBatch = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label27 = new System.Windows.Forms.Label();
             this.comboBoxBatchSplm = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerBatchManu = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerBatchExpDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerOrderDeliverDate = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBoxBatchQuantity = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBatchCost = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxBatchManu = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerOrderSignedDate = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxOrderManu = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxBatchPrice = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
@@ -589,6 +590,7 @@
             // 
             // tabBatch
             // 
+            this.tabBatch.Controls.Add(this.button1);
             this.tabBatch.Controls.Add(this.comboBoxAddedBatch);
             this.tabBatch.Controls.Add(this.label25);
             this.tabBatch.Controls.Add(this.tableLayoutPanel3);
@@ -602,6 +604,17 @@
             this.tabBatch.TabIndex = 3;
             this.tabBatch.Text = "Batch";
             this.tabBatch.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(85, 604);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 44);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "New order";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.createInOrder_Click);
             // 
             // comboBoxAddedBatch
             // 
@@ -629,22 +642,22 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.60305F));
             this.tableLayoutPanel3.Controls.Add(this.label27, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchSplm, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker4, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker3, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker1, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label24, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerBatchManu, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerBatchExpDate, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerOrderDeliverDate, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label24, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label21, 0, 8);
             this.tableLayoutPanel3.Controls.Add(this.label23, 0, 7);
             this.tableLayoutPanel3.Controls.Add(this.label22, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchQuantity, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label9, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.textBatchCost, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.label10, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label11, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label21, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.textBox7, 1, 8);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker2, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchManu, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerOrderSignedDate, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxOrderManu, 1, 8);
+            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxBatchPrice, 1, 3);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(85, 177);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 9;
@@ -679,44 +692,55 @@
             this.comboBoxBatchSplm.Size = new System.Drawing.Size(337, 28);
             this.comboBoxBatchSplm.TabIndex = 24;
             // 
-            // dateTimePicker4
+            // dateTimePickerBatchManu
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(178, 140);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(337, 27);
-            this.dateTimePicker4.TabIndex = 22;
+            this.dateTimePickerBatchManu.Location = new System.Drawing.Point(178, 142);
+            this.dateTimePickerBatchManu.Name = "dateTimePickerBatchManu";
+            this.dateTimePickerBatchManu.Size = new System.Drawing.Size(337, 27);
+            this.dateTimePickerBatchManu.TabIndex = 22;
             // 
-            // dateTimePicker3
+            // dateTimePickerBatchExpDate
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(178, 107);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(337, 27);
-            this.dateTimePicker3.TabIndex = 15;
+            this.dateTimePickerBatchExpDate.Location = new System.Drawing.Point(178, 175);
+            this.dateTimePickerBatchExpDate.Name = "dateTimePickerBatchExpDate";
+            this.dateTimePickerBatchExpDate.Size = new System.Drawing.Size(337, 27);
+            this.dateTimePickerBatchExpDate.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // dateTimePickerOrderDeliverDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(178, 240);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(337, 27);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePickerOrderDeliverDate.Location = new System.Drawing.Point(178, 241);
+            this.dateTimePickerOrderDeliverDate.Name = "dateTimePickerOrderDeliverDate";
+            this.dateTimePickerOrderDeliverDate.Size = new System.Drawing.Size(337, 27);
+            this.dateTimePickerOrderDeliverDate.TabIndex = 15;
             // 
             // label24
             // 
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(3, 276);
+            this.label24.Location = new System.Drawing.Point(3, 110);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(169, 23);
             this.label24.TabIndex = 17;
             this.label24.Text = "Price per Batch";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(3, 276);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(169, 23);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Manufacturer";
             // 
             // label23
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(3, 242);
+            this.label23.Location = new System.Drawing.Point(3, 243);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(169, 23);
             this.label23.TabIndex = 16;
@@ -727,30 +751,19 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(3, 209);
+            this.label22.Location = new System.Drawing.Point(3, 210);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(169, 23);
             this.label22.TabIndex = 15;
             this.label22.Text = "Signed Date";
             // 
-            // label8
+            // comboBoxBatchQuantity
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(3, 109);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(169, 23);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Expire Date";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(178, 38);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(337, 27);
-            this.textBox2.TabIndex = 2;
+            this.comboBoxBatchQuantity.Location = new System.Drawing.Point(178, 38);
+            this.comboBoxBatchQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxBatchQuantity.Name = "comboBoxBatchQuantity";
+            this.comboBoxBatchQuantity.Size = new System.Drawing.Size(337, 27);
+            this.comboBoxBatchQuantity.TabIndex = 2;
             // 
             // label9
             // 
@@ -787,49 +800,49 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(3, 142);
+            this.label11.Location = new System.Drawing.Point(3, 144);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(169, 23);
             this.label11.TabIndex = 9;
             this.label11.Text = "Manufacture Date";
             // 
-            // label21
+            // dateTimePickerOrderSignedDate
             // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(3, 175);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(169, 23);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Manufacturer";
+            this.dateTimePickerOrderSignedDate.Location = new System.Drawing.Point(178, 208);
+            this.dateTimePickerOrderSignedDate.Name = "dateTimePickerOrderSignedDate";
+            this.dateTimePickerOrderSignedDate.Size = new System.Drawing.Size(337, 27);
+            this.dateTimePickerOrderSignedDate.TabIndex = 21;
             // 
-            // textBox7
+            // comboBoxOrderManu
             // 
-            this.textBox7.Location = new System.Drawing.Point(178, 274);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(337, 27);
-            this.textBox7.TabIndex = 20;
+            this.comboBoxOrderManu.FormattingEnabled = true;
+            this.comboBoxOrderManu.Location = new System.Drawing.Point(178, 274);
+            this.comboBoxOrderManu.Name = "comboBoxOrderManu";
+            this.comboBoxOrderManu.Size = new System.Drawing.Size(337, 28);
+            this.comboBoxOrderManu.TabIndex = 23;
             // 
-            // dateTimePicker2
+            // label8
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(178, 207);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(337, 27);
-            this.dateTimePicker2.TabIndex = 21;
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(3, 177);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(169, 23);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Expire Date";
             // 
-            // comboBoxBatchManu
+            // comboBoxBatchPrice
             // 
-            this.comboBoxBatchManu.FormattingEnabled = true;
-            this.comboBoxBatchManu.Location = new System.Drawing.Point(178, 173);
-            this.comboBoxBatchManu.Name = "comboBoxBatchManu";
-            this.comboBoxBatchManu.Size = new System.Drawing.Size(337, 28);
-            this.comboBoxBatchManu.TabIndex = 23;
+            this.comboBoxBatchPrice.Location = new System.Drawing.Point(178, 108);
+            this.comboBoxBatchPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxBatchPrice.Name = "comboBoxBatchPrice";
+            this.comboBoxBatchPrice.Size = new System.Drawing.Size(337, 27);
+            this.comboBoxBatchPrice.TabIndex = 20;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(261, 604);
+            this.button3.Location = new System.Drawing.Point(433, 604);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 44);
@@ -839,7 +852,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(112, 604);
+            this.button2.Location = new System.Drawing.Point(261, 604);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 44);
@@ -935,7 +948,7 @@
         private Button button2;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label8;
-        private TextBox textBox2;
+        private TextBox comboBoxBatchQuantity;
         private Label label9;
         private TextBox textBatchCost;
         private Label label10;
@@ -944,15 +957,16 @@
         private Label label24;
         private Label label23;
         private Label label22;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox7;
-        private DateTimePicker dateTimePicker3;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker4;
-        private ComboBox comboBoxBatchManu;
+        private DateTimePicker dateTimePickerOrderDeliverDate;
+        private TextBox comboBoxBatchPrice;
+        private DateTimePicker dateTimePickerBatchExpDate;
+        private DateTimePicker dateTimePickerOrderSignedDate;
+        private DateTimePicker dateTimePickerBatchManu;
+        private ComboBox comboBoxOrderManu;
         private ComboBox comboBoxAddedBatch;
         private Label label25;
         private Label label27;
         private ComboBox comboBoxBatchSplm;
+        private Button button1;
     }
 }
