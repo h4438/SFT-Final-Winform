@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -193,9 +196,39 @@ namespace WinFormDrug
             UIHelper.clearTextBoxes((sender as Button).Parent);
         }
 
-        
-    }
+        //search
+        private void Form_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection MY_DB = new SqlConnection(ConfigurationManager.ConnectionStrings["MY_DB"].ConnectionString))
+                {
+                    if (MY_DB.State == ConnectionState.Closed)                    
+                        MY_DB.Open();
+                    using (SqlDataAdapter da = new SqlDataAdapter("Select *from Manufacturers", MY_DB))
+                    {
+                        DataTable dt = new DataTable("Manufacturer");
+                        da.Fill(dt);
+                        dataGridView1.DataSource = dt; 
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Message", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
 
+        private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = String.Format("ManuName like '%{0}%'", textBoxSearch.Text);
+                dataGridView1.DataSource = dv.ToTable();
+            }
+        }
+    }
     public partial class UIHelper
     {
         public static void clearTextBoxes(Control parent) 
