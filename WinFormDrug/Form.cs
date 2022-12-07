@@ -15,8 +15,6 @@ namespace WinFormDrug
     public partial class Form : System.Windows.Forms.Form
     {
         private DBModel dbHelper;
-        private bool refresh;
-        private bool changeTabRefresh;
         private List<Manufacturer> manufacturers;
         private List<Supplement> supplements;
         private Dictionary<string, Manufacturer> comboSource;
@@ -48,7 +46,6 @@ namespace WinFormDrug
             splmTabController.SInactiveIngredient = richTextSplmInactive;
             splmTabController.ManuComboBox = comboBoxSplmManu;
             // correspond to the number of tabs
-            refresh = true;
             dataGridView1.ReadOnly = true;
             dbHelper= new DBModel();
             manufacturers = new List<Manufacturer>();
@@ -56,8 +53,6 @@ namespace WinFormDrug
             comboSource= new Dictionary<string, Manufacturer>();
             splmSrc = new Dictionary<string, Supplement>();
             selectAllManufacturer();
-            refresh = false;
-            changeTabRefresh = false;
         }
         // Batch
         private void createInOrder_Click(object sender, EventArgs e)
@@ -100,7 +95,7 @@ namespace WinFormDrug
             if (tab == "Supplement" || tab == "Batch") 
             {
                 ComboBox comboMain = splmTabController.ManuComboBox;
-                comboMain.DataSource = new BindingSource(dao.getManuComboSrc(), null);
+                comboMain.DataSource = new BindingSource(dao.getSplmManuComboSrc(), null);
                 comboMain.DisplayMember = "Key";
                 comboMain.ValueMember = "Value";
                 //// can improve
@@ -139,14 +134,11 @@ namespace WinFormDrug
 
         private void selectAllSupplement() 
         {
-            if (supplements.Count == 0 || refresh)
-            {
-                refresh = false;
-                this.supplements = dbHelper.Supplements.ToList();
-            }
-            dataGridView1.DataSource = supplements;
+            int newRows = splmTabController.NumberNewRows();
+            dataGridView1.DataSource = dao.GetSupplements(newRows != 0);
+            splmTabController.resetRows();
             UIHelper.fillGrid(dataGridView1);
-            UIHelper.colorNewRows(dataGridView1, 0);
+            UIHelper.colorNewRows(dataGridView1, newRows);
         }
 
         // Manufacturer
@@ -163,15 +155,12 @@ namespace WinFormDrug
         private void selectAllManufacturer()
         {
             int newRows = manuTabController.NumberNewRows();
-            dataGridView1.DataSource = dao.getManufacturers(newRows != 0); 
+            dataGridView1.DataSource = dao.getManufacturers(newRows != 0);
+            manuTabController.resetRows();
             UIHelper.fillGrid(dataGridView1);
             UIHelper.colorNewRows(dataGridView1, newRows);      
         }
-         
 
-        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            changeTabRefresh = true;
-        }
+        
     }
 }

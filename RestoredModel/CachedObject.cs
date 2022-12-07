@@ -14,7 +14,7 @@ namespace RestoredModel
         private Dictionary<string, Manufacturer> ManuComboSource;
 
         public List<Manufacturer> CachedManufacturers { get; set; }
-
+        public List<Supplement> CachedSupplements { get; set; } 
         public Dictionary<string, Manufacturer> getManuComboSrc() 
         {
             foreach (Manufacturer a in CachedManufacturers)

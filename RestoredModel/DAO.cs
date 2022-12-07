@@ -26,19 +26,20 @@ namespace RestoredModel.Model
             return cachedMemory.GetInComingOrders();
         }
         // Supplement
-        public List<Supplement> GetSupplements()
+        public List<Supplement> GetSupplements(bool reConnect = false)
         {
-            List<Supplement> supplements = dbHelper.Supplements.ToList();
-
-            return supplements;
+            if (reConnect || cachedMemory.CachedSupplements == null || cachedMemory.CachedSupplements.Count == 0) 
+            {
+                cachedMemory.CachedSupplements = dbHelper.Supplements.ToList();
+            
+            }
+            return cachedMemory.CachedSupplements;
         }
 
-        public Dictionary<string, Manufacturer> getManuComboSrc()
-        {
-            return cachedMemory.getManuComboSrc();
-        }
 
         // Manufacturer
+        public Dictionary<string, Manufacturer> getSplmManuComboSrc() => cachedMemory.getManuComboSrc();
+        
         public bool saveManufacturer(Manufacturer a)
         {
             dbHelper.Manufacturers.Add(a);
@@ -48,8 +49,10 @@ namespace RestoredModel.Model
         
         public List<Manufacturer> getManufacturers(bool reConnect = false)
         {
-            if (reConnect || cachedMemory.CachedManufacturers == null || cachedMemory.CachedManufacturers.Count == 0)
+            if (reConnect || cachedMemory.CachedManufacturers == null || cachedMemory.CachedManufacturers.Count == 0) 
+            {
                 cachedMemory.CachedManufacturers = dbHelper.Manufacturers.ToList();
+            }
             return cachedMemory.CachedManufacturers;
         }
 

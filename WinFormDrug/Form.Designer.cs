@@ -51,7 +51,6 @@
             this.btnSaveSplm = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.tableSupplement = new System.Windows.Forms.TableLayoutPanel();
-            this.btnClear = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -144,7 +143,6 @@
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(654, 787);
             this.tabControlMain.TabIndex = 1;
-            this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.tabControlMain_SelectedIndexChanged);
             this.tabControlMain.Click += new System.EventHandler(this.changeTab_Click);
             // 
             // tabManu
@@ -370,7 +368,6 @@
             this.tableSupplement.ColumnCount = 2;
             this.tableSupplement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableSupplement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSupplement.Controls.Add(this.btnClear, 0, 10);
             this.tableSupplement.Controls.Add(this.label7, 0, 9);
             this.tableSupplement.Controls.Add(this.label18, 0, 7);
             this.tableSupplement.Controls.Add(this.label17, 0, 6);
@@ -405,16 +402,6 @@
             this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableSupplement.Size = new System.Drawing.Size(634, 530);
             this.tableSupplement.TabIndex = 0;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(3, 482);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 44);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -942,7 +929,6 @@
         private TextBox textManuCountry;
         private Label label5;
         private Label label6;
-        private Button btnClear;
         private TabPage tabBatch;
         private Label label26;
         private Button button3;
