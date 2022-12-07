@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WinFormDrug.ViewController
 {
-    public class ManuTabController
+    public class ManuTabController: ITabController<Manufacturer>
     {
         private int numNewRows;
         public ManuTabController(){ numNewRows = 0; }   
@@ -18,7 +18,7 @@ namespace WinFormDrug.ViewController
         public TextBox ManuAddressTxt { get; set; }
         public TextBox ManuCountryTxt { get; set;}
 
-        public Manufacturer createManuFromTxtBox()
+        public Manufacturer createObject()
         {
             Manufacturer manufacture = new Manufacturer();
             manufacture.ManuName = ManuNameTxt.Text.Trim();

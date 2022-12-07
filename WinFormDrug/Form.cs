@@ -15,7 +15,6 @@ namespace WinFormDrug
     public partial class Form : System.Windows.Forms.Form
     {
         private DBModel dbHelper;
-        private int[] newRows;
         private bool refresh;
         private bool changeTabRefresh;
         private List<Manufacturer> manufacturers;
@@ -25,6 +24,7 @@ namespace WinFormDrug
         private IncomingOrder inOrder;
         private DAO dao;
         private ManuTabController manuTabController;
+        private SplmTabController splmTabController;
         public Form()
         {
             InitializeComponent();
@@ -36,8 +36,18 @@ namespace WinFormDrug
             manuTabController.ManuPhoneTxt= textManuPhone;
             manuTabController.ManuAddressTxt = textManuAdrs;
             manuTabController.ManuCountryTxt = textManuCountry;
+            // Set splm Tab
+            splmTabController = new SplmTabController();
+            splmTabController.SName = richTextSplmName;
+            splmTabController.SUses = richTextSplmUses;
+            splmTabController.SDirections = richTextSplmDir;
+            splmTabController.SCategory = richTextSplmCate;
+            splmTabController.SWarnings = richTextSplmWarn;
+            splmTabController.SOtherInfo = richTextSplmOther;
+            splmTabController.SIngredient = richTextSplmIngredient;
+            splmTabController.SInactiveIngredient = richTextSplmInactive;
+            splmTabController.ManuComboBox = comboBoxSplmManu;
             // correspond to the number of tabs
-            newRows= new int[] { 0,0,0};
             refresh = true;
             dataGridView1.ReadOnly = true;
             dbHelper= new DBModel();
@@ -133,7 +143,6 @@ namespace WinFormDrug
             supplement.Manufacturer = (Manufacturer)comboBoxSplmManu.SelectedValue;
             dbHelper.Supplements.Add(supplement);
             dbHelper.SaveChanges();
-            newRows[tabControlMain.SelectedIndex]++;
             refresh = true;
             MessageBox.Show("OK");
             UIHelper.clearTextBoxes(richTextSplmCate.Parent);
@@ -154,14 +163,13 @@ namespace WinFormDrug
             }
             dataGridView1.DataSource = supplements;
             UIHelper.fillGrid(dataGridView1);
-            UIHelper.colorNewRows(dataGridView1, newRows[tabControlMain.SelectedIndex]);
-            newRows[tabControlMain.SelectedIndex] = 0;
+            UIHelper.colorNewRows(dataGridView1, 0);
         }
 
         // Manufacturer
         private void saveManufacturer_Click(object sender, EventArgs e)
         {
-            Manufacturer manufacture = manuTabController.createManuFromTxtBox();            
+            Manufacturer manufacture = manuTabController.createObject();            
             dbHelper.Manufacturers.Add(manufacture);
             dbHelper.SaveChanges();
             // update states
