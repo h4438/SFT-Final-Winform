@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CachedObject.cs" />
     <Compile Include="Migrations\202212071527020_Init.cs" />
     <Compile Include="Migrations\202212071527020_Init.designer.cs">
       <DependentUpon>202212071527020_Init.cs</DependentUpon>

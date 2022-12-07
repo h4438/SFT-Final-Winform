@@ -144,6 +144,7 @@
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(654, 787);
             this.tabControlMain.TabIndex = 1;
+            this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.tabControlMain_SelectedIndexChanged);
             this.tabControlMain.Click += new System.EventHandler(this.changeTab_Click);
             // 
             // tabManu

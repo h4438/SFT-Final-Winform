@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WinFormDrug.ViewController;
 
 namespace WinFormDrug
 {
@@ -17,15 +17,25 @@ namespace WinFormDrug
         private DBModel dbHelper;
         private int[] newRows;
         private bool refresh;
+        private bool changeTabRefresh;
         private List<Manufacturer> manufacturers;
         private List<Supplement> supplements;
         private Dictionary<string, Manufacturer> comboSource;
         private Dictionary<string, Supplement> splmSrc;
         private IncomingOrder inOrder;
         private DAO dao;
+        private ManuTabController manuTabController;
         public Form()
         {
             InitializeComponent();
+            dao = new DAO();    
+            // Set Manu Tab
+            manuTabController = new ManuTabController();
+            manuTabController.ManuNameTxt = textManuName;
+            manuTabController.ManuEmailTxt= textManuEmail;
+            manuTabController.ManuPhoneTxt= textManuPhone;
+            manuTabController.ManuAddressTxt = textManuAdrs;
+            manuTabController.ManuCountryTxt = textManuCountry;
             // correspond to the number of tabs
             newRows= new int[] { 0,0,0};
             refresh = true;
@@ -37,6 +47,7 @@ namespace WinFormDrug
             splmSrc = new Dictionary<string, Supplement>();
             selectAllManufacturer();
             refresh = false;
+            changeTabRefresh = false;
         }
         // Batch
         private void createInOrder_Click(object sender, EventArgs e)
@@ -76,7 +87,6 @@ namespace WinFormDrug
         // Supplement
         private void changeTab_Click(object sender, EventArgs e) 
         {
-            //refresh = true;
             string tab = tabControlMain.SelectedTab.Text;
             if (tab == "Supplement" || tab == "Batch") 
             {
@@ -87,13 +97,13 @@ namespace WinFormDrug
                     comboSource.Add(a.ManuName, a);
                 }
                 ComboBox comboMain = this.comboBoxSplmManu;
-                comboMain.DataSource = new BindingSource(this.comboSource, null);
-                comboMain.DisplayMember = "Key";
-                comboMain.ValueMember = "Value";
-                // can improve
-                comboBoxOrderManu.DataSource = new BindingSource(this.comboSource, null);
-                comboBoxOrderManu.DisplayMember = "Key";
-                comboBoxOrderManu.ValueMember = "Value";
+                //comboMain.DataSource = new BindingSource(this.comboSource, null);
+                //comboMain.DisplayMember = "Key";
+                //comboMain.ValueMember = "Value";
+                //// can improve
+                //comboBoxOrderManu.DataSource = new BindingSource(this.comboSource, null);
+                //comboBoxOrderManu.DisplayMember = "Key";
+                //comboBoxOrderManu.ValueMember = "Value";
             }
             if(tab == "Batch")
             {
@@ -103,9 +113,9 @@ namespace WinFormDrug
                     if (splmSrc.ContainsKey(a.SName)) { continue; }
                     splmSrc.Add(a.SName, a);
                 }
-                comboBoxBatchSplm.DataSource = new BindingSource(this.splmSrc, null);
-                comboBoxBatchSplm.DisplayMember = "Key";
-                comboBoxBatchSplm.ValueMember = "Value";    
+                //comboBoxBatchSplm.DataSource = new BindingSource(this.splmSrc, null);
+                //comboBoxBatchSplm.DisplayMember = "Key";
+                //comboBoxBatchSplm.ValueMember = "Value";    
             }
             
         }
@@ -151,85 +161,38 @@ namespace WinFormDrug
         // Manufacturer
         private void saveManufacturer_Click(object sender, EventArgs e)
         {
-            Manufacturer manufacture = new Manufacturer();
-            manufacture.ManuName = textManuName.Text;
-            manufacture.ManuAddress = textManuAdrs.Text;
-            manufacture.ManuPhone = textManuPhone.Text; 
-            manufacture.ManuCountry = textManuCountry.Text;  
-            manufacture.ManuEmail = textManuEmail.Text;
+            Manufacturer manufacture = manuTabController.createManuFromTxtBox();            
             dbHelper.Manufacturers.Add(manufacture);
             dbHelper.SaveChanges();
             // update states
             manufacturers.Add(manufacture);
-            refresh = true;
-            this.newRows[tabControlMain.SelectedIndex]++;
             MessageBox.Show("Save complete!");
-            UIHelper.clearTextBoxes(textManuEmail.Parent);
+            manuTabController.clearAll();
             textManuName.Focus();
         }
 
         private void showAllManu_Click(object sender, EventArgs e)
         {
-         
             selectAllManufacturer();
         }
 
         private void selectAllManufacturer()
         {
-            if (manufacturers.Count == 0 || !refresh) 
-            {
-                refresh = false;
-                manufacturers = dbHelper.Manufacturers.ToList(); ;
-            }
-            dataGridView1.DataSource = manufacturers;
+            int newRows = manuTabController.NumberNewRows();
+            dataGridView1.DataSource = dao.getManufacturers(newRows != 0); 
             UIHelper.fillGrid(dataGridView1);
-            UIHelper.colorNewRows(dataGridView1, newRows[tabControlMain.SelectedIndex]);
-            newRows[tabControlMain.SelectedIndex] = 0;
+            UIHelper.colorNewRows(dataGridView1, newRows);      
         }
-
+        
         // Event handling
-
         private void clearAllText_Click(object sender, EventArgs e)
         {
             UIHelper.clearTextBoxes((sender as Button).Parent);
         }
 
-        
-    }
-
-    public partial class UIHelper
-    {
-        public static void clearTextBoxes(Control parent) 
+        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var control in parent.Controls)
-            {
-                if (control is TextBox) {
-                    ((TextBox)control).Text = "";
-                }
-                else if(control is RichTextBox) 
-                {
-                    ((RichTextBox)control).Text = "";
-                }
-            }
-        }
-
-        public static void fillGrid(DataGridView dataGrid)
-        {
-            // ignore the id column
-            for (int i = 1; i < dataGrid.ColumnCount; i++)
-            {
-                dataGrid.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-        }
-
-        public static void colorNewRows(DataGridView dataGrid, int newRows)
-        {
-            int dataLength = dataGrid.Rows.Count;
-            for (int i = dataLength - newRows; i < dataLength; i++)
-            {
-                DataGridViewRow row = dataGrid.Rows[i];
-                row.DefaultCellStyle.BackColor = Color.LightGreen;
-            }
+            changeTabRefresh = true;
         }
     }
 }
