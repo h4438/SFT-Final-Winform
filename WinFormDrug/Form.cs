@@ -94,22 +94,15 @@ namespace WinFormDrug
             
         }
 
-        // Supplement
         private void changeTab_Click(object sender, EventArgs e) 
         {
             string tab = tabControlMain.SelectedTab.Text;
             if (tab == "Supplement" || tab == "Batch") 
             {
-                foreach (Manufacturer a in manufacturers) 
-                {
-                    // can improve
-                    if (comboSource.ContainsKey(a.ManuName)) { continue; }
-                    comboSource.Add(a.ManuName, a);
-                }
-                ComboBox comboMain = this.comboBoxSplmManu;
-                //comboMain.DataSource = new BindingSource(this.comboSource, null);
-                //comboMain.DisplayMember = "Key";
-                //comboMain.ValueMember = "Value";
+                ComboBox comboMain = splmTabController.ManuComboBox;
+                comboMain.DataSource = new BindingSource(dao.getManuComboSrc(), null);
+                comboMain.DisplayMember = "Key";
+                comboMain.ValueMember = "Value";
                 //// can improve
                 //comboBoxOrderManu.DataSource = new BindingSource(this.comboSource, null);
                 //comboBoxOrderManu.DisplayMember = "Key";
@@ -129,24 +122,14 @@ namespace WinFormDrug
             }
             
         }
+        // Supplement
         private void saveSupplement_Click(object sender, EventArgs e) 
         {
-            Supplement supplement = new Supplement();
-            supplement.SName = richTextSplmName.Text;
-            supplement.Uses = richTextSplmUses.Text;
-            supplement.Directions = richTextSplmDir.Text;
-            supplement.Category = richTextSplmCate.Text;
-            supplement.Warnings = richTextSplmWarn.Text;
-            supplement.OtherInfo = richTextSplmOther.Text;
-            supplement.Ingredient = richTextSplmIngredient.Text;
-            supplement.InactiveIngredient = richTextSplmInactive.Text;
-            supplement.Manufacturer = (Manufacturer)comboBoxSplmManu.SelectedValue;
+            Supplement supplement = splmTabController.createObject();
             dbHelper.Supplements.Add(supplement);
             dbHelper.SaveChanges();
-            refresh = true;
             MessageBox.Show("OK");
-            UIHelper.clearTextBoxes(richTextSplmCate.Parent);
-            richTextSplmName.Focus();
+            splmTabController.clearAll();
         }
 
         private void showAllSupplement_Click(object sender, EventArgs e)
@@ -169,20 +152,13 @@ namespace WinFormDrug
         // Manufacturer
         private void saveManufacturer_Click(object sender, EventArgs e)
         {
-            Manufacturer manufacture = manuTabController.createObject();            
-            dbHelper.Manufacturers.Add(manufacture);
-            dbHelper.SaveChanges();
-            // update states
-            manufacturers.Add(manufacture);
+            Manufacturer manufacture = manuTabController.createObject();
+            dao.saveManufacturer(manufacture);
             MessageBox.Show("Save complete!");
             manuTabController.clearAll();
-            textManuName.Focus();
         }
 
-        private void showAllManu_Click(object sender, EventArgs e)
-        {
-            selectAllManufacturer();
-        }
+        private void showAllManu_Click(object sender, EventArgs e) { selectAllManufacturer(); }
 
         private void selectAllManufacturer()
         {
@@ -191,12 +167,7 @@ namespace WinFormDrug
             UIHelper.fillGrid(dataGridView1);
             UIHelper.colorNewRows(dataGridView1, newRows);      
         }
-        
-        // Event handling
-        private void clearAllText_Click(object sender, EventArgs e)
-        {
-            UIHelper.clearTextBoxes((sender as Button).Parent);
-        }
+         
 
         private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {

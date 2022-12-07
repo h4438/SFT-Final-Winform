@@ -37,6 +37,7 @@ namespace WinFormDrug.ViewController
             ManuPhoneTxt.Clear();
             ManuAddressTxt.Clear();
             ManuCountryTxt.Clear();
+            ManuNameTxt.Focus();
         }
 
         public int NumberNewRows() => this.numNewRows;

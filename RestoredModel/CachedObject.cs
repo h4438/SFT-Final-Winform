@@ -15,8 +15,20 @@ namespace RestoredModel
 
         public List<Manufacturer> CachedManufacturers { get; set; }
 
+        public Dictionary<string, Manufacturer> getManuComboSrc() 
+        {
+            foreach (Manufacturer a in CachedManufacturers)
+            {
+                //Todo: can improve
+                if (ManuComboSource.ContainsKey(a.ManuName)) { continue; }
+                ManuComboSource.Add(a.ManuName, a);
+            }
+            return ManuComboSource;
+        }
+
         public CachedObject()
         {
+            this.ManuComboSource = new Dictionary<string, Manufacturer>();
             this.cachedBatches = new List<SupplementBatch>();
         }
 

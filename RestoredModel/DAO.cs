@@ -33,6 +33,11 @@ namespace RestoredModel.Model
             return supplements;
         }
 
+        public Dictionary<string, Manufacturer> getManuComboSrc()
+        {
+            return cachedMemory.getManuComboSrc();
+        }
+
         // Manufacturer
         public bool saveManufacturer(Manufacturer a)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestoredModel.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace WinFormDrug.ViewController
 {
-    public class SplmTabController
+    public class SplmTabController: ITabController<Supplement>
     {
+        private int numNewRows;
+
         public RichTextBox SName { get; set; }
         public RichTextBox SUses { get; set; }
         public RichTextBox SDirections { get; set; } 
@@ -17,5 +20,43 @@ namespace WinFormDrug.ViewController
         public RichTextBox SIngredient { get; set; }    
         public RichTextBox SInactiveIngredient { get; set; }  
         public ComboBox ManuComboBox { get; set; } 
+
+        public Supplement createObject() 
+        {
+            Supplement supplement = new Supplement();
+            supplement.SName = SName.Text.Trim();
+            supplement.Uses = SUses.Text.Trim();
+            supplement.Directions = SDirections.Text.Trim();
+            supplement.Category = SCategory.Text.Trim();
+            supplement.Warnings = SWarnings.Text.Trim();
+            supplement.OtherInfo = SOtherInfo.Text.Trim();
+            supplement.Ingredient = SIngredient.Text.Trim();
+            supplement.InactiveIngredient = SInactiveIngredient.Text.Trim();
+            supplement.Manufacturer = (Manufacturer)ManuComboBox.SelectedValue;
+            return supplement;
+        }
+
+        public void clearAll() 
+        {
+            SName.Clear();
+            SUses.Clear();
+            SDirections.Clear();
+            SCategory.Clear();
+            SWarnings.Clear();  
+            SOtherInfo.Clear(); 
+            SIngredient.Clear();
+            SInactiveIngredient.Clear();
+            SName.Focus();
+        }
+
+        public int NumberNewRows()
+        {
+            return numNewRows;
+        }
+
+        public void resetRows()
+        {
+            numNewRows = 0;
+        }
     }
 }
