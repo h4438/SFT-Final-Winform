@@ -26,6 +26,12 @@ namespace RestoredModel.Model
             return cachedMemory.GetInComingOrders();
         }
         // Supplement
+        public bool saveSupplement(Supplement supplement) 
+        {
+            dbHelper.Supplements.Add(supplement);
+            dbHelper.SaveChanges();
+            return true;
+        }
         public List<Supplement> GetSupplements(bool reConnect = false)
         {
             if (reConnect || cachedMemory.CachedSupplements == null || cachedMemory.CachedSupplements.Count == 0) 
@@ -35,7 +41,6 @@ namespace RestoredModel.Model
             }
             return cachedMemory.CachedSupplements;
         }
-
 
         // Manufacturer
         public Dictionary<string, Manufacturer> getSplmManuComboSrc() => cachedMemory.getManuComboSrc();

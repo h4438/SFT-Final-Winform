@@ -121,8 +121,7 @@ namespace WinFormDrug
         private void saveSupplement_Click(object sender, EventArgs e) 
         {
             Supplement supplement = splmTabController.createObject();
-            dbHelper.Supplements.Add(supplement);
-            dbHelper.SaveChanges();
+            dao.saveSupplement(supplement);
             MessageBox.Show("OK");
             splmTabController.clearAll();
         }
