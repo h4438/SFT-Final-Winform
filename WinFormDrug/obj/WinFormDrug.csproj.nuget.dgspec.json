@@ -4,6 +4,21 @@
     "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\WinFormDrug\\WinFormDrug.csproj": {}
   },
   "projects": {
+    "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj",
+        "projectName": "RestoredModel",
+        "projectPath": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj",
+        "frameworks": {
+          "net481": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net481": {}
+      }
+    },
     "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\WinFormDrug\\WinFormDrug.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +46,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj": {
+                "projectPath": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

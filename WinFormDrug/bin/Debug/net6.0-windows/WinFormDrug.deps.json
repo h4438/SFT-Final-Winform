@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "WinFormDrug/1.0.0": {
         "dependencies": {
-          "EntityFramework": "6.4.4"
+          "EntityFramework": "6.4.4",
+          "RestoredModel": "1.0.0"
         },
         "runtime": {
           "WinFormDrug.dll": {}
@@ -138,6 +139,11 @@
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
+        }
+      },
+      "RestoredModel/1.0.0": {
+        "runtime": {
+          "RestoredModel.exe": {}
         }
       }
     }
@@ -280,6 +286,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "RestoredModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

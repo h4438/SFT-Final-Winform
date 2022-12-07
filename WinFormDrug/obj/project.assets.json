@@ -333,6 +333,15 @@
             "rid": "win"
           }
         }
+      },
+      "RestoredModel/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RestoredModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RestoredModel.dll": {}
+        }
       }
     }
   },
@@ -1071,11 +1080,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "RestoredModel/1.0.0": {
+      "type": "project",
+      "path": "../RestoredModel/RestoredModel.csproj",
+      "msbuildProject": "../RestoredModel/RestoredModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "EntityFramework >= 6.4.4"
+      "EntityFramework >= 6.4.4",
+      "RestoredModel >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1109,7 +1124,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj": {
+              "projectPath": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

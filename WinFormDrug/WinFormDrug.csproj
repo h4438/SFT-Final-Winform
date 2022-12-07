@@ -12,4 +12,8 @@
     <PackageReference Include="EntityFramework" Version="6.4.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RestoredModel\RestoredModel.csproj" />
+  </ItemGroup>
+
 </Project>

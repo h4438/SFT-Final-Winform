@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestoredModel.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormDrug.Model;
-using WinFormDrug.Model.Order;
+
 
 namespace WinFormDrug
 {
     public partial class Form : System.Windows.Forms.Form
     {
-        private DbHelper dbHelper;
+        private DBModel dbHelper;
         private int[] newRows;
         private bool refresh;
         private List<Manufacturer> manufacturers;
@@ -22,6 +22,7 @@ namespace WinFormDrug
         private Dictionary<string, Manufacturer> comboSource;
         private Dictionary<string, Supplement> splmSrc;
         private IncomingOrder inOrder;
+        private DAO dao;
         public Form()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace WinFormDrug
             newRows= new int[] { 0,0,0};
             refresh = true;
             dataGridView1.ReadOnly = true;
-            dbHelper= new DbHelper();
+            dbHelper= new DBModel();
             manufacturers = new List<Manufacturer>();
             supplements = new List<Supplement>();   
             comboSource= new Dictionary<string, Manufacturer>();
@@ -46,7 +47,7 @@ namespace WinFormDrug
             inOrder.ReceivedDate = null;
             inOrder.Manufacturer = (Manufacturer)comboBoxOrderManu.SelectedValue;
             inOrder.NumberOfProducts = 0;
-            dbHelper.incomingOrders.Add(inOrder);
+            dbHelper.IncomingOrders.Add(inOrder);
             dbHelper.SaveChanges();
             //string a = inOrder.IncomingOrderID+"";
             MessageBox.Show("You can start importing batches!");
@@ -60,10 +61,10 @@ namespace WinFormDrug
             batch.BatchInitPrice = Double.Parse(textBatchPrice.Text);
             batch.BatchManuDate = dateTimePickerBatchManu.Value.ToString("yyyy-MM-dd");
             batch.BatchExpDate = dateTimePickerBatchExpDate.Value.ToString("yyyy-MM-dd");
-            batch.supplement = (Supplement)comboBoxBatchSplm.SelectedValue;
-            batch.incomingOrder = this.inOrder;
-            batch.outgoingOrder = null;
-            dbHelper.supplementBatches.Add(batch);
+            batch.Supplement = (Supplement)comboBoxBatchSplm.SelectedValue;
+            batch.IncomingOrder = this.inOrder;
+            batch.OutgoingOrder = null;
+            dbHelper.SupplementBatches.Add(batch);
             dbHelper.SaveChanges();
             MessageBox.Show("Batches added");
         }

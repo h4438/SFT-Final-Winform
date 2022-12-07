@@ -46,13 +46,6 @@ C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\bin\Debug\net6
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.csproj.AssemblyReference.cache
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Form.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.Initial.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.UpdateManu.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.AddSupplementImgLink.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.AddAgent.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.Added_OutgoingOrder.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.Added_IncomingOrder.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.Added_SupplementBatch.resources
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.csproj.GenerateResource.cache
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.AssemblyInfoInputs.cache
@@ -64,6 +57,7 @@ C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.pdb
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.genruntimeconfig.cache
 C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\ref\WinFormDrug.dll
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.changeDateToString_InOrder.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.changeDateTime_string.resources
-C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\obj\Debug\net6.0-windows\WinFormDrug.Migrations.updateSupplementBatch.resources
+C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\bin\Debug\net6.0-windows\RestoredModel.exe
+C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\bin\Debug\net6.0-windows\RestoredModel.pdb
+C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\bin\Debug\net6.0-windows\RestoredModel.exe.config
+C:\Users\PC\Desktop\Stuff\SFT-Final\SFT-Final-Winform\WinFormDrug\bin\Debug\net6.0-windows\WinFormDrug.dll.config
