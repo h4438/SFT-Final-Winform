@@ -9,21 +9,39 @@ namespace RestoredModel.Model
     public class DAO
     {
         private DBModel dbHelper;
-        private CachedObject cachedMemory;
+        private CachedMem cachedMemory;
         public DAO()
         {
             dbHelper = new DBModel();
-            cachedMemory = new CachedObject();
+            cachedMemory = new CachedMem();
+            getManufacturers();
+            GetSupplements();
+        }
+        // Batch 
+        public bool saveOrderSupplementBatch(IncomingOrder order,SupplementBatch supplementBatch) 
+        {
+            dbHelper.IncomingOrders.Add(order);
+            dbHelper.SaveChanges(); 
+            dbHelper.SupplementBatches.Add(supplementBatch);
+            dbHelper.SaveChanges();
+            return true;
+        }
+        public List<SupplementBatch> getSupplementBatches() 
+        {
+            if(cachedMemory.CachedBatches == null)
+            {
+                cachedMemory.CachedBatches = dbHelper.SupplementBatches.ToList();
+            }
+            return cachedMemory.CachedBatches;  
         }
         // Orders
         public List<IncomingOrder> GetIncomingOrders()
         {
-            if (cachedMemory.GetInComingOrders() == null)
+            if (cachedMemory.CachedIncomingOrders == null)
             {
-                List<IncomingOrder> orders = dbHelper.IncomingOrders.ToList();
-                cachedMemory.SetInComingOrders(orders);
+                cachedMemory.CachedIncomingOrders = dbHelper.IncomingOrders.ToList();
             }
-            return cachedMemory.GetInComingOrders();
+            return cachedMemory.CachedIncomingOrders;
         }
 
         public bool saveIncomingOrder(IncomingOrder order) 
@@ -42,16 +60,17 @@ namespace RestoredModel.Model
         }
         public List<Supplement> GetSupplements(bool reConnect = false)
         {
-            if (reConnect || cachedMemory.CachedSupplements == null || cachedMemory.CachedSupplements.Count == 0) 
+            if (reConnect || cachedMemory.CachedSupplements == null) 
             {
                 cachedMemory.CachedSupplements = dbHelper.Supplements.ToList();
             
             }
             return cachedMemory.CachedSupplements;
         }
-
+        public Dictionary<string, Supplement> getSplmComboSrc() => cachedMemory.getSplmComboSrc();
+        
         // Manufacturer
-        public Dictionary<string, Manufacturer> getSplmManuComboSrc() => cachedMemory.getManuComboSrc();
+        public Dictionary<string, Manufacturer> getManuComboSrc() => cachedMemory.getManuComboSrc();
         
         public bool saveManufacturer(Manufacturer a)
         {
@@ -62,7 +81,7 @@ namespace RestoredModel.Model
         
         public List<Manufacturer> getManufacturers(bool reConnect = false)
         {
-            if (reConnect || cachedMemory.CachedManufacturers == null || cachedMemory.CachedManufacturers.Count == 0) 
+            if (reConnect || cachedMemory.CachedManufacturers == null) 
             {
                 cachedMemory.CachedManufacturers = dbHelper.Manufacturers.ToList();
             }

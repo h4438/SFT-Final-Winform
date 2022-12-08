@@ -46,11 +46,30 @@ namespace WinFormDrug
             batchTabController.OrderDeliverDate = dateTimePickerOrderDeliverDate;
             batchTabController.OrderSignedDate = dateTimePickerOrderSignedDate;
             batchTabController.ManuComboBox = comboBoxOrderManu;
-            // correspond to the number of tabs
+            batchTabController.BatchQuantity = textBatchQuantity;
+            batchTabController.BatchCost = textBatchCost;
+            batchTabController.BatchPrice = textBatchPrice;
+            batchTabController.BatchManuDate = dateTimePickerBatchManu; 
+            batchTabController.BatchExpDate = dateTimePickerBatchExpDate;
+            batchTabController.SplmComboBox = comboBoxBatchSplm;
+            // done set up
             dataGridView1.ReadOnly = true;
-            
-            selectAllManufacturer();
+            selectAllSupplement();
         }
+        private void changeTab_Click(object sender, EventArgs e)
+        {
+            string tab = tabControlMain.SelectedTab.Text;
+            if (tab == "Supplement")
+            {
+                splmTabController.fillDataToComboBox(dao.getManuComboSrc());
+            }
+            if (tab == "Batch")
+            {
+                batchTabController.fillManuDataToComboBox(dao.getManuComboSrc());
+                batchTabController.fillSplmDataToComboBox(dao.getSplmComboSrc());
+            }
+        }
+
         // Batch
         private void createInOrder_Click(object sender, EventArgs e)
         {
@@ -60,45 +79,14 @@ namespace WinFormDrug
 
         private void addBatch_Click(object sender, EventArgs e) 
         {
-            //SupplementBatch batch = new SupplementBatch();
-            //batch.BatchQuantity = Int32.Parse(textBatchQuantity.Text);
-            //batch.BatchOriginalCost = Double.Parse(textBatchCost.Text);
-            //batch.BatchInitPrice = Double.Parse(textBatchPrice.Text);
-            //batch.BatchManuDate = dateTimePickerBatchManu.Value.ToString("yyyy-MM-dd");
-            //batch.BatchExpDate = dateTimePickerBatchExpDate.Value.ToString("yyyy-MM-dd");
-            //batch.Supplement = (Supplement)comboBoxBatchSplm.SelectedValue;
-            //batch.IncomingOrder = this.inOrder;
-            //batch.OutgoingOrder = null;
-            //dbHelper.SupplementBatches.Add(batch);
-            //dbHelper.SaveChanges();
-            //MessageBox.Show("Batches added");
-        }
-        private void saveBatch_Click(object sender, EventArgs e) 
-        {
             
         }
-
-        private void changeTab_Click(object sender, EventArgs e) 
+        private void saveBatches_Click(object sender, EventArgs e) 
         {
-            string tab = tabControlMain.SelectedTab.Text;
-            if (tab == "Supplement") 
-            {
-                splmTabController.fillDataToComboBox(dao.getSplmManuComboSrc());
-            }
-            if(tab == "Batch")
-            {
-                batchTabController.fillDataToComboBox(dao.getSplmManuComboSrc());
-                //if (supplements.Count == 0) { selectAllSupplement(); }
-                //foreach(Supplement a in supplements) 
-                //{
-                //    if (splmSrc.ContainsKey(a.SName)) { continue; }
-                //    splmSrc.Add(a.SName, a);
-                //}
-                //comboBoxBatchSplm.DataSource = new BindingSource(this.splmSrc, null);
-                //comboBoxBatchSplm.DisplayMember = "Key";
-                //comboBoxBatchSplm.ValueMember = "Value";    
-            }
-            
+            SupplementBatch supplementBatch = batchTabController.createObject();
+            dao.saveOrderSupplementBatch(batchTabController.getInternalOrder(),supplementBatch);
+            MessageBox.Show("Batches added");
+            batchTabController.clearAll();
         }
         // Supplement
         private void saveSupplement_Click(object sender, EventArgs e) 

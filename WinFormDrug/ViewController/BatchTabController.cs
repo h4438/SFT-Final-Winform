@@ -9,18 +9,26 @@ namespace WinFormDrug.ViewController
 {
     public class BatchTabController : ITabController<SupplementBatch>
     {
-
         private int numNewRows = 0;
         private IncomingOrder inOrder;
 
         public DateTimePicker OrderDeliverDate { get; set; }
         public DateTimePicker OrderSignedDate { get; set; }
         public ComboBox ManuComboBox { get; set; }
+        public TextBox BatchQuantity { get; set; } 
+        public TextBox BatchCost { get; set; }  
+        public TextBox BatchPrice { get; set; } 
+        public DateTimePicker BatchManuDate { get; set; }
+        public DateTimePicker BatchExpDate { get; set; }    
+        public ComboBox SplmComboBox { get; set; }
+
         public void clearAll()
         {
-            throw new NotImplementedException();
+            BatchCost.Clear();
+            BatchPrice.Clear(); 
+            BatchQuantity.Clear();  
         }
-
+        public IncomingOrder getInternalOrder() => this.inOrder;
         public void createInternalOrder() 
         {
             this.inOrder = new IncomingOrder();
@@ -33,22 +41,40 @@ namespace WinFormDrug.ViewController
 
         public SupplementBatch createObject()
         {
-            throw new NotImplementedException();
+            SupplementBatch batch = new SupplementBatch();
+            batch.BatchQuantity = Int32.Parse(BatchQuantity.Text);
+            batch.BatchOriginalCost = Double.Parse(BatchCost.Text);
+            batch.BatchInitPrice = Double.Parse(BatchPrice.Text);
+            batch.BatchManuDate = BatchManuDate.Value.ToString("yyyy-MM-dd");
+            batch.BatchExpDate = BatchExpDate.Value.ToString("yyyy-MM-dd");
+            batch.Supplement = (Supplement)SplmComboBox.SelectedValue;
+            batch.IncomingOrder = this.inOrder;
+            batch.OutgoingOrder = null;
+            numNewRows++;
+            return batch;
         }
 
         public int NumberNewRows()
         {
-            throw new NotImplementedException();
+            return numNewRows;
         }
 
         public void resetRows()
         {
-            throw new NotImplementedException();
+            numNewRows = 0;
         }
 
-        public void fillDataToComboBox(Dictionary<string, Manufacturer> comboSrc)
+        public void fillManuDataToComboBox(Dictionary<string, Manufacturer> comboSrc)
         {
             ComboBox comboMain = this.ManuComboBox;
+            comboMain.DataSource = new BindingSource(comboSrc, null);
+            comboMain.DisplayMember = "Key";
+            comboMain.ValueMember = "Value";
+        }
+
+        public void fillSplmDataToComboBox(Dictionary<string, Supplement> comboSrc) 
+        {
+            ComboBox comboMain = this.SplmComboBox;
             comboMain.DataSource = new BindingSource(comboSrc, null);
             comboMain.DisplayMember = "Key";
             comboMain.ValueMember = "Value";

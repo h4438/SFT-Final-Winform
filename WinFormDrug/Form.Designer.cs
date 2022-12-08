@@ -92,7 +92,7 @@
             this.comboBoxOrderManu = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBatchPrice = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSaveBatches = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -581,7 +581,7 @@
             this.tabBatch.Controls.Add(this.comboBoxAddedBatch);
             this.tabBatch.Controls.Add(this.label25);
             this.tabBatch.Controls.Add(this.tableLayoutPanel3);
-            this.tabBatch.Controls.Add(this.button3);
+            this.tabBatch.Controls.Add(this.btnSaveBatches);
             this.tabBatch.Controls.Add(this.button2);
             this.tabBatch.Controls.Add(this.label26);
             this.tabBatch.Location = new System.Drawing.Point(4, 29);
@@ -827,15 +827,16 @@
             this.textBatchPrice.Size = new System.Drawing.Size(337, 27);
             this.textBatchPrice.TabIndex = 20;
             // 
-            // button3
+            // btnSaveBatches
             // 
-            this.button3.Location = new System.Drawing.Point(433, 604);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 44);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSaveBatches.Location = new System.Drawing.Point(433, 604);
+            this.btnSaveBatches.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaveBatches.Name = "btnSaveBatches";
+            this.btnSaveBatches.Size = new System.Drawing.Size(94, 44);
+            this.btnSaveBatches.TabIndex = 8;
+            this.btnSaveBatches.Text = "Save";
+            this.btnSaveBatches.UseVisualStyleBackColor = true;
+            this.btnSaveBatches.Click += new System.EventHandler(this.saveBatches_Click);
             // 
             // button2
             // 
@@ -931,7 +932,7 @@
         private Label label6;
         private TabPage tabBatch;
         private Label label26;
-        private Button button3;
+        private Button btnSaveBatches;
         private Button button2;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label8;
