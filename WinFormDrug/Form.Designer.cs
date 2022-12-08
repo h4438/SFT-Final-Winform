@@ -95,6 +95,9 @@
             this.btnSaveBatches = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnCheckInOrder = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -104,6 +107,7 @@
             this.tableSupplement.SuspendLayout();
             this.tabBatch.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -123,13 +127,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 4);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(923, 787);
+            this.dataGridView1.Size = new System.Drawing.Size(923, 783);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabControlMain
@@ -137,6 +142,7 @@
             this.tabControlMain.Controls.Add(this.tabManu);
             this.tabControlMain.Controls.Add(this.tabPage1);
             this.tabControlMain.Controls.Add(this.tabBatch);
+            this.tabControlMain.Controls.Add(this.tabPage2);
             this.tabControlMain.Location = new System.Drawing.Point(934, 4);
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControlMain.Name = "tabControlMain";
@@ -147,6 +153,7 @@
             // 
             // tabManu
             // 
+            this.tabManu.AutoScroll = true;
             this.tabManu.Controls.Add(this.tableLayoutPanel2);
             this.tabManu.Controls.Add(this.btnShowAllManu);
             this.tabManu.Controls.Add(this.btnSaveManu);
@@ -859,6 +866,39 @@
             this.label26.TabIndex = 3;
             this.label26.Text = "Supplement Batch";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.btnCheckInOrder);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(646, 754);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Check Order";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(65, 400);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 44);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Outgoing Order";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckInOrder
+            // 
+            this.btnCheckInOrder.Location = new System.Drawing.Point(65, 330);
+            this.btnCheckInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCheckInOrder.Name = "btnCheckInOrder";
+            this.btnCheckInOrder.Size = new System.Drawing.Size(132, 44);
+            this.btnCheckInOrder.TabIndex = 18;
+            this.btnCheckInOrder.Text = "Incoming Order";
+            this.btnCheckInOrder.UseVisualStyleBackColor = true;
+            this.btnCheckInOrder.Click += new System.EventHandler(this.btnCheckInOrder_Click);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -883,6 +923,7 @@
             this.tabBatch.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -956,5 +997,8 @@
         private Label label27;
         private ComboBox comboBoxBatchSplm;
         private Button button1;
+        private TabPage tabPage2;
+        private Button button4;
+        private Button btnCheckInOrder;
     }
 }

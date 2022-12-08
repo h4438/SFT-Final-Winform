@@ -51,6 +51,7 @@ namespace WinFormDrug.ViewController
             batch.IncomingOrder = this.inOrder;
             batch.OutgoingOrder = null;
             numNewRows++;
+            this.inOrder.NumberOfProducts++; // important
             return batch;
         }
 

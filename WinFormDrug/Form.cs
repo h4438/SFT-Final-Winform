@@ -54,6 +54,7 @@ namespace WinFormDrug
             batchTabController.SplmComboBox = comboBoxBatchSplm;
             // done set up
             dataGridView1.ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             selectAllSupplement();
         }
         private void changeTab_Click(object sender, EventArgs e)
@@ -130,5 +131,13 @@ namespace WinFormDrug
             UIHelper.fillGrid(dataGridView1);
             UIHelper.colorNewRows(dataGridView1, newRows);      
         }
+
+        private void btnCheckInOrder_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = dao.GetIncomingOrders();
+            UIHelper.fillGrid(dataGridView1);
+        }
+
+        
     }
 }
