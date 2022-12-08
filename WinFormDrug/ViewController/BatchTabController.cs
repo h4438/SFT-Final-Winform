@@ -11,7 +11,7 @@ namespace WinFormDrug.ViewController
     {
         private int numNewRows = 0;
         private IncomingOrder inOrder;
-
+        private static string DATE_FORMAT = "yyyy-MM-dd";
         public DateTimePicker OrderDeliverDate { get; set; }
         public DateTimePicker OrderSignedDate { get; set; }
         public ComboBox ManuComboBox { get; set; }
@@ -32,8 +32,8 @@ namespace WinFormDrug.ViewController
         public void createInternalOrder() 
         {
             this.inOrder = new IncomingOrder();
-            inOrder.DeliverDate = OrderDeliverDate.Value.ToString("yyyy-MM-dd");
-            inOrder.SignedDate = OrderSignedDate.Value.ToString("yyyy-MM-dd");
+            inOrder.DeliverDate = OrderDeliverDate.Value.ToString(DATE_FORMAT);
+            inOrder.SignedDate = OrderSignedDate.Value.ToString(DATE_FORMAT);
             inOrder.ReceivedDate = null;
             inOrder.Manufacturer = (Manufacturer)ManuComboBox.SelectedValue;
             inOrder.NumberOfProducts = 0;
@@ -45,8 +45,8 @@ namespace WinFormDrug.ViewController
             batch.BatchQuantity = Int32.Parse(BatchQuantity.Text);
             batch.BatchOriginalCost = Double.Parse(BatchCost.Text);
             batch.BatchInitPrice = Double.Parse(BatchPrice.Text);
-            batch.BatchManuDate = BatchManuDate.Value.ToString("yyyy-MM-dd");
-            batch.BatchExpDate = BatchExpDate.Value.ToString("yyyy-MM-dd");
+            batch.BatchManuDate = BatchManuDate.Value.ToString(DATE_FORMAT);
+            batch.BatchExpDate = BatchExpDate.Value.ToString(DATE_FORMAT);
             batch.Supplement = (Supplement)SplmComboBox.SelectedValue;
             batch.IncomingOrder = this.inOrder;
             batch.OutgoingOrder = null;

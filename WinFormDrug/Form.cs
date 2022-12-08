@@ -19,6 +19,7 @@ namespace WinFormDrug
         private ManuTabController manuTabController;
         private SplmTabController splmTabController;
         private BatchTabController batchTabController;
+        private CheckOrderTabController checkOrderTabController;
         public Form()
         {
             InitializeComponent();
@@ -52,6 +53,15 @@ namespace WinFormDrug
             batchTabController.BatchManuDate = dateTimePickerBatchManu; 
             batchTabController.BatchExpDate = dateTimePickerBatchExpDate;
             batchTabController.SplmComboBox = comboBoxBatchSplm;
+            // Set check order tab
+            checkOrderTabController = new CheckOrderTabController();
+            checkOrderTabController.OrderID = textOrderID;
+            checkOrderTabController.SignedDate= dateTimePickerCheckSigned;
+            checkOrderTabController.DeliverDate = dateTimePickerCheckDeliver;
+            checkOrderTabController.ReceivedDate = dateTimePickerCheckReceived;
+            checkOrderTabController.ProductQuantity = textOrderProductQuantity;
+            checkOrderTabController.ManuComboBox = comboBoxCheckManu;
+            checkOrderTabController.SplmComboBox = comboBoxCheckSplm;
             // done set up
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -80,7 +90,7 @@ namespace WinFormDrug
 
         private void addBatch_Click(object sender, EventArgs e) 
         {
-            
+            // TODO: add instead of save    
         }
         private void saveBatches_Click(object sender, EventArgs e) 
         {
@@ -113,6 +123,13 @@ namespace WinFormDrug
         }
 
         // Manufacturer
+        private void btnManuSearch_Click(object sender, EventArgs e)
+        {
+            Manufacturer manufacturer = manuTabController.createObject();
+            List<Manufacturer> tmp = dao.findManufacturers(manufacturer);
+            UIHelper.showTmpData<Manufacturer>(dataGridView1, tmp);
+        }
+
         private void saveManufacturer_Click(object sender, EventArgs e)
         {
             Manufacturer manufacture = manuTabController.createObject();

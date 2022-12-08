@@ -8,19 +8,9 @@ namespace WinFormDrug.ViewController
 {
     public class UIHelper
     {
-        public static void clearTextBoxes(Control parent)
+        public static void showTmpData<T>(DataGridView dataGridView, List<T> data) 
         {
-            foreach (var control in parent.Controls)
-            {
-                if (control is TextBox)
-                {
-                    ((TextBox)control).Text = "";
-                }
-                else if (control is RichTextBox)
-                {
-                    ((RichTextBox)control).Text = "";
-                }
-            }
+            dataGridView.DataSource = data;
         }
 
         public static void fillGrid(DataGridView dataGrid)

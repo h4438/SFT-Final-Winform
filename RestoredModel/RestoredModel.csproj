@@ -66,6 +66,7 @@
     <Compile Include="Model\IncomingOrder.cs" />
     <Compile Include="Model\Manufacturer.cs" />
     <Compile Include="Model\DBModel.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Model\OutgoingOrder.cs" />
     <Compile Include="Model\Supplement.cs" />
     <Compile Include="Model\SupplementBatch.cs" />

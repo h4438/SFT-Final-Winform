@@ -14,8 +14,8 @@ namespace RestoredModel.Model
         {
             dbHelper = new DBModel();
             cachedMemory = new CachedMem();
-            getManufacturers();
             GetSupplements();
+            getManufacturers();
         }
         // Batch 
         public bool saveOrderSupplementBatch(IncomingOrder order,SupplementBatch supplementBatch) 
@@ -35,6 +35,11 @@ namespace RestoredModel.Model
             return cachedMemory.CachedBatches;  
         }
         // Orders
+
+        public List<IncomingOrder> findIncomingOrder()
+        {
+            return null;
+        }
         public List<IncomingOrder> GetIncomingOrders()
         {
             if (cachedMemory.CachedIncomingOrders == null)
@@ -88,15 +93,16 @@ namespace RestoredModel.Model
             return cachedMemory.CachedManufacturers;
         }
 
-        public List<Manufacturer> findManufacturers(string name, string email, string address, string phone)
+        public List<Manufacturer> findManufacturers(Manufacturer manufacturer)
         {
-            List<Manufacturer> query = dbHelper.Manufacturers.
-                Where(m => m.ManuName.Contains(name))
-                .Where(m => m.ManuEmail.Contains(email))
-                .Where(m => m.ManuPhone.Contains(phone))
-                .Where(m => m.ManuAddress.Contains(address))
+            List<Manufacturer> result = dbHelper.Manufacturers.
+                Where(m => m.ManuName.Contains(manufacturer.ManuName))
+                .Where(m => m.ManuCountry.Contains(manufacturer.ManuCountry))
+                .Where(m => m.ManuEmail.Contains(manufacturer.ManuEmail))
+                .Where(m => m.ManuPhone.Contains(manufacturer.ManuPhone))
+                .Where(m => m.ManuAddress.Contains(manufacturer.ManuAddress))
                 .ToList();
-            return query;
+            return result;
         }
     }
 
