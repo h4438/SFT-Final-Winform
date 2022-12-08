@@ -14,15 +14,11 @@ namespace WinFormDrug
 {
     public partial class Form : System.Windows.Forms.Form
     {
-        private DBModel dbHelper;
-        private List<Manufacturer> manufacturers;
-        private List<Supplement> supplements;
-        private Dictionary<string, Manufacturer> comboSource;
-        private Dictionary<string, Supplement> splmSrc;
-        private IncomingOrder inOrder;
+        
         private DAO dao;
         private ManuTabController manuTabController;
         private SplmTabController splmTabController;
+        private BatchTabController batchTabController;
         public Form()
         {
             InitializeComponent();
@@ -45,44 +41,37 @@ namespace WinFormDrug
             splmTabController.SIngredient = richTextSplmIngredient;
             splmTabController.SInactiveIngredient = richTextSplmInactive;
             splmTabController.ManuComboBox = comboBoxSplmManu;
+            // Set Batch Tab
+            batchTabController = new BatchTabController();
+            batchTabController.OrderDeliverDate = dateTimePickerOrderDeliverDate;
+            batchTabController.OrderSignedDate = dateTimePickerOrderSignedDate;
+            batchTabController.ManuComboBox = comboBoxOrderManu;
             // correspond to the number of tabs
             dataGridView1.ReadOnly = true;
-            dbHelper= new DBModel();
-            manufacturers = new List<Manufacturer>();
-            supplements = new List<Supplement>();   
-            comboSource= new Dictionary<string, Manufacturer>();
-            splmSrc = new Dictionary<string, Supplement>();
+            
             selectAllManufacturer();
         }
         // Batch
         private void createInOrder_Click(object sender, EventArgs e)
         {
-            inOrder= new IncomingOrder();   
-            inOrder.DeliverDate = dateTimePickerOrderDeliverDate.Value.ToString("yyyy-MM-dd");
-            inOrder.SignedDate = dateTimePickerOrderSignedDate.Value.ToString("yyyy-MM-dd");
-            inOrder.ReceivedDate = null;
-            inOrder.Manufacturer = (Manufacturer)comboBoxOrderManu.SelectedValue;
-            inOrder.NumberOfProducts = 0;
-            dbHelper.IncomingOrders.Add(inOrder);
-            dbHelper.SaveChanges();
-            //string a = inOrder.IncomingOrderID+"";
+            batchTabController.createInternalOrder();
             MessageBox.Show("You can start importing batches!");
         }
 
         private void addBatch_Click(object sender, EventArgs e) 
         {
-            SupplementBatch batch = new SupplementBatch();
-            batch.BatchQuantity = Int32.Parse(textBatchQuantity.Text);
-            batch.BatchOriginalCost = Double.Parse(textBatchCost.Text);
-            batch.BatchInitPrice = Double.Parse(textBatchPrice.Text);
-            batch.BatchManuDate = dateTimePickerBatchManu.Value.ToString("yyyy-MM-dd");
-            batch.BatchExpDate = dateTimePickerBatchExpDate.Value.ToString("yyyy-MM-dd");
-            batch.Supplement = (Supplement)comboBoxBatchSplm.SelectedValue;
-            batch.IncomingOrder = this.inOrder;
-            batch.OutgoingOrder = null;
-            dbHelper.SupplementBatches.Add(batch);
-            dbHelper.SaveChanges();
-            MessageBox.Show("Batches added");
+            //SupplementBatch batch = new SupplementBatch();
+            //batch.BatchQuantity = Int32.Parse(textBatchQuantity.Text);
+            //batch.BatchOriginalCost = Double.Parse(textBatchCost.Text);
+            //batch.BatchInitPrice = Double.Parse(textBatchPrice.Text);
+            //batch.BatchManuDate = dateTimePickerBatchManu.Value.ToString("yyyy-MM-dd");
+            //batch.BatchExpDate = dateTimePickerBatchExpDate.Value.ToString("yyyy-MM-dd");
+            //batch.Supplement = (Supplement)comboBoxBatchSplm.SelectedValue;
+            //batch.IncomingOrder = this.inOrder;
+            //batch.OutgoingOrder = null;
+            //dbHelper.SupplementBatches.Add(batch);
+            //dbHelper.SaveChanges();
+            //MessageBox.Show("Batches added");
         }
         private void saveBatch_Click(object sender, EventArgs e) 
         {
@@ -92,25 +81,19 @@ namespace WinFormDrug
         private void changeTab_Click(object sender, EventArgs e) 
         {
             string tab = tabControlMain.SelectedTab.Text;
-            if (tab == "Supplement" || tab == "Batch") 
+            if (tab == "Supplement") 
             {
-                ComboBox comboMain = splmTabController.ManuComboBox;
-                comboMain.DataSource = new BindingSource(dao.getSplmManuComboSrc(), null);
-                comboMain.DisplayMember = "Key";
-                comboMain.ValueMember = "Value";
-                //// can improve
-                //comboBoxOrderManu.DataSource = new BindingSource(this.comboSource, null);
-                //comboBoxOrderManu.DisplayMember = "Key";
-                //comboBoxOrderManu.ValueMember = "Value";
+                splmTabController.fillDataToComboBox(dao.getSplmManuComboSrc());
             }
             if(tab == "Batch")
             {
-                if (supplements.Count == 0) { selectAllSupplement(); }
-                foreach(Supplement a in supplements) 
-                {
-                    if (splmSrc.ContainsKey(a.SName)) { continue; }
-                    splmSrc.Add(a.SName, a);
-                }
+                batchTabController.fillDataToComboBox(dao.getSplmManuComboSrc());
+                //if (supplements.Count == 0) { selectAllSupplement(); }
+                //foreach(Supplement a in supplements) 
+                //{
+                //    if (splmSrc.ContainsKey(a.SName)) { continue; }
+                //    splmSrc.Add(a.SName, a);
+                //}
                 //comboBoxBatchSplm.DataSource = new BindingSource(this.splmSrc, null);
                 //comboBoxBatchSplm.DisplayMember = "Key";
                 //comboBoxBatchSplm.ValueMember = "Value";    
@@ -159,7 +142,5 @@ namespace WinFormDrug
             UIHelper.fillGrid(dataGridView1);
             UIHelper.colorNewRows(dataGridView1, newRows);      
         }
-
-        
     }
 }

@@ -25,6 +25,14 @@ namespace RestoredModel.Model
             }
             return cachedMemory.GetInComingOrders();
         }
+
+        public bool saveIncomingOrder(IncomingOrder order) 
+        {
+            dbHelper.IncomingOrders.Add(order);     
+            dbHelper.SaveChanges();
+            return true;
+        }
+
         // Supplement
         public bool saveSupplement(Supplement supplement) 
         {

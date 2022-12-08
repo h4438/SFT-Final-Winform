@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WinFormDrug.ViewController
 {
     public class SplmTabController: ITabController<Supplement>
     {
-        private int numNewRows;
+        private int numNewRows = 0;
 
         public RichTextBox SName { get; set; }
         public RichTextBox SUses { get; set; }
@@ -58,6 +59,14 @@ namespace WinFormDrug.ViewController
         public void resetRows()
         {
             numNewRows = 0;
+        }
+
+        public void fillDataToComboBox(Dictionary<string, Manufacturer> comboSrc) 
+        {
+            ComboBox comboMain = this.ManuComboBox;
+            comboMain.DataSource = new BindingSource(comboSrc, null);
+            comboMain.DisplayMember = "Key";
+            comboMain.ValueMember = "Value";
         }
     }
 }
