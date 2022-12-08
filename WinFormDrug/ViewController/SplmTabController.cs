@@ -33,6 +33,7 @@ namespace WinFormDrug.ViewController
             supplement.Ingredient = SIngredient.Text.Trim();
             supplement.InactiveIngredient = SInactiveIngredient.Text.Trim();
             supplement.Manufacturer = (Manufacturer)ManuComboBox.SelectedValue;
+            numNewRows++;
             return supplement;
         }
 
