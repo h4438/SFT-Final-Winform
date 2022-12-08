@@ -35,14 +35,32 @@ namespace RestoredModel.Model
             return cachedMemory.CachedBatches;  
         }
         // Orders
-
-        public List<IncomingOrder> findIncomingOrder()
+        public List<IncomingOrder> findAnyIncomingOrder(IncomingOrder order)
         {
-            return null;
+            List<IncomingOrder> result = dbHelper.IncomingOrders
+                .Where(m => m.IncomingOrderID.Equals(order.IncomingOrderID)
+                    || m.DeliverDate.Contains(order.DeliverDate)
+                    || m.SignedDate.Contains(order.SignedDate))
+                .ToList();
+            return result;
         }
-        public List<IncomingOrder> GetIncomingOrders()
+        public bool ReceiveIncomingOrder(IncomingOrder incomingOrder) 
         {
-            if (cachedMemory.CachedIncomingOrders == null)
+            cachedMemory.selectedInOrder.ReceivedDate = incomingOrder.ReceivedDate;
+            dbHelper.SaveChanges();
+            cachedMemory.selectedInOrder = null;
+            return true;
+        }
+        public IncomingOrder loadIncomingOrderByID(int id) 
+        {
+            IncomingOrder result = dbHelper.IncomingOrders
+                .Where(m => m.IncomingOrderID.Equals(id)).FirstOrDefault();
+            cachedMemory.selectedInOrder = result;
+            return result;
+        }
+        public List<IncomingOrder> GetIncomingOrders(bool reConnect = false)
+        {
+            if (reConnect || cachedMemory.CachedIncomingOrders == null)
             {
                 cachedMemory.CachedIncomingOrders = dbHelper.IncomingOrders.ToList();
             }

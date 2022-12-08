@@ -32,6 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabManu = new System.Windows.Forms.TabPage();
+            this.btnManuSearch = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.textManuEmail = new System.Windows.Forms.TextBox();
@@ -96,6 +97,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnLoadIncoming = new System.Windows.Forms.Button();
+            this.btnSearchInOrder = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dateTimePickerCheckReceived = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCheckSplm = new System.Windows.Forms.ComboBox();
@@ -114,7 +117,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.btnCheckInOrder = new System.Windows.Forms.Button();
-            this.btnManuSearch = new System.Windows.Forms.Button();
+            this.btnUpdateInOrder = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -185,6 +188,17 @@
             this.tabManu.TabIndex = 0;
             this.tabManu.Text = "Manufacturer";
             this.tabManu.UseVisualStyleBackColor = true;
+            // 
+            // btnManuSearch
+            // 
+            this.btnManuSearch.Location = new System.Drawing.Point(194, 414);
+            this.btnManuSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnManuSearch.Name = "btnManuSearch";
+            this.btnManuSearch.Size = new System.Drawing.Size(94, 44);
+            this.btnManuSearch.TabIndex = 14;
+            this.btnManuSearch.Text = "Search";
+            this.btnManuSearch.UseVisualStyleBackColor = true;
+            this.btnManuSearch.Click += new System.EventHandler(this.btnManuSearch_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -887,6 +901,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnUpdateInOrder);
+            this.tabPage2.Controls.Add(this.btnLoadIncoming);
+            this.tabPage2.Controls.Add(this.btnSearchInOrder);
             this.tabPage2.Controls.Add(this.tableLayoutPanel4);
             this.tabPage2.Controls.Add(this.label28);
             this.tabPage2.Controls.Add(this.button4);
@@ -898,6 +915,28 @@
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Check Order";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadIncoming
+            // 
+            this.btnLoadIncoming.Location = new System.Drawing.Point(65, 587);
+            this.btnLoadIncoming.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLoadIncoming.Name = "btnLoadIncoming";
+            this.btnLoadIncoming.Size = new System.Drawing.Size(132, 44);
+            this.btnLoadIncoming.TabIndex = 23;
+            this.btnLoadIncoming.Text = "Load Incoming";
+            this.btnLoadIncoming.UseVisualStyleBackColor = true;
+            this.btnLoadIncoming.Click += new System.EventHandler(this.btnLoadIncoming_Click);
+            // 
+            // btnSearchInOrder
+            // 
+            this.btnSearchInOrder.Location = new System.Drawing.Point(65, 508);
+            this.btnSearchInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSearchInOrder.Name = "btnSearchInOrder";
+            this.btnSearchInOrder.Size = new System.Drawing.Size(132, 44);
+            this.btnSearchInOrder.TabIndex = 22;
+            this.btnSearchInOrder.Text = "Search Incoming";
+            this.btnSearchInOrder.UseVisualStyleBackColor = true;
+            this.btnSearchInOrder.Click += new System.EventHandler(this.btnSearchInOrder_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -1076,7 +1115,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(242, 533);
+            this.button4.Location = new System.Drawing.Point(242, 437);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(132, 44);
@@ -1086,7 +1125,7 @@
             // 
             // btnCheckInOrder
             // 
-            this.btnCheckInOrder.Location = new System.Drawing.Point(65, 533);
+            this.btnCheckInOrder.Location = new System.Drawing.Point(65, 437);
             this.btnCheckInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCheckInOrder.Name = "btnCheckInOrder";
             this.btnCheckInOrder.Size = new System.Drawing.Size(132, 44);
@@ -1095,16 +1134,16 @@
             this.btnCheckInOrder.UseVisualStyleBackColor = true;
             this.btnCheckInOrder.Click += new System.EventHandler(this.btnCheckInOrder_Click);
             // 
-            // btnManuSearch
+            // btnUpdateInOrder
             // 
-            this.btnManuSearch.Location = new System.Drawing.Point(194, 414);
-            this.btnManuSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnManuSearch.Name = "btnManuSearch";
-            this.btnManuSearch.Size = new System.Drawing.Size(94, 44);
-            this.btnManuSearch.TabIndex = 14;
-            this.btnManuSearch.Text = "Search";
-            this.btnManuSearch.UseVisualStyleBackColor = true;
-            this.btnManuSearch.Click += new System.EventHandler(this.btnManuSearch_Click);
+            this.btnUpdateInOrder.Location = new System.Drawing.Point(65, 666);
+            this.btnUpdateInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateInOrder.Name = "btnUpdateInOrder";
+            this.btnUpdateInOrder.Size = new System.Drawing.Size(132, 44);
+            this.btnUpdateInOrder.TabIndex = 24;
+            this.btnUpdateInOrder.Text = "Update Incoming";
+            this.btnUpdateInOrder.UseVisualStyleBackColor = true;
+            this.btnUpdateInOrder.Click += new System.EventHandler(this.btnUpdateInOrder_Click);
             // 
             // Form
             // 
@@ -1227,5 +1266,8 @@
         private ComboBox comboBoxCheckManu;
         private TextBox textOrderProductQuantity;
         private Button btnManuSearch;
+        private Button btnSearchInOrder;
+        private Button btnLoadIncoming;
+        private Button btnUpdateInOrder;
     }
 }

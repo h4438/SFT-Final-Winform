@@ -79,6 +79,11 @@ namespace WinFormDrug
                 batchTabController.fillManuDataToComboBox(dao.getManuComboSrc());
                 batchTabController.fillSplmDataToComboBox(dao.getSplmComboSrc());
             }
+            if(tab == "Check Order") 
+            {
+                checkOrderTabController.fillManuDataToComboBox(dao.getManuComboSrc());
+                checkOrderTabController.fillSplmDataToComboBox(dao.getSplmComboSrc());
+            }
         }
 
         // Batch
@@ -155,6 +160,28 @@ namespace WinFormDrug
             UIHelper.fillGrid(dataGridView1);
         }
 
-        
+        private void btnSearchInOrder_Click(object sender, EventArgs e)
+        {
+            IncomingOrder order = checkOrderTabController.createIncomingOrder();
+            List<IncomingOrder> result = dao.findAnyIncomingOrder(order);
+            UIHelper.showTmpData<IncomingOrder>(dataGridView1, result);
+        }
+
+        private void btnLoadIncoming_Click(object sender, EventArgs e)
+        {
+            int orderId = checkOrderTabController.convertToInt(checkOrderTabController.OrderID.Text);
+            dao.loadIncomingOrderByID(orderId);
+            MessageBox.Show("Load order with id = "+ orderId+ " complete");
+        }
+
+        private void btnUpdateInOrder_Click(object sender, EventArgs e)
+        {
+            IncomingOrder order = checkOrderTabController.createIncomingOrder();
+            dao.ReceiveIncomingOrder(order);
+            MessageBox.Show("Update complete!");
+            dao.GetIncomingOrders(true);
+        }
+        // Order
+
     }
 }

@@ -15,7 +15,7 @@ namespace RestoredModel
         public List<Supplement> CachedSupplements { get; set; }
         public List<SupplementBatch> CachedBatches { get; set; }
         public List<IncomingOrder> CachedIncomingOrders { get; set; }
-
+        public IncomingOrder selectedInOrder { get; set; }
         public CachedMem()
         {
             this.ManuComboSource = new Dictionary<string, Manufacturer>();

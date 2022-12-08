@@ -9,6 +9,9 @@ namespace WinFormDrug.ViewController
 {
     public class CheckOrderTabController:ITabController<Order>
     {
+        private int newDataRows = 0;
+        private static string DATE_FORMAT = "yyyy-MM-dd";
+
         public TextBox OrderID { get; set; }
         public TextBox ProductQuantity { get; set; }    
         public ComboBox SplmComboBox { get; set; }
@@ -20,7 +23,9 @@ namespace WinFormDrug.ViewController
 
         public void clearAll()
         {
-            throw new NotImplementedException();
+            this.OrderID.Clear();
+            this.ProductQuantity.Clear();   
+            this.OrderID.Focus();   
         }
 
         public Order createObject()
@@ -28,14 +33,51 @@ namespace WinFormDrug.ViewController
             throw new NotImplementedException();
         }
 
+        public IncomingOrder createIncomingOrder()
+        {
+            IncomingOrder inOrder = new IncomingOrder();
+            inOrder.IncomingOrderID = convertToInt(this.OrderID.Text); 
+            inOrder.DeliverDate = this.DeliverDate.Value.ToString(DATE_FORMAT);
+            inOrder.SignedDate = this.SignedDate.Value.ToString(DATE_FORMAT);
+            inOrder.ReceivedDate = this.ReceivedDate.Value.ToString(DATE_FORMAT);
+            inOrder.Manufacturer = (Manufacturer)ManuComboBox.SelectedValue;
+            inOrder.NumberOfProducts = convertToInt(this.ProductQuantity.Text);
+            return inOrder;
+        }
+
         public int NumberNewRows()
         {
-            throw new NotImplementedException();
+            return this.newDataRows;
         }
 
         public void resetRows()
         {
-            throw new NotImplementedException();
+            this.newDataRows = 0;
+        }
+
+        public void fillManuDataToComboBox(Dictionary<string, Manufacturer> comboSrc)
+        {
+            ComboBox comboMain = this.ManuComboBox;
+            comboMain.DataSource = new BindingSource(comboSrc, null);
+            comboMain.DisplayMember = "Key";
+            comboMain.ValueMember = "Value";
+        }
+        public void fillSplmDataToComboBox(Dictionary<string, Supplement> comboSrc)
+        {
+            ComboBox comboMain = this.SplmComboBox;
+            comboMain.DataSource = new BindingSource(comboSrc, null);
+            comboMain.DisplayMember = "Key";
+            comboMain.ValueMember = "Value";
+        }
+
+        public int convertToInt(string value) 
+        {
+            int num = 0;
+            if (int.TryParse(value, out num))
+            {
+                return num;
+            }
+            return 0;
         }
     }
 }
