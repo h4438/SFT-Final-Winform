@@ -72,6 +72,18 @@
     <Compile Include="Migrations\202212091941279_ChangeColumnsSplm.designer.cs">
       <DependentUpon>202212091941279_ChangeColumnsSplm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212091955284_FixSplm.cs" />
+    <Compile Include="Migrations\202212091955284_FixSplm.designer.cs">
+      <DependentUpon>202212091955284_FixSplm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212091958428_FixCatIDSplm.cs" />
+    <Compile Include="Migrations\202212091958428_FixCatIDSplm.designer.cs">
+      <DependentUpon>202212091958428_FixCatIDSplm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212092008529_RestoreSplm.cs" />
+    <Compile Include="Migrations\202212092008529_RestoreSplm.designer.cs">
+      <DependentUpon>202212092008529_RestoreSplm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
@@ -79,9 +91,9 @@
     <Compile Include="Model\IncomingOrder.cs" />
     <Compile Include="Model\Manufacturer.cs" />
     <Compile Include="Model\DBModel.cs" />
+    <Compile Include="Model\Supplement.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Model\OutgoingOrder.cs" />
-    <Compile Include="Model\Supplement.cs" />
     <Compile Include="Model\SupplementBatch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +118,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212091941279_ChangeColumnsSplm.resx">
       <DependentUpon>202212091941279_ChangeColumnsSplm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212091955284_FixSplm.resx">
+      <DependentUpon>202212091955284_FixSplm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212091958428_FixCatIDSplm.resx">
+      <DependentUpon>202212091958428_FixCatIDSplm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212092008529_RestoreSplm.resx">
+      <DependentUpon>202212092008529_RestoreSplm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

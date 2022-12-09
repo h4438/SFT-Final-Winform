@@ -31,3 +31,6 @@ C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.p
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.AddCategory.resources
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.ChangeSNameSupplement.resources
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.ChangeColumnsSplm.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.FixSplm.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.FixCatIDSplm.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.RestoreSplm.resources

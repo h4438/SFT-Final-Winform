@@ -39,17 +39,17 @@ namespace RestoredModel.Model
             modelBuilder.Entity<Manufacturer>()
                 .HasMany(e => e.Supplements)
                 .WithOptional(e => e.Manufacturer)
-                .HasForeignKey(e => e.Manufacturer_ManuID);
+                .HasForeignKey(e => e.ManuID);
 
             modelBuilder.Entity<OutgoingOrder>()
                 .HasMany(e => e.SupplementBatches)
                 .WithOptional(e => e.OutgoingOrder)
                 .HasForeignKey(e => e.outgoingOrder_OutOrderID);
 
-            modelBuilder.Entity<Supplement>()
-                .HasMany(e => e.SupplementBatches)
-                .WithOptional(e => e.Supplement)
-                .HasForeignKey(e => e.supplement_SID);
+            //modelBuilder.Entity<Supplement>()
+            //    .HasMany(e => e.SupplementBatches)
+            //    .WithOptional(e => e.Supplement)
+            //    .HasForeignKey(e => e.supplement_SID);
         }
     }
 }
