@@ -20,8 +20,7 @@ namespace RestoredModel.ViewModel
         public string ReceivedDate { get; set; }
 
         public string Manufacturer { get; set; }
-
-        public static IncomingOrderView createView(IncomingOrder order) 
+        public static IncomingOrderView createView(IncomingOrder order)
         {
             IncomingOrderView view = new IncomingOrderView();
             view.IncomingOrderID = order.IncomingOrderID;   
@@ -32,5 +31,6 @@ namespace RestoredModel.ViewModel
             view.Manufacturer = order.Manufacturer.ManuName;
             return view;
         }
+
     }
 }

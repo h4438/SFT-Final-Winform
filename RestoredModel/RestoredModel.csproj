@@ -72,8 +72,9 @@
     <Compile Include="Model\SupplementBatch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\IModelView.cs" />
     <Compile Include="ViewModel\IncomingOrderView.cs" />
+    <Compile Include="ViewModel\ManufacturerView.cs" />
+    <Compile Include="ViewModel\ModelView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

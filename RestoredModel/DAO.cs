@@ -75,16 +75,6 @@ namespace RestoredModel.Model
             return cachedMemory.CachedIncomingOrders;
         }
 
-        public List<IncomingOrderView> GetIncomingOrderViews(List<IncomingOrder> data) 
-        {
-            List<IncomingOrderView> results = new List<IncomingOrderView>();
-            foreach(IncomingOrder order in data)
-            {
-                results.Add(IncomingOrderView.createView(order));
-            }
-            return results;
-        }
-
         public bool saveIncomingOrder(IncomingOrder order) 
         {
             dbHelper.IncomingOrders.Add(order);     
@@ -128,7 +118,7 @@ namespace RestoredModel.Model
             }
             return cachedMemory.CachedManufacturers;
         }
-
+        
         public List<Manufacturer> findManufacturers(Manufacturer manufacturer)
         {
             List<Manufacturer> result = dbHelper.Manufacturers.
@@ -139,6 +129,27 @@ namespace RestoredModel.Model
                 .Where(m => m.ManuAddress.Contains(manufacturer.ManuAddress))
                 .ToList();
             return result;
+        }
+
+        // Views
+        public List<IncomingOrderView> GetIncomingOrderViews(List<IncomingOrder> data)
+        {
+            List<IncomingOrderView> results = new List<IncomingOrderView>();
+            foreach (IncomingOrder order in data)
+            {
+                results.Add(IncomingOrderView.createView(order));
+            }
+            return results;
+        }
+
+        public List<ManufacturerView> GetManufacturerViews(List<Manufacturer> manufacturers) 
+        {
+            List<ManufacturerView> results = new List<ManufacturerView>();  
+            foreach(Manufacturer manufacturer in manufacturers) 
+            {
+                results.Add(ManufacturerView.createView(manufacturer));
+            }
+            return results;
         }
     }
 

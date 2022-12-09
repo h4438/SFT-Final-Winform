@@ -149,7 +149,8 @@ namespace WinFormDrug
         private void selectAllManufacturer()
         {
             int newRows = manuTabController.NumberNewRows();
-            dataGridView1.DataSource = dao.getManufacturers(newRows != 0);
+            List<Manufacturer> data = dao.getManufacturers(newRows != 0);
+            dataGridView1.DataSource = dao.CreateIncomingOrderViews(data);
             manuTabController.resetRows();
             UIHelper.fillGrid(dataGridView1);
             UIHelper.colorNewRows(dataGridView1, newRows);      
@@ -158,7 +159,7 @@ namespace WinFormDrug
         private void btnCheckInOrder_Click(object sender, EventArgs e)
         {
             List<IncomingOrder> data = dao.GetIncomingOrders();
-            dataGridView1.DataSource = dao.GetIncomingOrderViews(data);
+            dataGridView1.DataSource = dao.CreateIncomingOrderViews(data);
             UIHelper.fillGrid(dataGridView1);
         }
 
@@ -166,7 +167,7 @@ namespace WinFormDrug
         {
             IncomingOrder order = checkOrderTabController.createIncomingOrder();
             List<IncomingOrder> result = dao.findAnyIncomingOrder(order);
-            UIHelper.showTmpData<IncomingOrderView>(dataGridView1, dao.GetIncomingOrderViews(result));
+            UIHelper.showTmpData<IncomingOrderView>(dataGridView1, dao.CreateIncomingOrderViews(result));
         }
 
         private void btnLoadIncoming_Click(object sender, EventArgs e)
@@ -185,7 +186,7 @@ namespace WinFormDrug
             checkOrderTabController.clearAll();
             dao.GetIncomingOrders(true);
         }
-        // Order
+        
 
     }
 }
