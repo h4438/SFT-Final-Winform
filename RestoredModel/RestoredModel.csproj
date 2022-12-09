@@ -60,9 +60,14 @@
     <Compile Include="Migrations\202212071527020_Init.designer.cs">
       <DependentUpon>202212071527020_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212091919145_AddCategory.cs" />
+    <Compile Include="Migrations\202212091919145_AddCategory.designer.cs">
+      <DependentUpon>202212091919145_AddCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\IncomingOrder.cs" />
     <Compile Include="Model\Manufacturer.cs" />
     <Compile Include="Model\DBModel.cs" />
@@ -84,6 +89,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202212071527020_Init.resx">
       <DependentUpon>202212071527020_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212091919145_AddCategory.resx">
+      <DependentUpon>202212091919145_AddCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,7 +18,7 @@ namespace RestoredModel.Model
         public virtual DbSet<OutgoingOrder> OutgoingOrders { get; set; }
         public virtual DbSet<SupplementBatch> SupplementBatches { get; set; }
         public virtual DbSet<Supplement> Supplements { get; set; }
-
+        public virtual DbSet<Category> Categories { get; set; }   
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Agent>()
