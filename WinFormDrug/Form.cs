@@ -122,7 +122,8 @@ namespace WinFormDrug
         private void selectAllSupplement() 
         {
             int newRows = splmTabController.NumberNewRows();
-            dataGridView1.DataSource = dao.GetSupplements(newRows != 0);
+            List<Supplement> data = dao.GetSupplements(newRows != 0);
+            dataGridView1.DataSource = dao.CreateSupplementViews(data);
             splmTabController.resetRows();
             UIHelper.fillGrid(dataGridView1);
             UIHelper.colorNewRows(dataGridView1, newRows);

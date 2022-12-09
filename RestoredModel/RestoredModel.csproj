@@ -75,6 +75,7 @@
     <Compile Include="ViewModel\IncomingOrderView.cs" />
     <Compile Include="ViewModel\ManufacturerView.cs" />
     <Compile Include="ViewModel\ModelView.cs" />
+    <Compile Include="ViewModel\SupplementView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

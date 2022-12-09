@@ -132,7 +132,7 @@ namespace RestoredModel.Model
         }
 
         // Views
-        public List<IncomingOrderView> GetIncomingOrderViews(List<IncomingOrder> data)
+        public List<IncomingOrderView> CreateIncomingOrderViews(List<IncomingOrder> data)
         {
             List<IncomingOrderView> results = new List<IncomingOrderView>();
             foreach (IncomingOrder order in data)
@@ -142,12 +142,22 @@ namespace RestoredModel.Model
             return results;
         }
 
-        public List<ManufacturerView> GetManufacturerViews(List<Manufacturer> manufacturers) 
+        public List<ManufacturerView> CreateIncomingOrderViews(List<Manufacturer> manufacturers) 
         {
             List<ManufacturerView> results = new List<ManufacturerView>();  
             foreach(Manufacturer manufacturer in manufacturers) 
             {
                 results.Add(ManufacturerView.createView(manufacturer));
+            }
+            return results;
+        }
+
+        public List<SupplementView> CreateSupplementViews(List<Supplement> supplements) 
+        {
+            List<SupplementView> results = new List<SupplementView>();
+            foreach(Supplement supplement in supplements) 
+            {
+                results.Add(SupplementView.createView(supplement));
             }
             return results;
         }

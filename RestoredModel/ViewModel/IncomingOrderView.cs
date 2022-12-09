@@ -9,9 +9,9 @@ namespace RestoredModel.ViewModel
 {
     public class IncomingOrderView
     {
-        public int IncomingOrderID { get; set; }
+        public int ID { get; set; }
 
-        public int NumberOfProducts { get; set; }
+        public int NumberProducts { get; set; }
 
         public string DeliverDate { get; set; }
 
@@ -23,8 +23,8 @@ namespace RestoredModel.ViewModel
         public static IncomingOrderView createView(IncomingOrder order)
         {
             IncomingOrderView view = new IncomingOrderView();
-            view.IncomingOrderID = order.IncomingOrderID;   
-            view.NumberOfProducts = order.NumberOfProducts;
+            view.ID = order.IncomingOrderID;   
+            view.NumberProducts = order.NumberOfProducts;
             view.ReceivedDate = order.ReceivedDate; 
             view.DeliverDate = order.DeliverDate;    
             view.SignedDate = order.SignedDate;
