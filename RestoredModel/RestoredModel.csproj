@@ -64,6 +64,14 @@
     <Compile Include="Migrations\202212091919145_AddCategory.designer.cs">
       <DependentUpon>202212091919145_AddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212091928596_ChangeSNameSupplement.cs" />
+    <Compile Include="Migrations\202212091928596_ChangeSNameSupplement.designer.cs">
+      <DependentUpon>202212091928596_ChangeSNameSupplement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212091941279_ChangeColumnsSplm.cs" />
+    <Compile Include="Migrations\202212091941279_ChangeColumnsSplm.designer.cs">
+      <DependentUpon>202212091941279_ChangeColumnsSplm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
@@ -92,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212091919145_AddCategory.resx">
       <DependentUpon>202212091919145_AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212091928596_ChangeSNameSupplement.resx">
+      <DependentUpon>202212091928596_ChangeSNameSupplement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212091941279_ChangeColumnsSplm.resx">
+      <DependentUpon>202212091941279_ChangeColumnsSplm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

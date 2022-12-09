@@ -36,7 +36,7 @@ namespace RestoredModel.ViewModel
             view.Warnings= supplement.Warnings; 
             view.SName= supplement.SName;
             view.Uses = supplement.Uses;
-            view.Category= supplement.Category;
+            //view.Category= supplement.Category;
             view.Ingredient= supplement.Ingredient;
             view.ManuName = supplement.Manufacturer.ManuName;
             view.Inactive = supplement.InactiveIngredient;    

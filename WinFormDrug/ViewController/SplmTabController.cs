@@ -28,7 +28,7 @@ namespace WinFormDrug.ViewController
             supplement.SName = SName.Text.Trim();
             supplement.Uses = SUses.Text.Trim();
             supplement.Directions = SDirections.Text.Trim();
-            supplement.Category = SCategory.Text.Trim();
+            //supplement.Category = SCategory.Text.Trim();
             supplement.Warnings = SWarnings.Text.Trim();
             supplement.OtherInfo = SOtherInfo.Text.Trim();
             supplement.Ingredient = SIngredient.Text.Trim();
