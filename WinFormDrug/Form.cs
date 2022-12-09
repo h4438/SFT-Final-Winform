@@ -164,6 +164,20 @@ namespace WinFormDrug
             UIHelper.fillGrid(dataGridView1);
         }
 
+        private void btnExpectingOrder_Click(object sender, EventArgs e)
+        {
+            List<IncomingOrder> result = dao.GetExpectingOrders();
+            UIHelper.showTmpData<IncomingOrderView>(dataGridView1, dao.CreateIncomingOrderViews(result));
+            UIHelper.fillGrid(dataGridView1);
+        }
+
+        private void btnReceivedOrder_Click(object sender, EventArgs e)
+        {
+            List<IncomingOrder> result = dao.GetReceivedOrders();
+            UIHelper.showTmpData<IncomingOrderView>(dataGridView1, dao.CreateIncomingOrderViews(result));
+            UIHelper.fillGrid(dataGridView1);
+        }
+
         private void btnSearchInOrder_Click(object sender, EventArgs e)
         {
             IncomingOrder order = checkOrderTabController.createIncomingOrder();
@@ -187,7 +201,7 @@ namespace WinFormDrug
             checkOrderTabController.clearAll();
             dao.GetIncomingOrders(true);
         }
-        
 
+        
     }
 }

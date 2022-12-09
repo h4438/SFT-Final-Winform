@@ -97,8 +97,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnLoadIncoming = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnCheckInOrder = new System.Windows.Forms.Button();
             this.btnSearchInOrder = new System.Windows.Forms.Button();
+            this.btnLoadIncoming = new System.Windows.Forms.Button();
+            this.btnUpdateInOrder = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dateTimePickerCheckReceived = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCheckSplm = new System.Windows.Forms.ComboBox();
@@ -115,9 +120,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnCheckInOrder = new System.Windows.Forms.Button();
-            this.btnUpdateInOrder = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -128,6 +130,7 @@
             this.tabBatch.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -901,42 +904,103 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.btnUpdateInOrder);
-            this.tabPage2.Controls.Add(this.btnLoadIncoming);
-            this.tabPage2.Controls.Add(this.btnSearchInOrder);
+            this.tabPage2.Controls.Add(this.tableLayoutPanel5);
             this.tabPage2.Controls.Add(this.tableLayoutPanel4);
             this.tabPage2.Controls.Add(this.label28);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.btnCheckInOrder);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage2.Size = new System.Drawing.Size(646, 754);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Check Order";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnLoadIncoming
+            // tableLayoutPanel5
             // 
-            this.btnLoadIncoming.Location = new System.Drawing.Point(65, 587);
-            this.btnLoadIncoming.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLoadIncoming.Name = "btnLoadIncoming";
-            this.btnLoadIncoming.Size = new System.Drawing.Size(132, 44);
-            this.btnLoadIncoming.TabIndex = 23;
-            this.btnLoadIncoming.Text = "Load Incoming";
-            this.btnLoadIncoming.UseVisualStyleBackColor = true;
-            this.btnLoadIncoming.Click += new System.EventHandler(this.btnLoadIncoming_Click);
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.Controls.Add(this.button3, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnCheckInOrder, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnSearchInOrder, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.btnLoadIncoming, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.btnUpdateInOrder, 2, 1);
+            this.tableLayoutPanel5.Controls.Add(this.button4, 2, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(105, 444);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(421, 109);
+            this.tableLayoutPanel5.TabIndex = 25;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(141, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "btnReceivedOrder";
+            this.button3.Size = new System.Drawing.Size(132, 44);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Received Order";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnReceivedOrder_Click);
+            // 
+            // btnCheckInOrder
+            // 
+            this.btnCheckInOrder.Location = new System.Drawing.Point(3, 4);
+            this.btnCheckInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCheckInOrder.Name = "btnExpectOrder";
+            this.btnCheckInOrder.Size = new System.Drawing.Size(132, 44);
+            this.btnCheckInOrder.TabIndex = 18;
+            this.btnCheckInOrder.Text = "Expecting Order";
+            this.btnCheckInOrder.UseVisualStyleBackColor = true;
+            this.btnCheckInOrder.Click += new System.EventHandler(this.btnExpectingOrder_Click);
             // 
             // btnSearchInOrder
             // 
-            this.btnSearchInOrder.Location = new System.Drawing.Point(65, 508);
+            this.btnSearchInOrder.Location = new System.Drawing.Point(3, 56);
             this.btnSearchInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchInOrder.Name = "btnSearchInOrder";
             this.btnSearchInOrder.Size = new System.Drawing.Size(132, 44);
             this.btnSearchInOrder.TabIndex = 22;
-            this.btnSearchInOrder.Text = "Search Incoming";
+            this.btnSearchInOrder.Text = "Search";
             this.btnSearchInOrder.UseVisualStyleBackColor = true;
             this.btnSearchInOrder.Click += new System.EventHandler(this.btnSearchInOrder_Click);
+            // 
+            // btnLoadIncoming
+            // 
+            this.btnLoadIncoming.Location = new System.Drawing.Point(141, 56);
+            this.btnLoadIncoming.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLoadIncoming.Name = "btnLoadIncoming";
+            this.btnLoadIncoming.Size = new System.Drawing.Size(132, 44);
+            this.btnLoadIncoming.TabIndex = 23;
+            this.btnLoadIncoming.Text = "Load";
+            this.btnLoadIncoming.UseVisualStyleBackColor = true;
+            this.btnLoadIncoming.Click += new System.EventHandler(this.btnLoadIncoming_Click);
+            // 
+            // btnUpdateInOrder
+            // 
+            this.btnUpdateInOrder.Location = new System.Drawing.Point(279, 56);
+            this.btnUpdateInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateInOrder.Name = "btnUpdateInOrder";
+            this.btnUpdateInOrder.Size = new System.Drawing.Size(132, 44);
+            this.btnUpdateInOrder.TabIndex = 24;
+            this.btnUpdateInOrder.Text = "Update";
+            this.btnUpdateInOrder.UseVisualStyleBackColor = true;
+            this.btnUpdateInOrder.Click += new System.EventHandler(this.btnUpdateInOrder_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(279, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 44);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Outgoing Order";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
             // 
@@ -958,7 +1022,7 @@
             this.tableLayoutPanel4.Controls.Add(this.textOrderID, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label29, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label35, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(65, 99);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(67, 99);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 9;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -970,12 +1034,12 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(524, 248);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(520, 248);
             this.tableLayoutPanel4.TabIndex = 21;
             // 
             // dateTimePickerCheckReceived
             // 
-            this.dateTimePickerCheckReceived.Location = new System.Drawing.Point(178, 107);
+            this.dateTimePickerCheckReceived.Location = new System.Drawing.Point(176, 107);
             this.dateTimePickerCheckReceived.Name = "dateTimePickerCheckReceived";
             this.dateTimePickerCheckReceived.Size = new System.Drawing.Size(337, 27);
             this.dateTimePickerCheckReceived.TabIndex = 22;
@@ -983,14 +1047,14 @@
             // comboBoxCheckSplm
             // 
             this.comboBoxCheckSplm.FormattingEnabled = true;
-            this.comboBoxCheckSplm.Location = new System.Drawing.Point(178, 38);
+            this.comboBoxCheckSplm.Location = new System.Drawing.Point(176, 38);
             this.comboBoxCheckSplm.Name = "comboBoxCheckSplm";
             this.comboBoxCheckSplm.Size = new System.Drawing.Size(337, 28);
             this.comboBoxCheckSplm.TabIndex = 24;
             // 
             // dateTimePickerCheckDeliver
             // 
-            this.dateTimePickerCheckDeliver.Location = new System.Drawing.Point(178, 173);
+            this.dateTimePickerCheckDeliver.Location = new System.Drawing.Point(176, 173);
             this.dateTimePickerCheckDeliver.Name = "dateTimePickerCheckDeliver";
             this.dateTimePickerCheckDeliver.Size = new System.Drawing.Size(337, 27);
             this.dateTimePickerCheckDeliver.TabIndex = 15;
@@ -1002,7 +1066,7 @@
             this.label30.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label30.Location = new System.Drawing.Point(3, 75);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(169, 23);
+            this.label30.Size = new System.Drawing.Size(167, 23);
             this.label30.TabIndex = 17;
             this.label30.Text = "Product Quantity";
             // 
@@ -1013,7 +1077,7 @@
             this.label31.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label31.Location = new System.Drawing.Point(3, 214);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(169, 23);
+            this.label31.Size = new System.Drawing.Size(167, 23);
             this.label31.TabIndex = 11;
             this.label31.Text = "Manufacturer";
             // 
@@ -1024,7 +1088,7 @@
             this.label32.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label32.Location = new System.Drawing.Point(3, 175);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(169, 23);
+            this.label32.Size = new System.Drawing.Size(167, 23);
             this.label32.TabIndex = 16;
             this.label32.Text = "Deliver Date";
             // 
@@ -1035,7 +1099,7 @@
             this.label33.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label33.Location = new System.Drawing.Point(3, 142);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(169, 23);
+            this.label33.Size = new System.Drawing.Size(167, 23);
             this.label33.TabIndex = 15;
             this.label33.Text = "Signed Date";
             // 
@@ -1046,13 +1110,13 @@
             this.label36.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label36.Location = new System.Drawing.Point(3, 109);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(169, 23);
+            this.label36.Size = new System.Drawing.Size(167, 23);
             this.label36.TabIndex = 9;
             this.label36.Text = "Received Date";
             // 
             // dateTimePickerCheckSigned
             // 
-            this.dateTimePickerCheckSigned.Location = new System.Drawing.Point(178, 140);
+            this.dateTimePickerCheckSigned.Location = new System.Drawing.Point(176, 140);
             this.dateTimePickerCheckSigned.Name = "dateTimePickerCheckSigned";
             this.dateTimePickerCheckSigned.Size = new System.Drawing.Size(337, 27);
             this.dateTimePickerCheckSigned.TabIndex = 21;
@@ -1060,14 +1124,14 @@
             // comboBoxCheckManu
             // 
             this.comboBoxCheckManu.FormattingEnabled = true;
-            this.comboBoxCheckManu.Location = new System.Drawing.Point(178, 206);
+            this.comboBoxCheckManu.Location = new System.Drawing.Point(176, 206);
             this.comboBoxCheckManu.Name = "comboBoxCheckManu";
             this.comboBoxCheckManu.Size = new System.Drawing.Size(337, 28);
             this.comboBoxCheckManu.TabIndex = 23;
             // 
             // textOrderProductQuantity
             // 
-            this.textOrderProductQuantity.Location = new System.Drawing.Point(178, 73);
+            this.textOrderProductQuantity.Location = new System.Drawing.Point(176, 73);
             this.textOrderProductQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textOrderProductQuantity.Name = "textOrderProductQuantity";
             this.textOrderProductQuantity.Size = new System.Drawing.Size(337, 27);
@@ -1075,7 +1139,7 @@
             // 
             // textOrderID
             // 
-            this.textOrderID.Location = new System.Drawing.Point(178, 4);
+            this.textOrderID.Location = new System.Drawing.Point(176, 4);
             this.textOrderID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textOrderID.Name = "textOrderID";
             this.textOrderID.Size = new System.Drawing.Size(337, 27);
@@ -1088,7 +1152,7 @@
             this.label29.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label29.Location = new System.Drawing.Point(3, 40);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(169, 23);
+            this.label29.Size = new System.Drawing.Size(167, 23);
             this.label29.TabIndex = 25;
             this.label29.Text = "Supplement";
             // 
@@ -1099,7 +1163,7 @@
             this.label35.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label35.Location = new System.Drawing.Point(3, 6);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(169, 23);
+            this.label35.Size = new System.Drawing.Size(167, 23);
             this.label35.TabIndex = 7;
             this.label35.Text = "Order ID";
             // 
@@ -1107,43 +1171,11 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(242, 34);
+            this.label28.Location = new System.Drawing.Point(244, 36);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(184, 41);
             this.label28.TabIndex = 20;
             this.label28.Text = "Check Order";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(242, 437);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 44);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Outgoing Order";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnCheckInOrder
-            // 
-            this.btnCheckInOrder.Location = new System.Drawing.Point(65, 437);
-            this.btnCheckInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCheckInOrder.Name = "btnCheckInOrder";
-            this.btnCheckInOrder.Size = new System.Drawing.Size(132, 44);
-            this.btnCheckInOrder.TabIndex = 18;
-            this.btnCheckInOrder.Text = "Incoming Order";
-            this.btnCheckInOrder.UseVisualStyleBackColor = true;
-            this.btnCheckInOrder.Click += new System.EventHandler(this.btnCheckInOrder_Click);
-            // 
-            // btnUpdateInOrder
-            // 
-            this.btnUpdateInOrder.Location = new System.Drawing.Point(65, 666);
-            this.btnUpdateInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnUpdateInOrder.Name = "btnUpdateInOrder";
-            this.btnUpdateInOrder.Size = new System.Drawing.Size(132, 44);
-            this.btnUpdateInOrder.TabIndex = 24;
-            this.btnUpdateInOrder.Text = "Update Incoming";
-            this.btnUpdateInOrder.UseVisualStyleBackColor = true;
-            this.btnUpdateInOrder.Click += new System.EventHandler(this.btnUpdateInOrder_Click);
             // 
             // Form
             // 
@@ -1171,6 +1203,7 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
@@ -1269,5 +1302,7 @@
         private Button btnSearchInOrder;
         private Button btnLoadIncoming;
         private Button btnUpdateInOrder;
+        private TableLayoutPanel tableLayoutPanel5;
+        private Button button3;
     }
 }

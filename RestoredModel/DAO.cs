@@ -74,6 +74,15 @@ namespace RestoredModel.Model
             }
             return cachedMemory.CachedIncomingOrders;
         }
+        public List<IncomingOrder> GetExpectingOrders(bool reConnect = false)
+        {
+            return dbHelper.IncomingOrders.Where(m => m.ReceivedDate == null).ToList();   
+        }
+
+        public List<IncomingOrder> GetReceivedOrders(bool reConnect = false)
+        {
+            return dbHelper.IncomingOrders.Where(m => m.ReceivedDate != null).ToList();
+        }
 
         public bool saveIncomingOrder(IncomingOrder order) 
         {
