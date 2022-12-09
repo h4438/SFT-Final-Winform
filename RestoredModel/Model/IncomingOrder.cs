@@ -4,6 +4,7 @@ namespace RestoredModel.Model
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data;
     using System.Data.Entity.Spatial;
 
     public partial class IncomingOrder:Order
@@ -30,5 +31,14 @@ namespace RestoredModel.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SupplementBatch> SupplementBatches { get; set; }
+    
+        public void setData(IncomingOrder order) 
+        {
+            this.IncomingOrderID= order.IncomingOrderID;
+            this.NumberOfProducts= order.NumberOfProducts;
+            this.DeliverDate = order.DeliverDate;   
+            this.ReceivedDate = order.ReceivedDate; 
+            this.SignedDate = order.SignedDate;
+        }
     }
 }

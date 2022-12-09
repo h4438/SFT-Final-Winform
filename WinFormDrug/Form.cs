@@ -1,4 +1,5 @@
 ﻿using RestoredModel.Model;
+using RestoredModel.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -153,10 +154,11 @@ namespace WinFormDrug
             UIHelper.fillGrid(dataGridView1);
             UIHelper.colorNewRows(dataGridView1, newRows);      
         }
-
+        // Orders
         private void btnCheckInOrder_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = dao.GetIncomingOrders();
+            List<IncomingOrder> data = dao.GetIncomingOrders();
+            dataGridView1.DataSource = dao.GetIncomingOrderViews(data);
             UIHelper.fillGrid(dataGridView1);
         }
 
@@ -164,21 +166,23 @@ namespace WinFormDrug
         {
             IncomingOrder order = checkOrderTabController.createIncomingOrder();
             List<IncomingOrder> result = dao.findAnyIncomingOrder(order);
-            UIHelper.showTmpData<IncomingOrder>(dataGridView1, result);
+            UIHelper.showTmpData<IncomingOrderView>(dataGridView1, dao.GetIncomingOrderViews(result));
         }
 
         private void btnLoadIncoming_Click(object sender, EventArgs e)
         {
             int orderId = checkOrderTabController.convertToInt(checkOrderTabController.OrderID.Text);
-            dao.loadIncomingOrderByID(orderId);
+            IncomingOrder order = dao.LoadIncomingOrderByID(orderId);
+            checkOrderTabController.loadIncomingOrder(order);
             MessageBox.Show("Load order with id = "+ orderId+ " complete");
         }
 
         private void btnUpdateInOrder_Click(object sender, EventArgs e)
         {
             IncomingOrder order = checkOrderTabController.createIncomingOrder();
-            dao.ReceiveIncomingOrder(order);
+            dao.UpdateIncomingOrder(order);
             MessageBox.Show("Update complete!");
+            checkOrderTabController.clearAll();
             dao.GetIncomingOrders(true);
         }
         // Order

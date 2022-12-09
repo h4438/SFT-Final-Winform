@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestoredModel.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,14 @@ namespace RestoredModel.Model
             cachedMemory.selectedInOrder = null;
             return true;
         }
-        public IncomingOrder loadIncomingOrderByID(int id) 
+        public bool UpdateIncomingOrder(IncomingOrder incomingOrder) 
+        {
+            cachedMemory.selectedInOrder.setData(incomingOrder);
+            dbHelper.SaveChanges();
+            cachedMemory.selectedInOrder = null;
+            return true;
+        }
+        public IncomingOrder LoadIncomingOrderByID(int id) 
         {
             IncomingOrder result = dbHelper.IncomingOrders
                 .Where(m => m.IncomingOrderID.Equals(id)).FirstOrDefault();
@@ -65,6 +73,16 @@ namespace RestoredModel.Model
                 cachedMemory.CachedIncomingOrders = dbHelper.IncomingOrders.ToList();
             }
             return cachedMemory.CachedIncomingOrders;
+        }
+
+        public List<IncomingOrderView> GetIncomingOrderViews(List<IncomingOrder> data) 
+        {
+            List<IncomingOrderView> results = new List<IncomingOrderView>();
+            foreach(IncomingOrder order in data)
+            {
+                results.Add(IncomingOrderView.createView(order));
+            }
+            return results;
         }
 
         public bool saveIncomingOrder(IncomingOrder order) 

@@ -1100,11 +1100,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\WinFormDrug\\WinFormDrug.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WinFormDrug\\WinFormDrug.csproj",
       "projectName": "WinFormDrug",
-      "projectPath": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\WinFormDrug\\WinFormDrug.csproj",
+      "projectPath": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WinFormDrug\\WinFormDrug.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\WinFormDrug\\obj\\",
+      "outputPath": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WinFormDrug\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1125,8 +1125,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj": {
-              "projectPath": "C:\\Users\\PC\\Desktop\\Stuff\\SFT-Final\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj"
+            "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj": {
+              "projectPath": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj"
             }
           }
         }

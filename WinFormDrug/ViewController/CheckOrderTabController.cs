@@ -41,7 +41,7 @@ namespace WinFormDrug.ViewController
             inOrder.SignedDate = this.SignedDate.Value.ToString(DATE_FORMAT);
             inOrder.ReceivedDate = this.ReceivedDate.Value.ToString(DATE_FORMAT);
             inOrder.Manufacturer = (Manufacturer)ManuComboBox.SelectedValue;
-            inOrder.NumberOfProducts = convertToInt(this.ProductQuantity.Text);
+            inOrder.NumberOfProducts = convertToInt(this.ProductQuantity.Text);    
             return inOrder;
         }
 
@@ -78,6 +78,17 @@ namespace WinFormDrug.ViewController
                 return num;
             }
             return 0;
+        }
+
+        public void loadIncomingOrder(IncomingOrder data) 
+        {
+            this.OrderID.Text = data.IncomingOrderID.ToString();
+            this.ProductQuantity.Text = data.NumberOfProducts.ToString();
+            if(data.ReceivedDate != null)
+                this.ReceivedDate.Value = DateTime.Parse(data.ReceivedDate.ToString()); 
+            this.DeliverDate.Value = DateTime.Parse(data.DeliverDate.ToString());
+            this.SignedDate.Value = DateTime.Parse(data.SignedDate.ToString());
+            this.ManuComboBox.SelectedValue = data.Manufacturer;
         }
     }
 }

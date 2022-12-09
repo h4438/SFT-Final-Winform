@@ -13,5 +13,6 @@ namespace WinFormDrug.ViewController
 
         int NumberNewRows();
         void resetRows();
+
     }
 }
