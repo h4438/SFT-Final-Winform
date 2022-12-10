@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace RestoredModel.Model
 {
+    [Table("Supplement")]
     public partial class DBModel : DbContext
     {
         public DBModel()

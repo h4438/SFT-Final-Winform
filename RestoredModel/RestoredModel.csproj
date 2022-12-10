@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202212100147320_AddCategorySplm.designer.cs">
       <DependentUpon>202212100147320_AddCategorySplm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212100339099_ChangeNameSupplement.cs" />
+    <Compile Include="Migrations\202212100339099_ChangeNameSupplement.designer.cs">
+      <DependentUpon>202212100339099_ChangeNameSupplement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
@@ -135,7 +139,11 @@
     <EmbeddedResource Include="Migrations\202212100147320_AddCategorySplm.resx">
       <DependentUpon>202212100147320_AddCategorySplm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212100339099_ChangeNameSupplement.resx">
+      <DependentUpon>202212100339099_ChangeNameSupplement.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
