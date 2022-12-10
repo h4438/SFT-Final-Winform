@@ -39,3 +39,4 @@ C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.M
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.ChangeNameSplm.resources
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.DropMoneyBatches.resources
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.ChangeBatch.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.DropOutOrder.resources

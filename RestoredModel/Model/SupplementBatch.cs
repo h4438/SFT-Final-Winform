@@ -19,12 +19,8 @@ namespace RestoredModel.Model
 
         public int? incomingOrder_IncomingOrderID { get; set; }
 
-        public int? outgoingOrder_OutOrderID { get; set; }
-
 
         public virtual IncomingOrder IncomingOrder { get; set; }
-
-        public virtual OutgoingOrder OutgoingOrder { get; set; }
 
         public virtual Supplement Supplement { get; set; }
     }

@@ -45,7 +45,6 @@ namespace WinFormDrug.ViewController
             batch.BatchExpDate = BatchExpDate.Value.ToString(DATE_FORMAT);
             batch.Supplement = (Supplement)SplmComboBox.SelectedValue;
             batch.IncomingOrder = this.inOrder;
-            batch.OutgoingOrder = null;
             numNewRows++;
             this.inOrder.NumberOfProducts++; // important
             return batch;

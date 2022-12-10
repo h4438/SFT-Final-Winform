@@ -104,6 +104,10 @@
     <Compile Include="Migrations\202212100745511_ChangeBatch.designer.cs">
       <DependentUpon>202212100745511_ChangeBatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212101303109_DropOutOrder.cs" />
+    <Compile Include="Migrations\202212101303109_DropOutOrder.designer.cs">
+      <DependentUpon>202212101303109_DropOutOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
@@ -162,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212100745511_ChangeBatch.resx">
       <DependentUpon>202212100745511_ChangeBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212101303109_DropOutOrder.resx">
+      <DependentUpon>202212101303109_DropOutOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

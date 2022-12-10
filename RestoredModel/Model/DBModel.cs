@@ -42,10 +42,7 @@ namespace RestoredModel.Model
                 .WithOptional(e => e.Manufacturer)
                 .HasForeignKey(e => e.ManuID);
 
-            modelBuilder.Entity<OutgoingOrder>()
-                .HasMany(e => e.SupplementBatches)
-                .WithOptional(e => e.OutgoingOrder)
-                .HasForeignKey(e => e.outgoingOrder_OutOrderID);
+            
 
             
         }
