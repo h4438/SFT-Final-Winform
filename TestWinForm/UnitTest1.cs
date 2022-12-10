@@ -4,9 +4,11 @@ namespace TestWinForm
 {
     public class Tests
     {
+        private static DAO dao;
         [SetUp]
         public void Setup()
         {
+            dao = new DAO(); ;
         }
 
         [Test]
@@ -14,6 +16,17 @@ namespace TestWinForm
         {
             Assert.AreEqual(1, 1);
             Assert.Pass();
+        }
+
+        [Test]
+        public void TestFindExpectingInOrder() 
+        {
+            List<IncomingOrder> a = dao.GetExpectingOrders();
+            foreach(IncomingOrder i in a)
+            {
+                Assert.IsTrue(i.SignedDate != null && i.ReceivedDate == null && i.DeliverDate != null);
+            }
+        
         }
 
         [Test]
