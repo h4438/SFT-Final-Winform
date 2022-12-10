@@ -92,6 +92,12 @@ namespace RestoredModel.Model
             return true;
         }
 
+        public SupplementBatch FindBatchByID(int id) 
+        {
+            return dbHelper.SupplementBatches.FirstOrDefault(b => b.BatchID == id);
+
+        }
+
         // Supplement
         public List<Category> GetCategories(bool reConnect = false) 
         {

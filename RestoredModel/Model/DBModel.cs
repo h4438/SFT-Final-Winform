@@ -8,18 +8,20 @@ namespace RestoredModel.Model
     [Table("Supplement")]
     public partial class DBModel : DbContext
     {
+        private static string LOCAL = "data source=LAPTOP-8FHKAJNN\\SQLEXPRESS;initial catalog=DrugStore;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
         public DBModel()
-            : base("name=Model1")
+            : base(LOCAL)
         {
         }
 
         public virtual DbSet<Agent> Agents { get; set; }
         public virtual DbSet<IncomingOrder> IncomingOrders { get; set; }
         public virtual DbSet<Manufacturer> Manufacturers { get; set; }
-        public virtual DbSet<OutgoingOrder> OutgoingOrders { get; set; }
+        public virtual DbSet<AgentOrder> OutgoingOrders { get; set; }
         public virtual DbSet<SupplementBatch> SupplementBatches { get; set; }
         public virtual DbSet<Supplement> Supplements { get; set; }
         public virtual DbSet<Category> Categories { get; set; }   
+        public virtual DbSet<AgentTransaction> AgentTransactions { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Agent>()
@@ -41,10 +43,6 @@ namespace RestoredModel.Model
                 .HasMany(e => e.Supplements)
                 .WithOptional(e => e.Manufacturer)
                 .HasForeignKey(e => e.ManuID);
-
-            
-
-            
         }
     }
 }

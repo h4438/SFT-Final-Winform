@@ -7,7 +7,7 @@ namespace RestoredModel.Model
     using System.Data;
     using System.Data.Entity.Spatial;
 
-    public partial class IncomingOrder:Order
+    public partial class IncomingOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public IncomingOrder()
@@ -16,8 +16,6 @@ namespace RestoredModel.Model
         }
 
         public int IncomingOrderID { get; set; }
-
-        public int NumberOfProducts { get; set; }
 
         public string DeliverDate { get; set; }
 
@@ -35,7 +33,6 @@ namespace RestoredModel.Model
         public void setData(IncomingOrder order) 
         {
             this.IncomingOrderID= order.IncomingOrderID;
-            this.NumberOfProducts= order.NumberOfProducts;
             this.DeliverDate = order.DeliverDate;   
             this.ReceivedDate = order.ReceivedDate; 
             this.SignedDate = order.SignedDate;

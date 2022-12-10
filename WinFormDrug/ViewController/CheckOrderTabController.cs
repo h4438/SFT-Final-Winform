@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WinFormDrug.ViewController
 {
-    public class CheckOrderTabController:ITabController<Order>
+    public class CheckOrderTabController:ITabController<IncomingOrder>
     {
         private int newDataRows = 0;
         private static string DATE_FORMAT = "yyyy-MM-dd";
@@ -28,9 +28,9 @@ namespace WinFormDrug.ViewController
             this.OrderID.Focus();   
         }
 
-        public Order createObject()
+        public IncomingOrder createObject()
         {
-            throw new NotImplementedException();
+            return createIncomingOrder();
         }
 
         public IncomingOrder createIncomingOrder()
@@ -41,7 +41,6 @@ namespace WinFormDrug.ViewController
             inOrder.SignedDate = this.SignedDate.Value.ToString(DATE_FORMAT);
             inOrder.ReceivedDate = this.ReceivedDate.Value.ToString(DATE_FORMAT);
             inOrder.Manufacturer = (Manufacturer)ManuComboBox.SelectedValue;
-            inOrder.NumberOfProducts = convertToInt(this.ProductQuantity.Text);    
             return inOrder;
         }
 
@@ -83,7 +82,6 @@ namespace WinFormDrug.ViewController
         public void loadIncomingOrder(IncomingOrder data) 
         {
             this.OrderID.Text = data.IncomingOrderID.ToString();
-            this.ProductQuantity.Text = data.NumberOfProducts.ToString();
             if(data.ReceivedDate != null)
                 this.ReceivedDate.Value = DateTime.Parse(data.ReceivedDate.ToString()); 
             this.DeliverDate.Value = DateTime.Parse(data.DeliverDate.ToString());

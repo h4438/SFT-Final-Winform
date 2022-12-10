@@ -11,7 +11,7 @@ namespace RestoredModel.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Agent()
         {
-            OutgoingOrders = new HashSet<OutgoingOrder>();
+            OutgoingOrders = new HashSet<AgentOrder>();
         }
 
         public int AgentID { get; set; }
@@ -25,6 +25,6 @@ namespace RestoredModel.Model
         public string AgentPhone { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OutgoingOrder> OutgoingOrders { get; set; }
+        public virtual ICollection<AgentOrder> OutgoingOrders { get; set; }
     }
 }

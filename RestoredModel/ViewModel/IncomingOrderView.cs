@@ -24,7 +24,6 @@ namespace RestoredModel.ViewModel
         {
             IncomingOrderView view = new IncomingOrderView();
             view.ID = order.IncomingOrderID;   
-            view.NumberProducts = order.NumberOfProducts;
             view.ReceivedDate = order.ReceivedDate; 
             view.DeliverDate = order.DeliverDate;    
             view.SignedDate = order.SignedDate;

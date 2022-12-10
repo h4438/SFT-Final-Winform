@@ -40,3 +40,8 @@ C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.M
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.DropMoneyBatches.resources
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.ChangeBatch.resources
 C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.DropOutOrder.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.RenameAgentOrder.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.AgentTransaction.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.UpdateAgentTransaction.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.DropNumberOfProducts.resources
+C:\Users\PC\Desktop\DW\SFT-Final-Winform\RestoredModel\obj\Debug\RestoredModel.Migrations.DropNumberOfProducts1.resources

@@ -34,7 +34,6 @@ namespace WinFormDrug.ViewController
             inOrder.SignedDate = OrderSignedDate.Value.ToString(DATE_FORMAT);
             inOrder.ReceivedDate = null;
             inOrder.Manufacturer = (Manufacturer)ManuComboBox.SelectedValue;
-            this.inOrder.NumberOfProducts = 0;
         }
 
         public SupplementBatch createObject()
@@ -46,7 +45,6 @@ namespace WinFormDrug.ViewController
             batch.Supplement = (Supplement)SplmComboBox.SelectedValue;
             batch.IncomingOrder = this.inOrder;
             numNewRows++;
-            this.inOrder.NumberOfProducts++; // important
             return batch;
         }
 

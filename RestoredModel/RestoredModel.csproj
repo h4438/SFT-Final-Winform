@@ -108,16 +108,36 @@
     <Compile Include="Migrations\202212101303109_DropOutOrder.designer.cs">
       <DependentUpon>202212101303109_DropOutOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212101319555_RenameAgentOrder.cs" />
+    <Compile Include="Migrations\202212101319555_RenameAgentOrder.designer.cs">
+      <DependentUpon>202212101319555_RenameAgentOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212101327243_AgentTransaction.cs" />
+    <Compile Include="Migrations\202212101327243_AgentTransaction.designer.cs">
+      <DependentUpon>202212101327243_AgentTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212101338375_UpdateAgentTransaction.cs" />
+    <Compile Include="Migrations\202212101338375_UpdateAgentTransaction.designer.cs">
+      <DependentUpon>202212101338375_UpdateAgentTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212101449237_DropNumberOfProducts.cs" />
+    <Compile Include="Migrations\202212101449237_DropNumberOfProducts.designer.cs">
+      <DependentUpon>202212101449237_DropNumberOfProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212101454433_DropNumberOfProducts1.cs" />
+    <Compile Include="Migrations\202212101454433_DropNumberOfProducts1.designer.cs">
+      <DependentUpon>202212101454433_DropNumberOfProducts1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\AgentTransaction.cs" />
     <Compile Include="Model\IncomingOrder.cs" />
     <Compile Include="Model\Manufacturer.cs" />
     <Compile Include="Model\DBModel.cs" />
     <Compile Include="Model\Supplement.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="Model\OutgoingOrder.cs" />
+    <Compile Include="Model\AgentOrder.cs" />
     <Compile Include="Model\SupplementBatch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +189,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212101303109_DropOutOrder.resx">
       <DependentUpon>202212101303109_DropOutOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212101319555_RenameAgentOrder.resx">
+      <DependentUpon>202212101319555_RenameAgentOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212101327243_AgentTransaction.resx">
+      <DependentUpon>202212101327243_AgentTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212101338375_UpdateAgentTransaction.resx">
+      <DependentUpon>202212101338375_UpdateAgentTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212101449237_DropNumberOfProducts.resx">
+      <DependentUpon>202212101449237_DropNumberOfProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212101454433_DropNumberOfProducts1.resx">
+      <DependentUpon>202212101454433_DropNumberOfProducts1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
