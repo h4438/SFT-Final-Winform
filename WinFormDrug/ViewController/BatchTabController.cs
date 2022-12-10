@@ -24,8 +24,6 @@ namespace WinFormDrug.ViewController
 
         public void clearAll()
         {
-            BatchCost.Clear();
-            BatchPrice.Clear(); 
             BatchQuantity.Clear();  
         }
         public IncomingOrder getInternalOrder() => this.inOrder;
@@ -36,15 +34,13 @@ namespace WinFormDrug.ViewController
             inOrder.SignedDate = OrderSignedDate.Value.ToString(DATE_FORMAT);
             inOrder.ReceivedDate = null;
             inOrder.Manufacturer = (Manufacturer)ManuComboBox.SelectedValue;
-            inOrder.NumberOfProducts = 0;
+            this.inOrder.NumberOfProducts = 0;
         }
 
         public SupplementBatch createObject()
         {
             SupplementBatch batch = new SupplementBatch();
             batch.BatchQuantity = Int32.Parse(BatchQuantity.Text);
-            batch.BatchOriginalCost = Double.Parse(BatchCost.Text);
-            batch.BatchInitPrice = Double.Parse(BatchPrice.Text);
             batch.BatchManuDate = BatchManuDate.Value.ToString(DATE_FORMAT);
             batch.BatchExpDate = BatchExpDate.Value.ToString(DATE_FORMAT);
             batch.Supplement = (Supplement)SplmComboBox.SelectedValue;

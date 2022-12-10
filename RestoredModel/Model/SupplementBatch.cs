@@ -11,8 +11,6 @@ namespace RestoredModel.Model
         [Key]
         public int BatchID { get; set; }
 
-        public double BatchOriginalCost { get; set; }
-
         public int BatchQuantity { get; set; }
 
         public string BatchExpDate { get; set; }
@@ -23,9 +21,6 @@ namespace RestoredModel.Model
 
         public int? outgoingOrder_OutOrderID { get; set; }
 
-        public int? supplement_SID { get; set; }
-
-        public double BatchInitPrice { get; set; }
 
         public virtual IncomingOrder IncomingOrder { get; set; }
 

@@ -23,7 +23,7 @@ namespace RestoredModel.Model
         public bool saveOrderSupplementBatch(IncomingOrder order,SupplementBatch supplementBatch) 
         {
             dbHelper.IncomingOrders.Add(order);
-            dbHelper.SaveChanges(); 
+            dbHelper.SaveChanges();
             dbHelper.SupplementBatches.Add(supplementBatch);
             dbHelper.SaveChanges();
             return true;

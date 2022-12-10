@@ -50,8 +50,6 @@ namespace WinFormDrug
             batchTabController.OrderSignedDate = dateTimePickerOrderSignedDate;
             batchTabController.ManuComboBox = comboBoxOrderManu;
             batchTabController.BatchQuantity = textBatchQuantity;
-            batchTabController.BatchCost = textBatchCost;
-            batchTabController.BatchPrice = textBatchPrice;
             batchTabController.BatchManuDate = dateTimePickerBatchManu; 
             batchTabController.BatchExpDate = dateTimePickerBatchExpDate;
             batchTabController.SplmComboBox = comboBoxBatchSplm;

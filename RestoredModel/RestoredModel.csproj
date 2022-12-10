@@ -96,6 +96,14 @@
     <Compile Include="Migrations\202212100349561_ChangeNameSplm.designer.cs">
       <DependentUpon>202212100349561_ChangeNameSplm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212100728360_DropMoneyBatches.cs" />
+    <Compile Include="Migrations\202212100728360_DropMoneyBatches.designer.cs">
+      <DependentUpon>202212100728360_DropMoneyBatches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212100745511_ChangeBatch.cs" />
+    <Compile Include="Migrations\202212100745511_ChangeBatch.designer.cs">
+      <DependentUpon>202212100745511_ChangeBatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
@@ -148,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212100349561_ChangeNameSplm.resx">
       <DependentUpon>202212100349561_ChangeNameSplm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212100728360_DropMoneyBatches.resx">
+      <DependentUpon>202212100728360_DropMoneyBatches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212100745511_ChangeBatch.resx">
+      <DependentUpon>202212100745511_ChangeBatch.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
