@@ -92,6 +92,10 @@
     <Compile Include="Migrations\202212100339099_ChangeNameSupplement.designer.cs">
       <DependentUpon>202212100339099_ChangeNameSupplement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212100349561_ChangeNameSplm.cs" />
+    <Compile Include="Migrations\202212100349561_ChangeNameSplm.designer.cs">
+      <DependentUpon>202212100349561_ChangeNameSplm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
@@ -141,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212100339099_ChangeNameSupplement.resx">
       <DependentUpon>202212100339099_ChangeNameSupplement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212100349561_ChangeNameSplm.resx">
+      <DependentUpon>202212100349561_ChangeNameSplm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
