@@ -37,12 +37,13 @@ namespace WinFormDrug
             splmTabController.SName = richTextSplmName;
             splmTabController.SUses = richTextSplmUses;
             splmTabController.SDirections = richTextSplmDir;
-            splmTabController.SCategory = richTextSplmCate;
+            splmTabController.SPrice = richTextSplmPrice;
             splmTabController.SWarnings = richTextSplmWarn;
             splmTabController.SOtherInfo = richTextSplmOther;
             splmTabController.SIngredient = richTextSplmIngredient;
             splmTabController.SInactiveIngredient = richTextSplmInactive;
             splmTabController.ManuComboBox = comboBoxSplmManu;
+            splmTabController.CategoryComboBox = comboBoxSplmCat;
             // Set Batch Tab
             batchTabController = new BatchTabController();
             batchTabController.OrderDeliverDate = dateTimePickerOrderDeliverDate;
@@ -73,7 +74,8 @@ namespace WinFormDrug
             string tab = tabControlMain.SelectedTab.Text;
             if (tab == "Supplement")
             {
-                splmTabController.fillDataToComboBox(dao.getManuComboSrc());
+                splmTabController.fillManufacturerToComboBox(dao.getManuComboSrc());
+                splmTabController.fillCategoryToComboBox(dao.getCateComboSrc());    
             }
             if (tab == "Batch")
             {
@@ -202,6 +204,5 @@ namespace WinFormDrug
             dao.GetIncomingOrders(true);
         }
 
-        
     }
 }

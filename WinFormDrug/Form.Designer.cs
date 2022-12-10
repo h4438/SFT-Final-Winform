@@ -61,7 +61,7 @@
             this.richTextSplmName = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.richTextSplmCate = new System.Windows.Forms.RichTextBox();
+            this.richTextSplmPrice = new System.Windows.Forms.RichTextBox();
             this.richTextSplmUses = new System.Windows.Forms.RichTextBox();
             this.richTextSplmIngredient = new System.Windows.Forms.RichTextBox();
             this.richTextSplmDir = new System.Windows.Forms.RichTextBox();
@@ -120,6 +120,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.comboBoxSplmCat = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -411,6 +413,8 @@
             this.tableSupplement.ColumnCount = 2;
             this.tableSupplement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableSupplement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSupplement.Controls.Add(this.comboBoxSplmCat, 1, 10);
+            this.tableSupplement.Controls.Add(this.label34, 0, 10);
             this.tableSupplement.Controls.Add(this.label7, 0, 9);
             this.tableSupplement.Controls.Add(this.label18, 0, 7);
             this.tableSupplement.Controls.Add(this.label17, 0, 6);
@@ -420,7 +424,7 @@
             this.tableSupplement.Controls.Add(this.richTextSplmName, 1, 0);
             this.tableSupplement.Controls.Add(this.label13, 0, 0);
             this.tableSupplement.Controls.Add(this.label12, 0, 2);
-            this.tableSupplement.Controls.Add(this.richTextSplmCate, 1, 2);
+            this.tableSupplement.Controls.Add(this.richTextSplmPrice, 1, 2);
             this.tableSupplement.Controls.Add(this.richTextSplmUses, 1, 3);
             this.tableSupplement.Controls.Add(this.richTextSplmIngredient, 1, 4);
             this.tableSupplement.Controls.Add(this.richTextSplmDir, 1, 5);
@@ -443,7 +447,7 @@
             this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableSupplement.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableSupplement.Size = new System.Drawing.Size(634, 530);
+            this.tableSupplement.Size = new System.Drawing.Size(634, 516);
             this.tableSupplement.TabIndex = 0;
             // 
             // label7
@@ -540,15 +544,15 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(113, 23);
             this.label12.TabIndex = 6;
-            this.label12.Text = "Category";
+            this.label12.Text = "Price";
             // 
-            // richTextSplmCate
+            // richTextSplmPrice
             // 
-            this.richTextSplmCate.Location = new System.Drawing.Point(122, 60);
-            this.richTextSplmCate.Name = "richTextSplmCate";
-            this.richTextSplmCate.Size = new System.Drawing.Size(509, 51);
-            this.richTextSplmCate.TabIndex = 7;
-            this.richTextSplmCate.Text = "";
+            this.richTextSplmPrice.Location = new System.Drawing.Point(122, 60);
+            this.richTextSplmPrice.Name = "richTextSplmPrice";
+            this.richTextSplmPrice.Size = new System.Drawing.Size(509, 51);
+            this.richTextSplmPrice.TabIndex = 7;
+            this.richTextSplmPrice.Text = "";
             // 
             // richTextSplmUses
             // 
@@ -941,7 +945,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(141, 4);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "btnReceivedOrder";
+            this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(132, 44);
             this.button3.TabIndex = 25;
             this.button3.Text = "Received Order";
@@ -952,7 +956,7 @@
             // 
             this.btnCheckInOrder.Location = new System.Drawing.Point(3, 4);
             this.btnCheckInOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCheckInOrder.Name = "btnExpectOrder";
+            this.btnCheckInOrder.Name = "btnCheckInOrder";
             this.btnCheckInOrder.Size = new System.Drawing.Size(132, 44);
             this.btnCheckInOrder.TabIndex = 18;
             this.btnCheckInOrder.Text = "Expecting Order";
@@ -1177,6 +1181,26 @@
             this.label28.TabIndex = 20;
             this.label28.Text = "Check Order";
             // 
+            // label34
+            // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label34.Location = new System.Drawing.Point(3, 485);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(113, 23);
+            this.label34.TabIndex = 23;
+            this.label34.Text = "Category";
+            // 
+            // comboBoxSplmCat
+            // 
+            this.comboBoxSplmCat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSplmCat.FormattingEnabled = true;
+            this.comboBoxSplmCat.Location = new System.Drawing.Point(122, 483);
+            this.comboBoxSplmCat.Name = "comboBoxSplmCat";
+            this.comboBoxSplmCat.Size = new System.Drawing.Size(509, 28);
+            this.comboBoxSplmCat.TabIndex = 24;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1224,7 +1248,7 @@
         private RichTextBox richTextSplmName;
         private Label label13;
         private Label label12;
-        private RichTextBox richTextSplmCate;
+        private RichTextBox richTextSplmPrice;
         private Label label16;
         private Label label15;
         private Label label14;
@@ -1304,5 +1328,7 @@
         private Button btnUpdateInOrder;
         private TableLayoutPanel tableLayoutPanel5;
         private Button button3;
+        private ComboBox comboBoxSplmCat;
+        private Label label34;
     }
 }

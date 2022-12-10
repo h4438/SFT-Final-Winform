@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202212092008529_RestoreSplm.designer.cs">
       <DependentUpon>202212092008529_RestoreSplm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212100147320_AddCategorySplm.cs" />
+    <Compile Include="Migrations\202212100147320_AddCategorySplm.designer.cs">
+      <DependentUpon>202212100147320_AddCategorySplm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="DAO.cs" />
@@ -127,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212092008529_RestoreSplm.resx">
       <DependentUpon>202212092008529_RestoreSplm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212100147320_AddCategorySplm.resx">
+      <DependentUpon>202212100147320_AddCategorySplm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

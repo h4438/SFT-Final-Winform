@@ -15,6 +15,7 @@ namespace RestoredModel.Model
         {
             dbHelper = new DBModel();
             cachedMemory = new CachedMem();
+            GetCategories();
             GetSupplements();
             getManufacturers();
         }
@@ -92,6 +93,15 @@ namespace RestoredModel.Model
         }
 
         // Supplement
+        public List<Category> GetCategories(bool reConnect = false) 
+        {
+            if (reConnect || cachedMemory.CachedCategories == null)
+            {
+                cachedMemory.CachedCategories = dbHelper.Categories.ToList();
+
+            }
+            return cachedMemory.CachedCategories;
+        }
         public bool saveSupplement(Supplement supplement) 
         {
             dbHelper.Supplements.Add(supplement);
@@ -108,7 +118,7 @@ namespace RestoredModel.Model
             return cachedMemory.CachedSupplements;
         }
         public Dictionary<string, Supplement> getSplmComboSrc() => cachedMemory.getSplmComboSrc();
-        
+        public Dictionary<string, Category> getCateComboSrc() => cachedMemory.getCateComboSrc();    
         // Manufacturer
         public Dictionary<string, Manufacturer> getManuComboSrc() => cachedMemory.getManuComboSrc();
         

@@ -46,10 +46,7 @@ namespace RestoredModel.Model
                 .WithOptional(e => e.OutgoingOrder)
                 .HasForeignKey(e => e.outgoingOrder_OutOrderID);
 
-            //modelBuilder.Entity<Supplement>()
-            //    .HasMany(e => e.SupplementBatches)
-            //    .WithOptional(e => e.Supplement)
-            //    .HasForeignKey(e => e.supplement_SID);
+            
         }
     }
 }

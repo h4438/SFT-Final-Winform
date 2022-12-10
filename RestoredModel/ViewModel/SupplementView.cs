@@ -29,6 +29,8 @@ namespace RestoredModel.ViewModel
 
         public string ManuName { get; set; }    
 
+        public string Price { get; set; }   
+
         public static SupplementView createView (Supplement supplement)
         {
             SupplementView view = new SupplementView();
@@ -36,7 +38,8 @@ namespace RestoredModel.ViewModel
             view.Warnings= supplement.Warnings; 
             view.SName= supplement.SName;
             view.Uses = supplement.Uses;
-            //view.Category= supplement.Category;
+            view.Price = supplement.price.ToString();
+            view.Category= supplement.Category.CatName;
             view.Ingredient= supplement.Ingredient;
             view.ManuName = supplement.Manufacturer.ManuName;
             view.Inactive = supplement.InactiveIngredient;    
