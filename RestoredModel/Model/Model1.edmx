@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DrugStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="ReportRangeAgentSales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="smonth" Type="int" Mode="In" />
+          <Parameter Name="emonth" Type="int" Mode="In" />
+          <Parameter Name="syear" Type="int" Mode="In" />
+          <Parameter Name="eyear" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="SplmId" Type="int" Nullable="false" />
+                <Property Name="Supplement" Type="text" />
+                <Property Name="Own" Type="int" Nullable="false" />
+                <Property Name="SplmPrice" Type="int" />
+                <Property Name="Sold" Type="int" Nullable="false" />
+                <Property Name="Gain" Type="int" />
+                <Property Name="BoughtOn" Type="nvarchar(max)" />
+                <Property Name="Buyer" Type="nvarchar(max)" />
+                <Property Name="Contact" Type="nvarchar(max)" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="DrugStoreModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DrugStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="ReportRangeAgentSales_Result">
+          <Property Name="SplmId" Type="Int32" Nullable="false" />
+          <Property Name="Supplement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Own" Type="Int32" Nullable="false" />
+          <Property Name="SplmPrice" Type="Int32" />
+          <Property Name="Sold" Type="Int32" Nullable="false" />
+          <Property Name="Gain" Type="Int32" />
+          <Property Name="BoughtOn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Buyer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </ComplexType>
+        <EntityContainer Name="DrugStoreEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="ReportRangeAgentSales" IsComposable="true" ReturnType="Collection(DrugStoreModel.ReportRangeAgentSales_Result)">
+            <Parameter Name="smonth" Mode="In" Type="Int32" />
+            <Parameter Name="emonth" Mode="In" Type="Int32" />
+            <Parameter Name="syear" Mode="In" Type="Int32" />
+            <Parameter Name="eyear" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DrugStoreModelStoreContainer" CdmEntityContainer="DrugStoreEntities">
+          <FunctionImportMapping FunctionName="DrugStoreModel.Store.ReportRangeAgentSales" FunctionImportName="ReportRangeAgentSales">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DrugStoreModel.ReportRangeAgentSales_Result">
+                <ScalarProperty Name="SplmId" ColumnName="SplmId" />
+                <ScalarProperty Name="Supplement" ColumnName="Supplement" />
+                <ScalarProperty Name="Own" ColumnName="Own" />
+                <ScalarProperty Name="SplmPrice" ColumnName="SplmPrice" />
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
+                <ScalarProperty Name="Gain" ColumnName="Gain" />
+                <ScalarProperty Name="BoughtOn" ColumnName="BoughtOn" />
+                <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

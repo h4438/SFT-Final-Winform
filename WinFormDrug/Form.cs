@@ -21,6 +21,7 @@ namespace WinFormDrug
         private SplmTabController splmTabController;
         private BatchTabController batchTabController;
         private CheckOrderTabController checkOrderTabController;
+        private SalesTabController salesTabController;
         public Form()
         {
             InitializeComponent();
@@ -62,6 +63,12 @@ namespace WinFormDrug
             checkOrderTabController.ProductQuantity = textOrderProductQuantity;
             checkOrderTabController.ManuComboBox = comboBoxCheckManu;
             checkOrderTabController.SplmComboBox = comboBoxCheckSplm;
+            // check sale
+            salesTabController = new SalesTabController();
+            salesTabController.StartMonth = txtSMonth;
+            salesTabController.StartYear = textSYear;
+            salesTabController.EndMonth = textEMonth;
+            salesTabController.EndYear = textEYear;
             // done set up
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -202,6 +209,11 @@ namespace WinFormDrug
             dao.GetIncomingOrders(true);
         }
 
-        
+        private void btnCheckSales_Click(object sender, EventArgs e)
+        {
+            int[] data = salesTabController.createObject();
+            UIHelper.showTmpData<ReportRangeAgentSales_Result>(dataGridView1, dao.GetSalesReport(data));
+            salesTabController.clearAll();
+        }
     }
 }

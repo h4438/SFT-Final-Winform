@@ -11,10 +11,12 @@ namespace RestoredModel.Model
     {
         private DBModel dbHelper;
         private CachedMem cachedMemory;
+        private DrugStoreEntities storeEntities;
         public DAO()
         {
             dbHelper = new DBModel();
             cachedMemory = new CachedMem();
+            storeEntities = new DrugStoreEntities();    
             GetCategories();
             GetSupplements();
             getManufacturers();
@@ -185,6 +187,14 @@ namespace RestoredModel.Model
                 results.Add(SupplementView.createView(supplement));
             }
             return results;
+        }
+
+        // SQL Function
+        public List<ReportRangeAgentSales_Result> GetSalesReport(int[] data) 
+        {
+            List<ReportRangeAgentSales_Result> res = storeEntities
+                .ReportRangeAgentSales(data[0], data[1], data[2], data[3]).ToList();
+            return res;
         }
     }
 

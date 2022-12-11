@@ -6,9 +6,10 @@
         <ComplexTypeMapping TypeName="DrugStoreModel.ReportRangeAgentSales_Result">
           <ScalarProperty Name="SplmId" ColumnName="SplmId" />
           <ScalarProperty Name="Supplement" ColumnName="Supplement" />
-          <ScalarProperty Name="SplmPrice" ColumnName="SplmPrice" />
           <ScalarProperty Name="Own" ColumnName="Own" />
+          <ScalarProperty Name="SplmPrice" ColumnName="SplmPrice" />
           <ScalarProperty Name="Sold" ColumnName="Sold" />
+          <ScalarProperty Name="Gain" ColumnName="Gain" />
           <ScalarProperty Name="BoughtOn" ColumnName="BoughtOn" />
           <ScalarProperty Name="Buyer" ColumnName="Buyer" />
           <ScalarProperty Name="Contact" ColumnName="Contact" />

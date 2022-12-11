@@ -3,9 +3,10 @@
   <ComplexType Name="ReportRangeAgentSales_Result">
     <Property Name="SplmId" Type="Int32" Nullable="false" />
     <Property Name="Supplement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="SplmPrice" Type="Int32" />
     <Property Name="Own" Type="Int32" Nullable="false" />
+    <Property Name="SplmPrice" Type="Int32" />
     <Property Name="Sold" Type="Int32" Nullable="false" />
+    <Property Name="Gain" Type="Int32" />
     <Property Name="BoughtOn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Buyer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />

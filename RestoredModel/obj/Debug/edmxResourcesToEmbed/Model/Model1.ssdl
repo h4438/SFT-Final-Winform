@@ -10,9 +10,10 @@
         <RowType>
           <Property Name="SplmId" Type="int" Nullable="false" />
           <Property Name="Supplement" Type="text" />
-          <Property Name="SplmPrice" Type="int" />
           <Property Name="Own" Type="int" Nullable="false" />
+          <Property Name="SplmPrice" Type="int" />
           <Property Name="Sold" Type="int" Nullable="false" />
+          <Property Name="Gain" Type="int" />
           <Property Name="BoughtOn" Type="nvarchar(max)" />
           <Property Name="Buyer" Type="nvarchar(max)" />
           <Property Name="Contact" Type="nvarchar(max)" />

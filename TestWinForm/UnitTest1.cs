@@ -4,18 +4,26 @@ namespace TestWinForm
 {
     public class Tests
     {
-        private static DAO dao;
+        private DAO dao;
         [SetUp]
         public void Setup()
         {
-            dao = new DAO(); ;
+            dao = new DAO();
         }
 
         [Test]
-        public void Test1()
+        public void TestExecSQLFunction()
         {
-            Assert.AreEqual(1, 1);
-            Assert.Pass();
+            int[] data = { 4, 6, 2011, 2022 };
+            List<ReportRangeAgentSales_Result> res = dao.GetSalesReport(data);
+            foreach(ReportRangeAgentSales_Result a in res)
+            {
+                Assert.NotNull(a);
+                Assert.NotNull(a.Sold);
+                Assert.IsNotEmpty(a.Buyer);
+                Assert.IsNotEmpty(a.Supplement);
+            }
+            Assert.LessOrEqual(4, res.Count);
         }
 
         [Test]
@@ -25,8 +33,7 @@ namespace TestWinForm
             foreach(IncomingOrder i in a)
             {
                 Assert.IsTrue(i.SignedDate != null && i.ReceivedDate == null && i.DeliverDate != null);
-            }
-        
+            } 
         }
 
         [Test]
@@ -44,7 +51,6 @@ namespace TestWinForm
         [Test]
         public void TestAgentTransaction()
         {
-
             Assert.Pass();
         }
     }

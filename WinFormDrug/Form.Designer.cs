@@ -119,20 +119,20 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnCheckSales = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSMonth = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textSYear = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textEYear = new System.Windows.Forms.TextBox();
+            this.textEMonth = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -1176,7 +1176,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button7);
+            this.tabPage3.Controls.Add(this.btnCheckSales);
             this.tabPage3.Controls.Add(this.label40);
             this.tabPage3.Controls.Add(this.tableLayoutPanel6);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
@@ -1186,6 +1186,17 @@
             this.tabPage3.TabIndex = 5;
             this.tabPage3.Text = "Check Sales";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckSales
+            // 
+            this.btnCheckSales.Location = new System.Drawing.Point(99, 353);
+            this.btnCheckSales.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCheckSales.Name = "btnCheckSales";
+            this.btnCheckSales.Size = new System.Drawing.Size(94, 44);
+            this.btnCheckSales.TabIndex = 22;
+            this.btnCheckSales.Text = "Check";
+            this.btnCheckSales.UseVisualStyleBackColor = true;
+            this.btnCheckSales.Click += new System.EventHandler(this.btnCheckSales_Click);
             // 
             // label40
             // 
@@ -1204,12 +1215,12 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.69565F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.30434F));
             this.tableLayoutPanel6.Controls.Add(this.label9, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.txtSMonth, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.label24, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.textBox3, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.textSYear, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.label37, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.textBox4, 1, 3);
-            this.tableLayoutPanel6.Controls.Add(this.textBox5, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.textEYear, 1, 3);
+            this.tableLayoutPanel6.Controls.Add(this.textEMonth, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.label38, 0, 3);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(99, 125);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -1231,15 +1242,15 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(149, 23);
             this.label9.TabIndex = 14;
-            this.label9.Text = "End Month";
+            this.label9.Text = "To Month";
             // 
-            // textBox2
+            // txtSMonth
             // 
-            this.textBox2.Location = new System.Drawing.Point(158, 4);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(281, 27);
-            this.textBox2.TabIndex = 2;
+            this.txtSMonth.Location = new System.Drawing.Point(158, 4);
+            this.txtSMonth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSMonth.Name = "txtSMonth";
+            this.txtSMonth.Size = new System.Drawing.Size(281, 27);
+            this.txtSMonth.TabIndex = 2;
             // 
             // label24
             // 
@@ -1250,15 +1261,15 @@
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(149, 23);
             this.label24.TabIndex = 3;
-            this.label24.Text = "Start Year";
+            this.label24.Text = "From Year";
             // 
-            // textBox3
+            // textSYear
             // 
-            this.textBox3.Location = new System.Drawing.Point(158, 39);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(281, 27);
-            this.textBox3.TabIndex = 4;
+            this.textSYear.Location = new System.Drawing.Point(158, 39);
+            this.textSYear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textSYear.Name = "textSYear";
+            this.textSYear.Size = new System.Drawing.Size(281, 27);
+            this.textSYear.TabIndex = 4;
             // 
             // label37
             // 
@@ -1269,23 +1280,23 @@
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(149, 23);
             this.label37.TabIndex = 7;
-            this.label37.Text = "Start Month";
+            this.label37.Text = "From Month";
             // 
-            // textBox4
+            // textEYear
             // 
-            this.textBox4.Location = new System.Drawing.Point(158, 109);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(281, 27);
-            this.textBox4.TabIndex = 10;
+            this.textEYear.Location = new System.Drawing.Point(158, 109);
+            this.textEYear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEYear.Name = "textEYear";
+            this.textEYear.Size = new System.Drawing.Size(281, 27);
+            this.textEYear.TabIndex = 10;
             // 
-            // textBox5
+            // textEMonth
             // 
-            this.textBox5.Location = new System.Drawing.Point(158, 74);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(281, 27);
-            this.textBox5.TabIndex = 8;
+            this.textEMonth.Location = new System.Drawing.Point(158, 74);
+            this.textEMonth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEMonth.Name = "textEMonth";
+            this.textEMonth.Size = new System.Drawing.Size(281, 27);
+            this.textEMonth.TabIndex = 8;
             // 
             // label38
             // 
@@ -1296,7 +1307,7 @@
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(149, 23);
             this.label38.TabIndex = 9;
-            this.label38.Text = "End Year";
+            this.label38.Text = "To Year";
             // 
             // tableLayoutPanel7
             // 
@@ -1331,16 +1342,6 @@
             this.button6.TabIndex = 18;
             this.button6.Text = "Expecting Order";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(99, 353);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 44);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Check";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // Form
             // 
@@ -1476,14 +1477,14 @@
         private Label label40;
         private TableLayoutPanel tableLayoutPanel6;
         private Label label9;
-        private TextBox textBox2;
+        private TextBox txtSMonth;
         private Label label24;
-        private TextBox textBox3;
+        private TextBox textSYear;
         private Label label37;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox textEYear;
+        private TextBox textEMonth;
         private Label label38;
-        private Button button7;
+        private Button btnCheckSales;
         private TableLayoutPanel tableLayoutPanel7;
         private Button button5;
         private Button button6;
