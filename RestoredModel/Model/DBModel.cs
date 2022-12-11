@@ -17,7 +17,7 @@ namespace RestoredModel.Model
         public virtual DbSet<Agent> Agents { get; set; }
         public virtual DbSet<IncomingOrder> IncomingOrders { get; set; }
         public virtual DbSet<Manufacturer> Manufacturers { get; set; }
-        public virtual DbSet<AgentOrder> OutgoingOrders { get; set; }
+        public virtual DbSet<AgentOrder> AgentOrders { get; set; }
         public virtual DbSet<SupplementBatch> SupplementBatches { get; set; }
         public virtual DbSet<Supplement> Supplements { get; set; }
         public virtual DbSet<Category> Categories { get; set; }   

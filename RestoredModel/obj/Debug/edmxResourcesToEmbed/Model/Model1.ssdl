@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DrugStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="ReportRangeAgentSales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="smonth" Type="int" Mode="In" />
+    <Parameter Name="emonth" Type="int" Mode="In" />
+    <Parameter Name="syear" Type="int" Mode="In" />
+    <Parameter Name="eyear" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="SplmId" Type="int" Nullable="false" />
+          <Property Name="Supplement" Type="text" />
+          <Property Name="SplmPrice" Type="int" />
+          <Property Name="Own" Type="int" Nullable="false" />
+          <Property Name="Sold" Type="int" Nullable="false" />
+          <Property Name="BoughtOn" Type="nvarchar(max)" />
+          <Property Name="Buyer" Type="nvarchar(max)" />
+          <Property Name="Contact" Type="nvarchar(max)" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <EntityContainer Name="DrugStoreModelStoreContainer" />
+</Schema>

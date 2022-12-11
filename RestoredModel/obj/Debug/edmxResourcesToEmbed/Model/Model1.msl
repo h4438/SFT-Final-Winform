@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DrugStoreModelStoreContainer" CdmEntityContainer="DrugStoreEntities">
+    <FunctionImportMapping FunctionName="DrugStoreModel.Store.ReportRangeAgentSales" FunctionImportName="ReportRangeAgentSales">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DrugStoreModel.ReportRangeAgentSales_Result">
+          <ScalarProperty Name="SplmId" ColumnName="SplmId" />
+          <ScalarProperty Name="Supplement" ColumnName="Supplement" />
+          <ScalarProperty Name="SplmPrice" ColumnName="SplmPrice" />
+          <ScalarProperty Name="Own" ColumnName="Own" />
+          <ScalarProperty Name="Sold" ColumnName="Sold" />
+          <ScalarProperty Name="BoughtOn" ColumnName="BoughtOn" />
+          <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
