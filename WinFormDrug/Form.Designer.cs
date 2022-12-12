@@ -101,7 +101,6 @@
             this.btnSearchInOrder = new System.Windows.Forms.Button();
             this.btnLoadIncoming = new System.Windows.Forms.Button();
             this.btnUpdateInOrder = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dateTimePickerCheckReceived = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCheckSplm = new System.Windows.Forms.ComboBox();
@@ -130,9 +129,15 @@
             this.textEYear = new System.Windows.Forms.TextBox();
             this.textEMonth = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label46 = new System.Windows.Forms.Label();
+            this.btnAgentOrder = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -147,7 +152,9 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -184,6 +191,7 @@
             this.tabControlMain.Controls.Add(this.tabBatch);
             this.tabControlMain.Controls.Add(this.tabPage2);
             this.tabControlMain.Controls.Add(this.tabPage3);
+            this.tabControlMain.Controls.Add(this.tabPage4);
             this.tabControlMain.Location = new System.Drawing.Point(934, 4);
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControlMain.Name = "tabControlMain";
@@ -924,7 +932,6 @@
             this.tableLayoutPanel5.Controls.Add(this.btnSearchInOrder, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.btnLoadIncoming, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.btnUpdateInOrder, 2, 1);
-            this.tableLayoutPanel5.Controls.Add(this.button4, 2, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(105, 444);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
@@ -988,16 +995,6 @@
             this.btnUpdateInOrder.Text = "Update";
             this.btnUpdateInOrder.UseVisualStyleBackColor = true;
             this.btnUpdateInOrder.Click += new System.EventHandler(this.btnUpdateInOrder_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(279, 4);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 44);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Outgoing Order";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
             // 
@@ -1309,6 +1306,39 @@
             this.label38.TabIndex = 9;
             this.label38.Text = "To Year";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label46);
+            this.tabPage4.Controls.Add(this.btnAgentOrder);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(646, 754);
+            this.tabPage4.TabIndex = 6;
+            this.tabPage4.Text = "Agent Order";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label46.Location = new System.Drawing.Point(168, 42);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(272, 41);
+            this.label46.TabIndex = 21;
+            this.label46.Text = "Check Agent Order";
+            // 
+            // btnAgentOrder
+            // 
+            this.btnAgentOrder.Location = new System.Drawing.Point(68, 267);
+            this.btnAgentOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgentOrder.Name = "btnAgentOrder";
+            this.btnAgentOrder.Size = new System.Drawing.Size(132, 44);
+            this.btnAgentOrder.TabIndex = 19;
+            this.btnAgentOrder.Text = "Agent Order";
+            this.btnAgentOrder.UseVisualStyleBackColor = true;
+            this.btnAgentOrder.Click += new System.EventHandler(this.btnAgentOrder_Click);
+            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 3;
@@ -1343,6 +1373,38 @@
             this.button6.Text = "Expecting Order";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // label39
+            // 
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label39.Location = new System.Drawing.Point(3, 27);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(61, 46);
+            this.label39.TabIndex = 14;
+            this.label39.Text = "To Month";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(70, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(127, 27);
+            this.textBox1.TabIndex = 2;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.69565F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.30434F));
+            this.tableLayoutPanel8.Controls.Add(this.label39, 0, 2);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 3;
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel8.TabIndex = 0;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1376,7 +1438,11 @@
             this.tabPage3.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1447,7 +1513,6 @@
         private ComboBox comboBoxBatchSplm;
         private Button button1;
         private TabPage tabPage2;
-        private Button button4;
         private Button btnCheckInOrder;
         private Label label28;
         private TableLayoutPanel tableLayoutPanel4;
@@ -1488,5 +1553,11 @@
         private TableLayoutPanel tableLayoutPanel7;
         private Button button5;
         private Button button6;
+        private TabPage tabPage4;
+        private Button btnAgentOrder;
+        private Label label46;
+        private Label label39;
+        private TextBox textBox1;
+        private TableLayoutPanel tableLayoutPanel8;
     }
 }

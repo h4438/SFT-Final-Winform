@@ -19,7 +19,8 @@ namespace WindowsReportFormsApp
         public Form1()
         {
             InitializeComponent();
-            WriteReport("C:\\Users\\PC\\Desktop", "order.doc", 1);
+            this.textLocation.Text = "C:\\Users\\PC\\Desktop";
+            this.textFileName.Text = "report.doc";
         }
 
         public ReportDataSource createReportDataSrc<T>(string Name, List<T> data) 
@@ -30,18 +31,12 @@ namespace WindowsReportFormsApp
             return rds;
         }
 
-        public List<T> CreateSingleList<T>( T data) 
-        {
-            List<T> datas = new List<T> { data };
-            return datas;
-        }
-
         public void WriteReport(string exportPath, string fileName, int transactID)
         {
             DAO dao = new DAO();
             string path = exportPath + "\\" + fileName;
             // Get information
-            List<AgentTransaction> agentTransactions = dao.FindAgentTransactionById(transactID);
+            List<AgentTransaction> agentTransactions = dao.FindAgentTransactionByOrderId(transactID);
             List<TransactionView> transactionViews = dao.CreateTransactionViews(agentTransactions);
             LocalReport localReport = new LocalReport();
             localReport.ReportPath = "Report1.rdlc";
@@ -59,6 +54,15 @@ namespace WindowsReportFormsApp
             {
                 fs.Write(mybytes, 0, mybytes.Length);
             }
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            string location = this.textLocation.Text.Trim();
+            string file = this.textFileName.Text.Trim();
+            int orderId = int.Parse(this.textOrderId.Text.Trim());
+            WriteReport(location, file, orderId);
+            MessageBox.Show("Done report!");
         }
     }
 }

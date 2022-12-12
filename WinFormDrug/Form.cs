@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsReportFormsApp;
 using WinFormDrug.ViewController;
 
 namespace WinFormDrug
@@ -69,6 +70,7 @@ namespace WinFormDrug
             salesTabController.StartYear = textSYear;
             salesTabController.EndMonth = textEMonth;
             salesTabController.EndYear = textEYear;
+           
             // done set up
             dataGridView1.ReadOnly = true;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -215,5 +217,11 @@ namespace WinFormDrug
             UIHelper.showTmpData<ReportRangeAgentSales_Result>(dataGridView1, dao.GetSalesReport(data));
             salesTabController.clearAll();
         }
+
+        private void btnAgentOrder_Click(object sender, EventArgs e)
+        {
+            UIHelper.showTmpData<AgentOrder>(dataGridView1, dao.GetAgentOrders());
+        }
+
     }
 }

@@ -19,6 +19,25 @@
         "net481": {}
       }
     },
+    "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WindowsReportFormsApp\\WindowsReportFormsApp.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WindowsReportFormsApp\\WindowsReportFormsApp.csproj",
+        "projectName": "WindowsReportFormsApp",
+        "projectPath": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WindowsReportFormsApp\\WindowsReportFormsApp.csproj",
+        "frameworks": {
+          "net481": {
+            "projectReferences": {
+              "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj": {
+                "projectPath": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net481": {}
+      }
+    },
     "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WinFormDrug\\WinFormDrug.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -49,6 +68,9 @@
             "projectReferences": {
               "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj": {
                 "projectPath": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\RestoredModel\\RestoredModel.csproj"
+              },
+              "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WindowsReportFormsApp\\WindowsReportFormsApp.csproj": {
+                "projectPath": "C:\\Users\\PC\\Desktop\\DW\\SFT-Final-Winform\\WindowsReportFormsApp\\WindowsReportFormsApp.csproj"
               }
             }
           }

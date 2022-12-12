@@ -39,20 +39,20 @@ namespace RestoredModel.Model
             return cachedMemory.CachedBatches;  
         }
 
+        // Agent Orders
         public List<Agent> GetAgents() 
         {
             return dbHelper.Agents.ToList();    
         }
-        // Agent Orders
         public List<AgentOrder> GetAgentOrders() 
         {
             return dbHelper.AgentOrders.ToList();   
         }
 
-        public List<AgentTransaction> FindAgentTransactionById(int agentId) 
+        public List<AgentTransaction> FindAgentTransactionByOrderId(int orderId) 
         {
             List<AgentTransaction> results = dbHelper.AgentTransactions.
-                Where(m => m.AgentOrder.Agent_AgentID == agentId).ToList();
+                Where(m => m.AgentOrder.OutOrderID == orderId).ToList();
             return results;
         }
 
