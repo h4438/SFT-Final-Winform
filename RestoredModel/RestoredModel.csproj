@@ -163,6 +163,7 @@
     <Compile Include="ViewModel\ManufacturerView.cs" />
     <Compile Include="ViewModel\ModelView.cs" />
     <Compile Include="ViewModel\SupplementView.cs" />
+    <Compile Include="ViewModel\TransactionView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

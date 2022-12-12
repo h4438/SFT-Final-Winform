@@ -38,6 +38,24 @@ namespace RestoredModel.Model
             }
             return cachedMemory.CachedBatches;  
         }
+
+        public List<Agent> GetAgents() 
+        {
+            return dbHelper.Agents.ToList();    
+        }
+        // Agent Orders
+        public List<AgentOrder> GetAgentOrders() 
+        {
+            return dbHelper.AgentOrders.ToList();   
+        }
+
+        public List<AgentTransaction> FindAgentTransactionById(int agentId) 
+        {
+            List<AgentTransaction> results = dbHelper.AgentTransactions.
+                Where(m => m.AgentOrder.Agent_AgentID == agentId).ToList();
+            return results;
+        }
+
         // Orders
         public List<IncomingOrder> findAnyIncomingOrder(IncomingOrder order)
         {
@@ -165,6 +183,16 @@ namespace RestoredModel.Model
             foreach (IncomingOrder order in data)
             {
                 results.Add(IncomingOrderView.createView(order));
+            }
+            return results;
+        }
+
+        public List<TransactionView> CreateTransactionViews(List<AgentTransaction> data) 
+        {
+            List<TransactionView> results = new List<TransactionView>();
+            foreach(AgentTransaction transaction in data)
+            {
+                results.Add(TransactionView.createView(transaction));
             }
             return results;
         }
