@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormDrug", "WinFormDrug\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoredModel", "RestoredModel\RestoredModel.csproj", "{7610522B-DE29-4F59-BD31-916D0193F39B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWinForm", "TestWinForm\TestWinForm.csproj", "{DBDC7220-1B8D-4599-AE71-F22EA61BE301}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsReportFormsApp", "WindowsReportFormsApp\WindowsReportFormsApp.csproj", "{7CD26BDC-3688-4374-9E82-702ECF463A04}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{7610522B-DE29-4F59-BD31-916D0193F39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7610522B-DE29-4F59-BD31-916D0193F39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7610522B-DE29-4F59-BD31-916D0193F39B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBDC7220-1B8D-4599-AE71-F22EA61BE301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBDC7220-1B8D-4599-AE71-F22EA61BE301}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBDC7220-1B8D-4599-AE71-F22EA61BE301}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBDC7220-1B8D-4599-AE71-F22EA61BE301}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7CD26BDC-3688-4374-9E82-702ECF463A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7CD26BDC-3688-4374-9E82-702ECF463A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CD26BDC-3688-4374-9E82-702ECF463A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
